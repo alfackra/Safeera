@@ -1,3003 +1,5237 @@
-<!DOCTYPE html>
-<html lang="id">
+/* ======================================================
+   SAFEERA MADINAH
+   PREMIUM WEBSITE
+====================================================== */
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
 
-  <title>Safeera Madinah | Umroh & Land Arrangement Saudi Arabia</title>
+  --green-950: #021d18;
+  --green-900: #032b23;
+  --green-850: #04372c;
+  --green-800: #064536;
+  --green-700: #075b46;
+  --green-600: #087056;
 
-  <meta name="description"
-    content="Safeera Madinah menyediakan layanan Visa Umroh, Land Arrangement, Hotel Makkah dan Madinah, transportasi Saudi, Mutawwif, Haramain dan kebutuhan perjalanan Umroh.">
+  --gold-700: #a87b32;
+  --gold-600: #bd9145;
+  --gold-500: #cfa65b;
+  --gold-400: #e1c17e;
+  --gold-300: #ecd69f;
 
-  <meta name="theme-color" content="#063d32">
+  --ivory: #f9f6ef;
+  --cream: #f1eadc;
+  --cream-dark: #e8dfce;
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  --white: #ffffff;
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet">
+  --text: #16221e;
+  --muted: #6c7772;
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  --border: rgba(22, 47, 39, .12);
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  --shadow:
+    0 20px 60px rgba(4, 39, 31, .10);
 
+  --shadow-heavy:
+    0 30px 90px rgba(0, 0, 0, .22);
 
-<body>
+  --radius-sm: 12px;
+  --radius: 20px;
+  --radius-lg: 30px;
 
+}
 
-<!-- =====================================
-     TOP BAR
-===================================== -->
 
-<div class="topbar">
+/* ======================================================
+   RESET
+====================================================== */
 
-  <div class="container topbar-inner">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <div class="topbar-left">
-      <span>
-        <i class="fa-solid fa-location-dot"></i>
-        Madinah • Saudi Arabia
-      </span>
 
-      <span class="desktop-only">
-        <i class="fa-solid fa-location-dot"></i>
-        Depok • Indonesia
-      </span>
-    </div>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
 
-    <div class="topbar-right">
+body {
 
-      <a href="https://wa.me/6282165870953" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        +62 821-6587-0953
-      </a>
+  font-family: "DM Sans", sans-serif;
 
-      <span class="desktop-only">
-        Journey • Hospitality • A Higher Meaning
-      </span>
+  color: var(--text);
 
-    </div>
+  background: var(--ivory);
 
-  </div>
+  line-height: 1.65;
 
-</div>
+  overflow-x: hidden;
 
+}
 
 
-<!-- =====================================
-     NAVBAR
-===================================== -->
+body.menu-open {
+  overflow: hidden;
+}
 
-<header class="navbar" id="navbar">
 
-  <div class="container nav-inner">
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    <a href="#home" class="brand">
 
-      <div class="brand-mark">
-        S
-      </div>
+button,
+input,
+select {
+  font: inherit;
+}
 
-      <div class="brand-name">
-        <strong>SAFEERA</strong>
-        <span>MADINAH</span>
-      </div>
 
-    </a>
+button {
+  cursor: pointer;
+}
 
 
-    <nav class="nav-links" id="navLinks">
+img {
+  max-width: 100%;
+  display: block;
+}
 
-      <a href="#home">Beranda</a>
 
+h1,
+h2,
+h3,
+h4 {
 
-      <div class="nav-dropdown">
+  font-family: "Manrope", sans-serif;
 
-        <button class="dropdown-trigger">
-          Layanan
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
+  line-height: 1.12;
 
-        <div class="dropdown-menu">
+}
 
-          <a href="#visa">
-            <i class="fa-solid fa-passport"></i>
-            <div>
-              <strong>Visa Umroh</strong>
-              <small>Visa only & Siskopatuh</small>
-            </div>
-          </a>
 
-          <a href="#la">
-            <i class="fa-solid fa-kaaba"></i>
-            <div>
-              <strong>Land Arrangement</strong>
-              <small>Layanan lengkap di Saudi</small>
-            </div>
-          </a>
+.container {
 
-          <a href="#hotel">
-            <i class="fa-solid fa-hotel"></i>
-            <div>
-              <strong>Hotel</strong>
-              <small>Makkah & Madinah</small>
-            </div>
-          </a>
+  width: min(1180px, calc(100% - 40px));
 
-          <a href="#transport">
-            <i class="fa-solid fa-bus"></i>
-            <div>
-              <strong>Transportasi</strong>
-              <small>Airport & antar kota</small>
-            </div>
-          </a>
+  margin-inline: auto;
 
-          <a href="#mutawwif">
-            <i class="fa-solid fa-person-walking-luggage"></i>
-            <div>
-              <strong>Mutawwif</strong>
-              <small>Guide Indonesia</small>
-            </div>
-          </a>
+}
 
-          <a href="#lainnya">
-            <i class="fa-solid fa-circle-nodes"></i>
-            <div>
-              <strong>Layanan Lainnya</strong>
-              <small>Haramain, flight & ziarah</small>
-            </div>
-          </a>
 
-        </div>
+.section {
+  padding: 105px 0;
+}
 
-      </div>
 
+/* ======================================================
+   TOP BAR
+====================================================== */
 
-      <a href="#hotel">Hotel</a>
+.topbar {
 
-      <a href="#transport">Transportasi</a>
+  background: var(--green-950);
 
-      <a href="#kalkulator">Kalkulator</a>
+  color: rgba(255,255,255,.70);
 
-      <a href="#tentang">Tentang</a>
+  font-size: 11px;
 
-      <a href="#faq">FAQ</a>
+}
 
-    </nav>
 
+.topbar-inner {
 
-    <div class="nav-actions">
+  min-height: 37px;
 
-      <a href="#kalkulator" class="nav-calc desktop-only">
-        <i class="fa-solid fa-calculator"></i>
-      </a>
+  display: flex;
 
-      <a href="https://wa.me/6282165870953"
-        target="_blank"
-        class="nav-cta desktop-only">
+  justify-content: space-between;
 
-        Konsultasi
+  align-items: center;
 
-        <i class="fa-brands fa-whatsapp"></i>
+  gap: 30px;
 
-      </a>
+}
 
-      <button class="menu-button" id="menuButton" aria-label="Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
 
-    </div>
+.topbar-left,
+.topbar-right {
 
-  </div>
+  display: flex;
 
-</header>
+  align-items: center;
 
+  gap: 22px;
 
+}
 
-<!-- =====================================
-     HERO
-===================================== -->
 
-<section class="hero" id="home">
+.topbar i {
 
-  <div class="hero-pattern"></div>
+  color: var(--gold-400);
 
-  <div class="hero-glow hero-glow-one"></div>
-  <div class="hero-glow hero-glow-two"></div>
+  margin-right: 5px;
 
+}
 
-  <div class="container hero-grid">
 
-    <div class="hero-copy">
+/* ======================================================
+   NAVBAR
+====================================================== */
 
-      <div class="eyebrow light-eyebrow">
-        <span></span>
-        INDONESIA • SAUDI ARABIA
-      </div>
+.navbar {
 
+  height: 78px;
 
-      <h1>
-        Perjalanan ke
-        <em>Tanah Suci,</em>
-        kami siapkan dengan lebih tenang.
-      </h1>
+  background: rgba(249,246,239,.94);
 
+  backdrop-filter: blur(18px);
 
-      <p class="hero-subtitle">
-        Solusi kebutuhan Umroh & Land Arrangement dalam satu layanan.
-        Mulai visa, hotel Makkah–Madinah, transportasi, Mutawwif,
-        Haramain hingga handling jamaah di Arab Saudi.
-      </p>
+  border-bottom:
+    1px solid rgba(3,43,35,.08);
 
+  position: sticky;
 
-      <div class="hero-buttons">
+  top: 0;
 
-        <a href="#kalkulator" class="button gold-button">
+  z-index: 1000;
 
-          Rencanakan Perjalanan
+  transition: .3s;
 
-          <i class="fa-solid fa-arrow-right"></i>
+}
 
-        </a>
 
+.navbar.scrolled {
 
-        <a href="#layanan-cepat" class="button ghost-button">
+  box-shadow:
+    0 10px 35px rgba(3,43,35,.08);
 
-          Jelajahi Layanan
+}
 
-          <i class="fa-solid fa-chevron-down"></i>
 
-        </a>
+.nav-inner {
 
-      </div>
+  height: 100%;
 
+  display: flex;
 
-      <div class="hero-trust">
+  align-items: center;
 
-        <div class="trust-icons">
+  justify-content: space-between;
 
-          <span>
-            <i class="fa-solid fa-kaaba"></i>
-          </span>
+}
 
-          <span>
-            <i class="fa-solid fa-hotel"></i>
-          </span>
 
-          <span>
-            <i class="fa-solid fa-plane"></i>
-          </span>
+.brand,
+.footer-logo {
 
-        </div>
+  display: inline-flex;
 
-        <div>
-          <div class="stars">★★★★★</div>
-          <small>
-            Mendampingi kebutuhan jamaah & travel
-          </small>
-        </div>
+  align-items: center;
 
-      </div>
+  gap: 11px;
 
-    </div>
+}
 
 
+.brand-mark {
 
-    <!-- HERO VISUAL -->
+  width: 43px;
 
-    <div class="hero-visual">
+  height: 43px;
 
-      <div class="hero-logo-card">
+  display: grid;
 
-        <img
-          src="assets/safeera-logo.png"
-          alt="Safeera Madinah"
-          onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';"
-        >
+  place-items: center;
 
-        <div class="logo-fallback">
+  border-radius: 50% 50% 45% 45%;
 
-          <div class="fallback-s">S</div>
+  color: var(--gold-300);
 
-          <strong>SAFEERA</strong>
+  border:
+    1px solid rgba(207,166,91,.5);
 
-          <span>MADINAH</span>
+  background:
+    linear-gradient(
+      145deg,
+      var(--green-900),
+      var(--green-700)
+    );
 
-          <small>
-            JOURNEY • HOSPITALITY • A HIGHER MEANING
-          </small>
+  font-family: "Cormorant Garamond", serif;
 
-        </div>
+  font-size: 28px;
 
-      </div>
+  font-weight: 700;
 
+  box-shadow:
+    inset 0 0 15px rgba(255,255,255,.05);
 
-      <div class="floating-card floating-card-one">
+}
 
-        <div class="floating-icon">
-          <i class="fa-solid fa-shield-heart"></i>
-        </div>
 
-        <div>
-          <small>Safeera Support</small>
-          <strong>Indonesia & Saudi</strong>
-        </div>
+.brand-name {
 
-      </div>
+  display: flex;
 
+  flex-direction: column;
 
-      <div class="floating-card floating-card-two">
+  line-height: 1;
 
-        <small>Mulai dari</small>
+}
 
-        <strong>Rp 2.500.000</strong>
 
-        <span>Visa Umroh</span>
+.brand-name strong {
 
-      </div>
+  color: var(--green-900);
 
-    </div>
+  font-family: "Cormorant Garamond", serif;
 
-  </div>
+  font-size: 22px;
 
+  letter-spacing: 3.5px;
 
+}
 
-  <!-- HERO STATS -->
 
-  <div class="container">
+.brand-name span {
 
-    <div class="hero-stats">
+  margin-top: 5px;
 
-      <div class="hero-stat">
-        <strong>500+</strong>
-        <span>Jamaah</span>
-      </div>
+  color: var(--gold-700);
 
-      <div class="hero-stat">
-        <strong>50+</strong>
-        <span>Grup Dilayani</span>
-      </div>
+  font-size: 8px;
 
-      <div class="hero-stat">
-        <strong>2</strong>
-        <span>Negara Operasional</span>
-      </div>
+  letter-spacing: 5px;
 
-      <div class="hero-stat">
-        <strong>24/7</strong>
-        <span>Saudi Support</span>
-      </div>
+}
 
-    </div>
 
-  </div>
+.nav-links {
 
-</section>
+  display: flex;
 
+  align-items: center;
 
+  gap: 27px;
 
-<!-- =====================================
-     TICKER
-===================================== -->
+}
 
-<div class="trust-ticker">
 
-  <div class="ticker-track">
+.nav-links > a,
+.dropdown-trigger {
 
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Visa Umroh
-    </span>
+  border: 0;
 
-    <span>•</span>
+  background: none;
 
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Hotel Makkah & Madinah
-    </span>
+  color: #34463f;
 
-    <span>•</span>
+  font-size: 12px;
 
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Land Arrangement
-    </span>
+  font-weight: 600;
 
-    <span>•</span>
+  transition: .2s;
 
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Transport Saudi
-    </span>
+}
 
-    <span>•</span>
 
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Mutawwif Indonesia
-    </span>
+.nav-links > a:hover,
+.dropdown-trigger:hover {
 
-    <span>•</span>
+  color: var(--green-600);
 
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Handling Jamaah
-    </span>
+}
 
-  </div>
 
-</div>
+.nav-dropdown {
+  position: relative;
+}
 
 
+.dropdown-trigger {
 
-<!-- =====================================
-     QUICK SERVICES
-===================================== -->
+  display: flex;
 
-<section class="quick-section" id="layanan-cepat">
+  align-items: center;
 
-  <div class="container">
+  gap: 6px;
 
-    <div class="quick-services">
+}
 
-      <a href="#visa">
 
-        <div class="quick-icon">
-          <i class="fa-solid fa-passport"></i>
-        </div>
+.dropdown-trigger i {
+  font-size: 8px;
+}
 
-        <div>
-          <strong>Visa</strong>
-          <small>Umroh & Istifadhah</small>
-        </div>
 
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
+.dropdown-menu {
 
-      </a>
+  position: absolute;
 
+  left: -80px;
 
-      <a href="#hotel">
+  top: calc(100% + 25px);
 
-        <div class="quick-icon">
-          <i class="fa-solid fa-hotel"></i>
-        </div>
+  width: 390px;
 
-        <div>
-          <strong>Hotel</strong>
-          <small>Makkah & Madinah</small>
-        </div>
+  padding: 12px;
 
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
+  display: grid;
 
-      </a>
+  grid-template-columns:
+    repeat(2, 1fr);
 
+  gap: 5px;
 
-      <a href="#transport">
+  background: white;
 
-        <div class="quick-icon">
-          <i class="fa-solid fa-bus"></i>
-        </div>
+  border:
+    1px solid var(--border);
 
-        <div>
-          <strong>Transport</strong>
-          <small>Saudi Arabia</small>
-        </div>
+  border-radius: 17px;
 
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
+  box-shadow: var(--shadow);
 
-      </a>
+  opacity: 0;
 
+  visibility: hidden;
 
-      <a href="#la">
+  transform: translateY(10px);
 
-        <div class="quick-icon">
-          <i class="fa-solid fa-kaaba"></i>
-        </div>
+  transition: .25s;
 
-        <div>
-          <strong>Paket LA</strong>
-          <small>Custom kebutuhan</small>
-        </div>
+}
 
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
 
-      </a>
+.nav-dropdown:hover .dropdown-menu {
 
+  opacity: 1;
 
-      <a href="#kalkulator" class="quick-featured">
+  visibility: visible;
 
-        <div class="quick-icon">
-          <i class="fa-solid fa-calculator"></i>
-        </div>
+  transform: translateY(0);
 
-        <div>
-          <strong>Kalkulator</strong>
-          <small>Hitung estimasi</small>
-        </div>
+}
 
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
 
-      </a>
+.dropdown-menu a {
 
-    </div>
+  padding: 13px;
 
-  </div>
+  display: flex;
 
-</section>
+  gap: 10px;
 
+  border-radius: 11px;
 
+  transition: .2s;
 
-<!-- =====================================
-     INTRO
-===================================== -->
+}
 
-<section class="section intro-section" id="tentang">
 
-  <div class="container intro-grid">
+.dropdown-menu a:hover {
+  background: #f4f7f2;
+}
 
-    <div>
 
-      <div class="eyebrow">
-        <span></span>
-        SAFEERA MADINAH
-      </div>
+.dropdown-menu i {
 
-      <h2 class="section-title">
-        Satu partner untuk kebutuhan
-        <em>perjalanan di Tanah Suci.</em>
-      </h2>
+  color: var(--green-600);
 
-    </div>
+  margin-top: 3px;
 
+}
 
-    <div class="intro-copy">
 
-      <p>
-        Safeera hadir untuk membantu jamaah mandiri maupun mitra travel
-        dalam menyiapkan kebutuhan perjalanan Umroh di Arab Saudi
-        secara lebih praktis.
-      </p>
+.dropdown-menu strong {
 
-      <p>
-        Pilih layanan sesuai kebutuhan — mulai dari satu layanan
-        hingga paket Land Arrangement yang lebih lengkap.
-      </p>
+  display: block;
 
-      <div class="locations">
+  font-size: 11px;
 
-        <span>
-          <i class="fa-solid fa-location-dot"></i>
-          Depok, Indonesia
-        </span>
+}
 
-        <span>
-          <i class="fa-solid fa-location-dot"></i>
-          Madinah, Saudi Arabia
-        </span>
 
-      </div>
+.dropdown-menu small {
 
-    </div>
+  display: block;
 
-  </div>
+  margin-top: 2px;
 
-</section>
+  color: var(--muted);
 
+  font-size: 8px;
 
+}
 
-<!-- =====================================
-     CALCULATOR
-===================================== -->
 
-<section class="section calculator-section" id="kalkulator">
+.nav-actions {
 
-  <div class="container">
+  display: flex;
 
-    <div class="calculator-heading">
+  align-items: center;
 
-      <div>
+  gap: 9px;
 
-        <div class="eyebrow gold-eyebrow">
-          <span></span>
-          KALKULATOR SAFEERA
-        </div>
+}
 
-        <h2>
-          Rancang perjalanan
-          <em>sesuai kebutuhanmu.</em>
-        </h2>
 
-      </div>
+.nav-calc {
 
+  width: 40px;
 
-      <p>
-        Pilih jumlah jamaah dan layanan. Kalkulator akan
-        memberikan estimasi awal yang dapat langsung
-        dikirim ke WhatsApp Safeera.
-      </p>
+  height: 40px;
 
-    </div>
+  display: grid;
 
+  place-items: center;
 
+  border-radius: 10px;
 
-    <div class="calculator-shell">
+  border:
+    1px solid var(--border);
 
-      <!-- LEFT -->
+  color: var(--green-700);
 
-      <div class="calculator-form">
+}
 
 
-        <div class="calculator-section-title">
+.nav-cta {
 
-          <span>01</span>
+  height: 42px;
 
-          <div>
-            <strong>Jumlah Jamaah</strong>
-            <small>Atur jumlah peserta perjalanan</small>
-          </div>
+  padding: 0 16px;
 
-        </div>
+  display: flex;
 
+  align-items: center;
 
+  gap: 8px;
 
-        <div class="traveller-grid">
+  color: white;
 
-          <div class="counter-box">
+  background: var(--green-700);
 
-            <label>DEWASA</label>
+  border-radius: 10px;
 
-            <div class="counter">
+  font-size: 11px;
 
-              <button onclick="changeCounter('adult', -1)">−</button>
+  font-weight: 700;
 
-              <strong id="adultCount">2</strong>
+}
 
-              <button onclick="changeCounter('adult', 1)">+</button>
 
-            </div>
+.menu-button {
 
-            <small>12+ tahun</small>
+  display: none;
 
-          </div>
+  border: 0;
 
+  background: transparent;
 
-          <div class="counter-box">
+  color: var(--green-900);
 
-            <label>ANAK</label>
+  font-size: 22px;
 
-            <div class="counter">
+}
 
-              <button onclick="changeCounter('child', -1)">−</button>
 
-              <strong id="childCount">0</strong>
+/* ======================================================
+   HERO
+====================================================== */
 
-              <button onclick="changeCounter('child', 1)">+</button>
+.hero {
 
-            </div>
+  position: relative;
 
-            <small>2–11 tahun</small>
+  overflow: hidden;
 
-          </div>
+  color: white;
 
+  background:
 
-          <div class="counter-box">
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(194,151,70,.18),
+      transparent 27%
+    ),
 
-            <label>BAYI</label>
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(15,111,83,.28),
+      transparent 33%
+    ),
 
-            <div class="counter">
+    linear-gradient(
+      120deg,
+      #011b16 0%,
+      #032d25 50%,
+      #064637 100%
+    );
 
-              <button onclick="changeCounter('infant', -1)">−</button>
+}
 
-              <strong id="infantCount">0</strong>
 
-              <button onclick="changeCounter('infant', 1)">+</button>
+.hero-pattern {
 
-            </div>
+  position: absolute;
 
-            <small>&lt; 2 tahun</small>
+  inset: 0;
 
-          </div>
+  opacity: .05;
 
-        </div>
+  background-image:
 
+    linear-gradient(
+      30deg,
+      #fff 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #fff 87.5%,
+      #fff
+    ),
 
+    linear-gradient(
+      150deg,
+      #fff 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #fff 87.5%,
+      #fff
+    );
 
-        <div class="form-divider"></div>
+  background-size: 80px 140px;
 
+}
 
 
-        <div class="calculator-section-title">
+.hero-glow {
 
-          <span>02</span>
+  position: absolute;
 
-          <div>
-            <strong>Pilih Visa</strong>
-            <small>Harga per jamaah</small>
-          </div>
+  border-radius: 50%;
 
-        </div>
+  filter: blur(10px);
 
+}
 
-        <div class="choice-grid">
 
-          <label class="choice-card">
+.hero-glow-one {
 
-            <input
-              type="radio"
-              name="visa"
-              value="2500000"
-              data-label="Visa Only"
-              checked
-            >
+  width: 400px;
 
-            <div>
-              <i class="fa-solid fa-passport"></i>
-              <strong>Visa Only</strong>
-              <small>Rp 2.500.000 / pax</small>
-            </div>
+  height: 400px;
 
-          </label>
+  left: -250px;
 
+  top: -150px;
 
-          <label class="choice-card">
+  background:
+    rgba(207,166,91,.12);
 
-            <input
-              type="radio"
-              name="visa"
-              value="2850000"
-              data-label="Visa + Siskopatuh"
-            >
+}
 
-            <div>
-              <i class="fa-solid fa-shield"></i>
-              <strong>Visa + Siskopatuh</strong>
-              <small>Rp 2.850.000 / pax</small>
-            </div>
 
-          </label>
+.hero-glow-two {
 
+  width: 400px;
 
-          <label class="choice-card">
+  height: 400px;
 
-            <input
-              type="radio"
-              name="visa"
-              value="4999999"
-              data-label="Visa Istifadhah"
-            >
+  right: -180px;
 
-            <div>
-              <i class="fa-solid fa-earth-asia"></i>
-              <strong>Visa Istifadhah</strong>
-              <small>Rp 4.999.999 / pax</small>
-            </div>
+  bottom: -250px;
 
-          </label>
+  background:
+    rgba(0,0,0,.22);
 
-        </div>
+}
 
 
+.hero-grid {
 
-        <div class="form-divider"></div>
+  min-height: 650px;
 
+  position: relative;
 
+  z-index: 2;
 
-        <div class="calculator-section-title">
+  display: grid;
 
-          <span>03</span>
+  grid-template-columns:
+    minmax(0,1.08fr)
+    minmax(390px,.92fr);
 
-          <div>
-            <strong>Hotel</strong>
-            <small>Pilih lama menginap & kategori</small>
-          </div>
+  align-items: center;
 
-        </div>
+  gap: 85px;
 
+  padding-top: 70px;
 
-        <div class="hotel-night-grid">
+  padding-bottom: 70px;
 
-          <div class="field">
+}
 
-            <label>Makkah</label>
 
-            <select id="makkahNights">
-              <option value="0">Tidak perlu</option>
-              <option value="3">3 malam</option>
-              <option value="4">4 malam</option>
-              <option value="5" selected>5 malam</option>
-              <option value="6">6 malam</option>
-              <option value="7">7 malam</option>
-              <option value="8">8 malam</option>
-              <option value="10">10 malam</option>
-            </select>
+.eyebrow {
 
-          </div>
+  display: flex;
 
+  align-items: center;
 
-          <div class="field">
+  gap: 9px;
 
-            <label>Madinah</label>
+  margin-bottom: 15px;
 
-            <select id="madinahNights">
-              <option value="0">Tidak perlu</option>
-              <option value="3">3 malam</option>
-              <option value="4" selected>4 malam</option>
-              <option value="5">5 malam</option>
-              <option value="6">6 malam</option>
-              <option value="7">7 malam</option>
-              <option value="8">8 malam</option>
-            </select>
+  color: var(--green-700);
 
-          </div>
+  font-size: 9px;
 
-        </div>
+  font-weight: 800;
 
+  letter-spacing: 2.3px;
 
-        <div class="hotel-category">
+}
 
-          <label class="category-choice">
 
-            <input
-              type="radio"
-              name="hotelCategory"
-              value="350000"
-              data-label="Budget"
-              checked
-            >
+.eyebrow > span {
 
-            <span>Budget</span>
+  width: 25px;
 
-          </label>
+  height: 1px;
 
+  background: currentColor;
 
-          <label class="category-choice">
+}
 
-            <input
-              type="radio"
-              name="hotelCategory"
-              value="550000"
-              data-label="Dekat"
-            >
 
-            <span>Dekat</span>
+.light-eyebrow {
 
-          </label>
+  color: var(--gold-400);
 
+}
 
-          <label class="category-choice">
 
-            <input
-              type="radio"
-              name="hotelCategory"
-              value="850000"
-              data-label="Premium"
-            >
+.gold-eyebrow {
 
-            <span>Premium ★</span>
+  color: var(--gold-500);
 
-          </label>
+}
 
-        </div>
 
+.centered-eyebrow {
 
+  justify-content: center;
 
-        <div class="form-divider"></div>
+}
 
 
+.hero h1 {
 
-        <div class="calculator-section-title">
+  max-width: 750px;
 
-          <span>04</span>
+  font-family: "Cormorant Garamond", serif;
 
-          <div>
-            <strong>Transportasi</strong>
-            <small>Pilih kebutuhan transport Saudi</small>
-          </div>
+  font-size: clamp(50px, 6vw, 78px);
 
-        </div>
+  font-weight: 700;
 
+  letter-spacing: -2px;
 
-        <div class="field">
+}
 
-          <select id="transportType">
 
-            <option value="0" data-label="Tanpa transport">
-              Tanpa transport
-            </option>
+.hero h1 em,
+.section-title em,
+.la-content h2 em,
+.mutawwif-copy h2 em,
+.why-grid h2 em {
 
-            <option value="750000" data-label="Shared Transport">
-              Shared Transport — estimasi Rp 750.000 / pax
-            </option>
+  color: var(--gold-400);
 
-            <option value="1250000" data-label="Private Transport">
-              Private Transport — estimasi Rp 1.250.000 / pax
-            </option>
+  font-style: normal;
 
-          </select>
+}
 
-        </div>
 
+.hero-subtitle {
 
+  max-width: 640px;
 
-        <div class="addon-grid">
+  margin: 26px 0 31px;
 
+  color: #b8cbc4;
 
-          <label class="addon">
+  font-size: 15px;
 
-            <input
-              type="checkbox"
-              id="mutawwifAddon"
-              value="1320000"
-            >
+}
 
-            <span class="custom-check"></span>
 
-            <div>
-              <strong>Mutawwif / Guide</strong>
-              <small>Rp 1.320.000 / hari</small>
-            </div>
+.hero-buttons {
 
-          </label>
+  display: flex;
 
+  flex-wrap: wrap;
 
-          <label class="addon">
+  gap: 12px;
 
-            <input
-              type="checkbox"
-              id="handlingAddon"
-              value="350000"
-            >
+}
 
-            <span class="custom-check"></span>
 
-            <div>
-              <strong>Handling Jamaah</strong>
-              <small>Estimasi Rp 350.000 / pax</small>
-            </div>
+.button {
 
-          </label>
+  min-height: 52px;
 
+  padding: 0 21px;
 
-          <label class="addon">
+  display: inline-flex;
 
-            <input
-              type="checkbox"
-              id="haramainAddon"
-              value="750000"
-            >
+  align-items: center;
 
-            <span class="custom-check"></span>
+  justify-content: center;
 
-            <div>
-              <strong>Kereta Haramain</strong>
-              <small>Estimasi Rp 750.000 / pax</small>
-            </div>
+  gap: 10px;
 
-          </label>
+  border-radius: 11px;
 
+  font-size: 11px;
 
-          <label class="addon">
+  font-weight: 800;
 
-            <input
-              type="checkbox"
-              id="ziarahAddon"
-              value="400000"
-            >
+  transition: .25s;
 
-            <span class="custom-check"></span>
+}
 
-            <div>
-              <strong>Ziarah</strong>
-              <small>Estimasi Rp 400.000 / pax</small>
-            </div>
 
-          </label>
+.button:hover {
+  transform: translateY(-2px);
+}
 
-        </div>
 
-      </div>
+.gold-button {
 
+  color: #1e2d27;
 
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-300),
+      var(--gold-500)
+    );
 
-      <!-- RESULT -->
+  box-shadow:
+    0 15px 40px rgba(190,145,65,.15);
 
-      <aside class="calculator-result">
+}
 
-        <div class="result-top">
 
-          <span>ESTIMASI PERJALANAN</span>
+.ghost-button {
 
-          <h3 id="pricePerPerson">
-            Rp 0
-          </h3>
+  color: white;
 
-          <small>estimasi per jamaah dewasa</small>
+  border:
+    1px solid rgba(255,255,255,.18);
 
-        </div>
+  background:
+    rgba(255,255,255,.035);
 
+}
 
-        <div class="result-divider"></div>
 
+.hero-trust {
 
-        <div class="result-details">
+  margin-top: 34px;
 
-          <div>
-            <span>Jumlah jamaah</span>
-            <strong id="summaryTravellers">2 pax</strong>
-          </div>
+  display: flex;
 
-          <div>
-            <span>Visa</span>
-            <strong id="summaryVisa">Rp 0</strong>
-          </div>
+  align-items: center;
 
-          <div>
-            <span>Hotel</span>
-            <strong id="summaryHotel">Rp 0</strong>
-          </div>
+  gap: 13px;
 
-          <div>
-            <span>Transport</span>
-            <strong id="summaryTransport">Rp 0</strong>
-          </div>
+}
 
-          <div>
-            <span>Add-on</span>
-            <strong id="summaryAddon">Rp 0</strong>
-          </div>
 
-        </div>
+.trust-icons {
 
+  display: flex;
 
-        <div class="result-total">
+}
 
-          <small>TOTAL ESTIMASI</small>
 
-          <strong id="grandTotal">
-            Rp 0
-          </strong>
+.trust-icons span {
 
-        </div>
+  width: 34px;
 
+  height: 34px;
 
-        <p class="estimate-note">
-          *Harga hotel dan transport di kalkulator merupakan
-          estimasi sementara dan dapat berubah berdasarkan tanggal,
-          ketersediaan, jumlah jamaah dan pilihan layanan.
-        </p>
+  margin-left: -6px;
 
+  display: grid;
 
-        <button class="result-button" onclick="sendEstimateToWhatsApp()">
+  place-items: center;
 
-          Kirim Estimasi ke WhatsApp
+  border-radius: 50%;
 
-          <i class="fa-brands fa-whatsapp"></i>
+  color: var(--green-800);
 
-        </button>
+  background: var(--cream);
 
+  border:
+    2px solid var(--green-900);
 
-        <a href="#visa" class="result-secondary">
-          Lihat rincian layanan
-          <i class="fa-solid fa-arrow-down"></i>
-        </a>
+  font-size: 11px;
 
-      </aside>
+}
 
-    </div>
 
-  </div>
+.trust-icons span:first-child {
+  margin-left: 0;
+}
 
-</section>
 
+.stars {
 
+  color: var(--gold-400);
 
-<!-- =====================================
-     VISA
-===================================== -->
+  letter-spacing: 2px;
 
-<section class="section visa-section" id="visa">
+  font-size: 10px;
 
-  <div class="container">
+}
 
-    <div class="section-heading">
 
-      <div>
+.hero-trust small {
 
-        <div class="eyebrow">
-          <span></span>
-          VISA
-        </div>
+  color: #8ea69d;
 
-        <h2 class="section-title">
-          Pilih layanan
-          <em>Visa Umroh.</em>
-        </h2>
+  font-size: 9px;
 
-      </div>
+}
 
 
-      <p>
-        Pilih jenis pengurusan visa sesuai kebutuhan perjalanan.
-        Tim Safeera akan membantu proses dan informasi dokumen.
-      </p>
+/* HERO LOGO */
 
-    </div>
+.hero-visual {
+  position: relative;
+}
 
 
+.hero-logo-card {
 
-    <div class="visa-grid">
+  position: relative;
 
+  width: 100%;
 
-      <article class="visa-card">
+  max-width: 490px;
 
-        <div class="visa-card-head">
+  margin-left: auto;
 
-          <div class="service-round-icon">
-            <i class="fa-solid fa-passport"></i>
-          </div>
+  aspect-ratio: 1 / 1;
 
-          <span>VISA ONLY</span>
+  overflow: hidden;
 
-        </div>
+  border-radius: 34px;
 
-        <h3>Visa Umroh</h3>
+  border:
+    1px solid rgba(220,186,119,.22);
 
-        <div class="service-price">
-          Rp 2.500.000
-          <small>/ pax</small>
-        </div>
+  background:
+    #090c0b;
 
-        <p>
-          Untuk jamaah yang telah menyiapkan kebutuhan
-          perjalanan lainnya secara mandiri.
-        </p>
+  box-shadow: var(--shadow-heavy);
 
+}
 
-        <ul>
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pengajuan visa
-          </li>
 
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Bantuan pengecekan dokumen
-          </li>
+.hero-logo-card::after {
 
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Update proses
-          </li>
-        </ul>
+  content: "";
 
+  position: absolute;
 
-        <a
-          href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20tentang%20Visa%20Umroh%20Only."
-          target="_blank"
-          class="service-action"
-        >
+  inset: 0;
 
-          Ajukan Visa
+  pointer-events: none;
 
-          <i class="fa-solid fa-arrow-right"></i>
+  background:
+    linear-gradient(
+      135deg,
+      transparent 50%,
+      rgba(211,171,93,.08)
+    );
 
-        </a>
+}
 
-      </article>
 
+.hero-logo-card img {
 
+  width: 100%;
 
-      <article class="visa-card featured-visa">
+  height: 100%;
 
-        <div class="popular-label">
-          PILIHAN POPULER
-        </div>
+  object-fit: cover;
 
+}
 
-        <div class="visa-card-head">
 
-          <div class="service-round-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
+.logo-fallback {
 
-          <span>VISA + SISKOPATUH</span>
+  display: none;
 
-        </div>
+  position: absolute;
 
-        <h3>Visa + Siskopatuh</h3>
+  inset: 0;
 
-        <div class="service-price">
-          Rp 2.850.000
-          <small>/ pax</small>
-        </div>
+  align-items: center;
 
-        <p>
-          Pilihan layanan Visa Umroh beserta kebutuhan
-          administrasi Siskopatuh.
-        </p>
+  justify-content: center;
 
+  flex-direction: column;
 
-        <ul>
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pengajuan Visa Umroh
-          </li>
+  color: var(--gold-400);
 
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Siskopatuh
-          </li>
+  background:
+    radial-gradient(
+      circle,
+      #1b1914,
+      #070908
+    );
 
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pendampingan dokumen
-          </li>
-        </ul>
+}
 
 
-        <a
-          href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20tentang%20Visa%20%2B%20Siskopatuh."
-          target="_blank"
-          class="service-action"
-        >
+.fallback-s {
 
-          Konsultasi Sekarang
+  font-family: "Cormorant Garamond";
 
-          <i class="fa-solid fa-arrow-right"></i>
+  font-size: 140px;
 
-        </a>
+  line-height: .8;
 
-      </article>
+}
 
 
+.logo-fallback strong {
 
-      <article class="visa-card">
+  font-family: "Cormorant Garamond";
 
-        <div class="visa-card-head">
+  font-size: 45px;
 
-          <div class="service-round-icon">
-            <i class="fa-solid fa-earth-asia"></i>
-          </div>
+  letter-spacing: 8px;
 
-          <span>LONG STAY</span>
+}
 
-        </div>
 
-        <h3>Visa Istifadhah</h3>
+.logo-fallback span {
 
-        <div class="service-price">
-          Rp 4.999.999
-          <small>/ pax</small>
-        </div>
+  margin-top: 10px;
 
-        <p>
-          Pilihan visa untuk kebutuhan kunjungan yang
-          memenuhi ketentuan layanan terkait.
-        </p>
+  letter-spacing: 10px;
 
+}
 
-        <ul>
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Konsultasi kebutuhan
-          </li>
 
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pengecekan dokumen
-          </li>
+.logo-fallback small {
 
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pendampingan pengajuan
-          </li>
-        </ul>
+  margin-top: 25px;
 
+  letter-spacing: 3px;
 
-        <a
-          href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20tentang%20Visa%20Istifadhah."
-          target="_blank"
-          class="service-action"
-        >
+  font-size: 7px;
 
-          Tanya Visa Istifadhah
+}
 
-          <i class="fa-solid fa-arrow-right"></i>
 
-        </a>
+.floating-card {
 
-      </article>
+  position: absolute;
 
-    </div>
+  z-index: 4;
 
+  background:
+    rgba(255,255,255,.96);
 
+  color: var(--text);
 
-    <!-- PROCESS -->
+  box-shadow: var(--shadow);
 
-    <div class="process-row">
+  border-radius: 13px;
 
-      <div class="process-card">
-        <span>01</span>
-        <strong>Konsultasi</strong>
-        <p>Sampaikan jenis visa dan kebutuhan perjalanan.</p>
-      </div>
+}
 
-      <div class="process-card">
-        <span>02</span>
-        <strong>Kirim Dokumen</strong>
-        <p>Tim memberikan daftar dokumen yang diperlukan.</p>
-      </div>
 
-      <div class="process-card">
-        <span>03</span>
-        <strong>Verifikasi</strong>
-        <p>Dokumen diperiksa sebelum proses pengajuan.</p>
-      </div>
+.floating-card-one {
 
-      <div class="process-card">
-        <span>04</span>
-        <strong>Proses Visa</strong>
-        <p>Safeera memberikan update proses kepada pelanggan.</p>
-      </div>
+  left: -45px;
 
-    </div>
+  bottom: 55px;
 
-  </div>
+  padding: 12px 15px;
 
-</section>
+  display: flex;
 
+  align-items: center;
 
+  gap: 10px;
 
-<!-- =====================================
-     LAND ARRANGEMENT
-===================================== -->
+}
 
-<section class="section la-section" id="la">
 
-  <div class="container la-grid">
+.floating-icon {
 
-    <div class="la-content">
+  width: 36px;
 
-      <div class="eyebrow gold-eyebrow">
-        <span></span>
-        LAND ARRANGEMENT
-      </div>
+  height: 36px;
 
-      <h2>
-        Satu koordinasi untuk
-        <em>kebutuhan jamaah di Saudi.</em>
-      </h2>
+  display: grid;
 
-      <p>
-        Cocok untuk jamaah mandiri, keluarga, grup maupun
-        mitra travel yang membutuhkan layanan darat di
-        Makkah, Madinah dan Jeddah.
-      </p>
+  place-items: center;
 
+  border-radius: 10px;
 
-      <div class="la-features">
+  color: var(--gold-400);
 
-        <div>
-          <i class="fa-solid fa-passport"></i>
-          <span>
-            <strong>Visa</strong>
-            Pengurusan sesuai kebutuhan
-          </span>
-        </div>
+  background: var(--green-900);
 
-        <div>
-          <i class="fa-solid fa-hotel"></i>
-          <span>
-            <strong>Hotel</strong>
-            Makkah & Madinah
-          </span>
-        </div>
+}
 
-        <div>
-          <i class="fa-solid fa-bus"></i>
-          <span>
-            <strong>Transport</strong>
-            Airport & antar kota
-          </span>
-        </div>
 
-        <div>
-          <i class="fa-solid fa-user-group"></i>
-          <span>
-            <strong>Handling</strong>
-            Pendampingan jamaah
-          </span>
-        </div>
+.floating-card small,
+.floating-card strong,
+.floating-card span {
 
-        <div>
-          <i class="fa-solid fa-person-walking-luggage"></i>
-          <span>
-            <strong>Mutawwif</strong>
-            Guide Bahasa Indonesia
-          </span>
-        </div>
+  display: block;
 
-        <div>
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <strong>Ziarah</strong>
-            Makkah & Madinah
-          </span>
-        </div>
+}
 
-      </div>
 
+.floating-card-one small {
 
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20konsultasi%20Paket%20Land%20Arrangement."
-        target="_blank"
-        class="button gold-button"
-      >
+  color: var(--muted);
 
-        Minta Penawaran LA
+  font-size: 8px;
 
-        <i class="fa-brands fa-whatsapp"></i>
+}
 
-      </a>
 
-    </div>
+.floating-card-one strong {
 
+  font-size: 10px;
 
+}
 
-    <div class="la-package-card">
 
-      <div class="la-package-top">
+.floating-card-two {
 
-        <span>SAFEERA</span>
+  right: -22px;
 
-        <small>Custom Package</small>
+  top: 50px;
 
-      </div>
+  padding: 14px 17px;
 
+}
 
-      <h3>
-        Land Arrangement
-        <em>Saudi Arabia</em>
-      </h3>
 
+.floating-card-two small {
 
-      <p>
-        Paket dapat disesuaikan berdasarkan jumlah jamaah,
-        tanggal keberangkatan, kategori hotel dan kendaraan.
-      </p>
+  color: var(--muted);
 
+  font-size: 8px;
 
-      <div class="package-route">
+}
 
-        <div>
-          <span>01</span>
-          <strong>JEDDAH</strong>
-        </div>
 
-        <i class="fa-solid fa-arrow-right"></i>
+.floating-card-two strong {
 
-        <div>
-          <span>02</span>
-          <strong>MAKKAH</strong>
-        </div>
+  color: var(--green-700);
 
-        <i class="fa-solid fa-arrow-right"></i>
+  font-size: 17px;
 
-        <div>
-          <span>03</span>
-          <strong>MADINAH</strong>
-        </div>
+}
 
-      </div>
 
+.floating-card-two span {
 
-      <div class="package-bottom">
+  color: var(--muted);
 
-        <span>
-          <i class="fa-solid fa-users"></i>
-          Individual & Group
-        </span>
+  font-size: 8px;
 
-        <span>
-          <i class="fa-solid fa-handshake"></i>
-          B2B Travel
-        </span>
+}
 
-      </div>
 
-    </div>
+/* STATS */
 
-  </div>
+.hero-stats {
 
-</section>
+  position: relative;
 
+  z-index: 3;
 
+  display: grid;
 
-<!-- =====================================
-     HOTEL
-===================================== -->
+  grid-template-columns:
+    repeat(4,1fr);
 
-<section class="section hotel-section" id="hotel">
+  border:
+    1px solid rgba(255,255,255,.08);
 
-  <div class="container">
+  border-bottom: 0;
 
-    <div class="section-heading">
+  border-radius:
+    20px 20px 0 0;
 
-      <div>
+  background:
+    rgba(255,255,255,.045);
 
-        <div class="eyebrow">
-          <span></span>
-          HOTEL
-        </div>
+  backdrop-filter: blur(15px);
 
-        <h2 class="section-title">
-          Menginap lebih nyaman di
-          <em>Makkah & Madinah.</em>
-        </h2>
+}
 
-      </div>
 
-      <p>
-        Kami membantu mencarikan hotel berdasarkan budget,
-        lokasi, kapasitas kamar dan ketersediaan pada
-        tanggal perjalanan.
-      </p>
+.hero-stat {
 
-    </div>
+  padding: 23px;
 
+  text-align: center;
 
+}
 
-    <div class="filter-tabs">
 
-      <button class="filter-tab active" data-city="all">
-        Semua
-      </button>
+.hero-stat:not(:last-child) {
 
-      <button class="filter-tab" data-city="makkah">
-        Makkah
-      </button>
+  border-right:
+    1px solid rgba(255,255,255,.08);
 
-      <button class="filter-tab" data-city="madinah">
-        Madinah
-      </button>
+}
 
-    </div>
 
+.hero-stat strong {
 
+  display: block;
 
-    <div class="hotel-grid" id="hotelGrid">
+  font-family:
+    "Cormorant Garamond", serif;
 
+  color: var(--gold-300);
 
-      <article class="hotel-card" data-city="makkah">
+  font-size: 31px;
 
-        <div class="hotel-image hotel-placeholder makkah-bg">
+}
 
-          <span class="hotel-city-badge">
-            MAKKAH
-          </span>
 
-          <div class="hotel-placeholder-icon">
-            <i class="fa-solid fa-kaaba"></i>
-          </div>
+.hero-stat span {
 
-          <small>Foto hotel dapat ditambahkan</small>
+  color: #8ba097;
 
-        </div>
+  font-size: 9px;
 
+  letter-spacing: 1px;
 
-        <div class="hotel-info">
+  text-transform: uppercase;
 
-          <div class="hotel-meta">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Makkah
-            </span>
-            <span>★★★★★</span>
-          </div>
+}
 
-          <h3>Hotel Makkah — Premium</h3>
 
-          <p>
-            Pilihan hotel dekat area Masjidil Haram.
-            Nama hotel disesuaikan ketersediaan.
-          </p>
+/* ======================================================
+   TICKER
+====================================================== */
 
-          <div class="hotel-footer">
+.trust-ticker {
 
-            <div>
-              <small>HARGA</small>
-              <strong>Hubungi Kami</strong>
-            </div>
+  min-height: 50px;
 
-            <a
-              href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20mencari%20hotel%20di%20Makkah."
-              target="_blank"
-            >
-              Cek Hotel →
-            </a>
+  overflow: hidden;
 
-          </div>
+  background: var(--cream);
 
-        </div>
+  border-bottom:
+    1px solid rgba(3,43,35,.08);
 
-      </article>
+}
 
 
+.ticker-track {
 
-      <article class="hotel-card" data-city="makkah">
+  min-height: 50px;
 
-        <div class="hotel-image hotel-placeholder gold-bg">
+  display: flex;
 
-          <span class="hotel-city-badge">
-            MAKKAH
-          </span>
+  align-items: center;
 
-          <div class="hotel-placeholder-icon">
-            <i class="fa-solid fa-hotel"></i>
-          </div>
+  justify-content: center;
 
-          <small>Foto hotel dapat ditambahkan</small>
+  gap: 25px;
 
-        </div>
+  white-space: nowrap;
 
+  color: #50615a;
 
-        <div class="hotel-info">
+  font-size: 9px;
 
-          <div class="hotel-meta">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Makkah
-            </span>
-            <span>★★★★</span>
-          </div>
+}
 
-          <h3>Hotel Makkah — Value</h3>
 
-          <p>
-            Pilihan untuk jamaah yang mengutamakan
-            keseimbangan harga dan kenyamanan.
-          </p>
+.ticker-track i {
+  color: var(--green-600);
+}
 
-          <div class="hotel-footer">
 
-            <div>
-              <small>HARGA</small>
-              <strong>Hubungi Kami</strong>
-            </div>
+/* ======================================================
+   QUICK SERVICES
+====================================================== */
 
-            <a
-              href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20mencari%20hotel%20Makkah%20kategori%20value."
-              target="_blank"
-            >
-              Cek Hotel →
-            </a>
+.quick-section {
 
-          </div>
+  padding: 28px 0;
 
-        </div>
+  background: var(--ivory);
 
-      </article>
+}
 
 
+.quick-services {
 
-      <article class="hotel-card" data-city="madinah">
+  display: grid;
 
-        <div class="hotel-image hotel-placeholder madinah-bg">
+  grid-template-columns:
+    repeat(5,1fr);
 
-          <span class="hotel-city-badge">
-            MADINAH
-          </span>
+  overflow: hidden;
 
-          <div class="hotel-placeholder-icon">
-            <i class="fa-solid fa-mosque"></i>
-          </div>
+  background: white;
 
-          <small>Foto hotel dapat ditambahkan</small>
+  border:
+    1px solid var(--border);
 
-        </div>
+  border-radius: 15px;
 
+  box-shadow:
+    0 10px 30px rgba(3,43,35,.05);
 
-        <div class="hotel-info">
+}
 
-          <div class="hotel-meta">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Madinah
-            </span>
-            <span>★★★★★</span>
-          </div>
 
-          <h3>Hotel Madinah — Premium</h3>
+.quick-services > a {
 
-          <p>
-            Pilihan akomodasi untuk jamaah yang
-            mengutamakan akses dan kenyamanan.
-          </p>
+  min-height: 82px;
 
-          <div class="hotel-footer">
+  padding: 15px;
 
-            <div>
-              <small>HARGA</small>
-              <strong>Hubungi Kami</strong>
-            </div>
+  display: flex;
 
-            <a
-              href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20mencari%20hotel%20di%20Madinah."
-              target="_blank"
-            >
-              Cek Hotel →
-            </a>
+  align-items: center;
 
-          </div>
+  gap: 10px;
 
-        </div>
+  position: relative;
 
-      </article>
+}
 
-    </div>
 
+.quick-services > a:not(:last-child) {
 
-    <div class="center-action">
+  border-right:
+    1px solid var(--border);
 
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20boleh%20minta%20pilihan%20hotel%20Makkah%20dan%20Madinah?"
-        target="_blank"
-        class="outline-action"
-      >
+}
 
-        Minta Daftar Hotel
 
-        <i class="fa-brands fa-whatsapp"></i>
+.quick-icon {
 
-      </a>
+  width: 38px;
 
-    </div>
+  height: 38px;
 
-  </div>
+  display: grid;
 
-</section>
+  place-items: center;
 
+  flex-shrink: 0;
 
+  border-radius: 10px;
 
-<!-- =====================================
-     TRANSPORT
-===================================== -->
+  color: var(--green-700);
 
-<section class="section transport-section" id="transport">
+  background: #edf3ed;
 
-  <div class="container">
+}
 
-    <div class="section-heading">
 
-      <div>
+.quick-services strong,
+.quick-services small {
 
-        <div class="eyebrow">
-          <span></span>
-          TRANSPORT SAUDI
-        </div>
+  display: block;
 
-        <h2 class="section-title">
-          Dari airport hingga antar kota,
-          <em>lebih terkoordinasi.</em>
-        </h2>
+}
 
-      </div>
 
-      <p>
-        Pilihan kendaraan disesuaikan dengan jumlah jamaah,
-        rute, bagasi dan kebutuhan perjalanan.
-      </p>
+.quick-services strong {
 
-    </div>
+  color: var(--green-900);
 
+  font-size: 11px;
 
+}
 
-    <div class="transport-grid">
 
+.quick-services small {
 
-      <article class="transport-card">
+  margin-top: 2px;
 
-        <div class="transport-icon">
-          <i class="fa-solid fa-plane-arrival"></i>
-        </div>
+  color: var(--muted);
 
-        <span>01</span>
+  font-size: 8px;
 
-        <h3>Airport Transfer</h3>
+}
 
-        <p>
-          Penjemputan atau pengantaran dari dan menuju
-          airport sesuai itinerary.
-        </p>
 
-        <div class="transport-tags">
-          <small>Jeddah</small>
-          <small>Madinah</small>
-          <small>Private</small>
-        </div>
+.quick-arrow {
 
-      </article>
+  position: absolute;
 
+  right: 12px;
 
+  color: #a6b1ac;
 
-      <article class="transport-card">
+  font-size: 8px;
 
-        <div class="transport-icon">
-          <i class="fa-solid fa-road"></i>
-        </div>
+}
 
-        <span>02</span>
 
-        <h3>Intercity</h3>
+.quick-featured {
 
-        <p>
-          Perjalanan antar kota seperti
-          Jeddah–Makkah–Madinah.
-        </p>
+  color: white;
 
-        <div class="transport-tags">
-          <small>Car</small>
-          <small>Hiace</small>
-          <small>Bus</small>
-        </div>
+  background:
+    linear-gradient(
+      135deg,
+      var(--green-900),
+      var(--green-700)
+    );
 
-      </article>
+}
 
 
+.quick-featured strong {
+  color: white;
+}
 
-      <article class="transport-card">
 
-        <div class="transport-icon">
-          <i class="fa-solid fa-train"></i>
-        </div>
+.quick-featured small {
+  color: #a7c3b8;
+}
 
-        <span>03</span>
 
-        <h3>Haramain Transfer</h3>
+.quick-featured .quick-icon {
 
-        <p>
-          Transfer menuju atau dari stasiun
-          Kereta Cepat Haramain.
-        </p>
+  color: var(--gold-300);
 
-        <div class="transport-tags">
-          <small>Station</small>
-          <small>Hotel</small>
-          <small>Airport</small>
-        </div>
+  background:
+    rgba(255,255,255,.08);
 
-      </article>
+}
 
 
+/* ======================================================
+   TITLES
+====================================================== */
 
-      <article class="transport-card">
+.section-title {
 
-        <div class="transport-icon">
-          <i class="fa-solid fa-map-location-dot"></i>
-        </div>
+  max-width: 700px;
 
-        <span>04</span>
+  color: var(--green-900);
 
-        <h3>Ziarah</h3>
+  font-family:
+    "Cormorant Garamond", serif;
 
-        <p>
-          Transportasi untuk program ziarah
-          Makkah dan Madinah.
-        </p>
+  font-size:
+    clamp(38px,5vw,54px);
 
-        <div class="transport-tags">
-          <small>Makkah</small>
-          <small>Madinah</small>
-          <small>Group</small>
-        </div>
+  letter-spacing: -1px;
 
-      </article>
+}
 
-    </div>
 
+.section-title em {
 
-    <div class="center-action">
+  color: var(--green-600);
 
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20transportasi%20di%20Saudi."
-        target="_blank"
-        class="dark-action"
-      >
+}
 
-        Tanya Harga Transport
 
-        <i class="fa-brands fa-whatsapp"></i>
+.section-heading {
 
-      </a>
+  display: grid;
 
-    </div>
+  grid-template-columns:
+    1fr 430px;
 
-  </div>
+  gap: 60px;
 
-</section>
+  align-items: end;
 
+  margin-bottom: 45px;
 
+}
 
-<!-- =====================================
-     MUTAWIF
-===================================== -->
 
-<section class="section mutawwif-section" id="mutawwif">
+.section-heading > p {
 
-  <div class="container mutawwif-grid">
+  color: var(--muted);
 
-    <div class="mutawwif-copy">
+  font-size: 13px;
 
-      <div class="eyebrow gold-eyebrow">
-        <span></span>
-        MUTAWWIF / GUIDE
-      </div>
+}
 
-      <h2>
-        Pendamping berbahasa Indonesia
-        <em>di Tanah Suci.</em>
-      </h2>
 
-      <p>
-        Layanan Mutawwif/guide untuk membantu koordinasi
-        perjalanan dan pendampingan jamaah sesuai program.
-      </p>
+.center-heading {
 
+  max-width: 730px;
 
-      <div class="mutawwif-benefits">
+  margin: 0 auto 50px;
 
-        <div>
-          <i class="fa-solid fa-language"></i>
-          <span>
-            <strong>Bahasa Indonesia</strong>
-            Komunikasi lebih mudah
-          </span>
-        </div>
+  text-align: center;
 
-        <div>
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <strong>Makkah & Madinah</strong>
-            Sesuai kebutuhan program
-          </span>
-        </div>
+}
 
-        <div>
-          <i class="fa-solid fa-calendar-days"></i>
-          <span>
-            <strong>Fleksibel</strong>
-            Pilih kebutuhan per hari
-          </span>
-        </div>
 
-        <div>
-          <i class="fa-solid fa-users"></i>
-          <span>
-            <strong>Individual & Grup</strong>
-            Menyesuaikan jamaah
-          </span>
-        </div>
+.center-heading .section-title {
 
-      </div>
+  margin-inline: auto;
 
-    </div>
+}
 
 
+.center-heading p {
 
-    <div class="mutawwif-price-card">
+  margin-top: 13px;
 
-      <div class="premium-tag">
-        SAFEERA ADD-ON
-      </div>
+  color: var(--muted);
 
-      <span>MUTAWWIF / GUIDE</span>
+  font-size: 13px;
 
-      <h3>
-        Rp 1.320.000
-        <small>/ hari</small>
-      </h3>
+}
 
-      <ul>
 
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Guide berbahasa Indonesia
-        </li>
+/* ======================================================
+   INTRO
+====================================================== */
 
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Makkah atau Madinah
-        </li>
+.intro-section {
+  background: white;
+}
 
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Pilihan tanggal sesuai ketersediaan
-        </li>
 
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Dapat digabung dengan paket LA
-        </li>
+.intro-grid {
 
-      </ul>
+  display: grid;
 
+  grid-template-columns:
+    1fr .8fr;
 
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20booking%20Mutawwif%20%2F%20Guide."
-        target="_blank"
-        class="button gold-button full-button"
-      >
+  gap: 90px;
 
-        Booking Mutawwif
+  align-items: center;
 
-        <i class="fa-solid fa-arrow-right"></i>
+}
 
-      </a>
 
-    </div>
+.intro-copy {
 
-  </div>
+  color: var(--muted);
 
-</section>
+  font-size: 14px;
 
+}
 
 
-<!-- =====================================
-     OTHER SERVICES
-===================================== -->
+.intro-copy p + p {
+  margin-top: 12px;
+}
 
-<section class="section other-services" id="lainnya">
 
-  <div class="container">
+.locations {
 
-    <div class="center-heading">
+  margin-top: 23px;
 
-      <div class="eyebrow centered-eyebrow">
-        <span></span>
-        LEBIH LENGKAP
-        <span></span>
-      </div>
+  display: flex;
 
-      <h2 class="section-title">
-        Lengkapi perjalanan bersama
-        <em>Safeera.</em>
-      </h2>
+  flex-wrap: wrap;
 
-      <p>
-        Pilih layanan tambahan sesuai kebutuhan perjalanan Anda.
-      </p>
+  gap: 10px;
 
-    </div>
+}
 
 
+.locations span {
 
-    <div class="other-grid">
+  padding: 8px 11px;
 
+  border-radius: 8px;
 
-      <article class="other-card">
+  color: var(--green-700);
 
-        <div class="other-icon">
-          <i class="fa-solid fa-train-subway"></i>
-        </div>
+  background: #edf3ed;
 
-        <h3>Kereta Haramain</h3>
+  font-size: 9px;
 
-        <p>
-          Bantuan kebutuhan perjalanan Kereta Cepat
-          Haramain sesuai rute dan jadwal.
-        </p>
+  font-weight: 700;
 
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20Kereta%20Haramain."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
+}
 
-      </article>
 
+/* ======================================================
+   CALCULATOR
+====================================================== */
 
+.calculator-section {
 
-      <article class="other-card">
+  color: white;
 
-        <div class="other-icon">
-          <i class="fa-solid fa-plane"></i>
-        </div>
+  background:
 
-        <h3>Tiket Pesawat</h3>
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(207,166,91,.13),
+      transparent 25%
+    ),
 
-        <p>
-          Bantuan pencarian kebutuhan penerbangan
-          berdasarkan itinerary jamaah.
-        </p>
+    linear-gradient(
+      135deg,
+      #021d18,
+      #04372c
+    );
 
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20tiket%20pesawat%20Umroh."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
+}
 
-      </article>
 
+.calculator-heading {
 
+  display: grid;
 
-      <article class="other-card">
+  grid-template-columns:
+    1fr 420px;
 
-        <div class="other-icon">
-          <i class="fa-solid fa-map-location"></i>
-        </div>
+  gap: 60px;
 
-        <h3>Ziarah</h3>
+  align-items: end;
 
-        <p>
-          Program transport dan pendampingan
-          ziarah Makkah atau Madinah.
-        </p>
+  margin-bottom: 45px;
 
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20program%20ziarah."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
+}
 
-      </article>
 
+.calculator-heading h2 {
 
+  max-width: 700px;
 
-      <article class="other-card">
+  font-family:
+    "Cormorant Garamond", serif;
 
-        <div class="other-icon">
-          <i class="fa-solid fa-suitcase-rolling"></i>
-        </div>
+  font-size:
+    clamp(40px,5vw,56px);
 
-        <h3>Perlengkapan Umroh</h3>
+}
 
-        <p>
-          Kebutuhan perlengkapan perjalanan jamaah.
-          Katalog produk dapat ditambahkan kemudian.
-        </p>
 
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20perlengkapan%20Umroh."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
+.calculator-heading h2 em {
 
-      </article>
+  color: var(--gold-400);
 
-    </div>
+  font-style: normal;
 
-  </div>
+}
 
-</section>
 
+.calculator-heading > p {
 
+  color: #9bb0a8;
 
-<!-- =====================================
-     HOW IT WORKS
-===================================== -->
+  font-size: 13px;
 
-<section class="section journey-section">
+}
 
-  <div class="container">
 
-    <div class="center-heading">
+.calculator-shell {
 
-      <div class="eyebrow centered-eyebrow">
-        <span></span>
-        CARA PEMESANAN
-        <span></span>
-      </div>
+  display: grid;
 
-      <h2 class="section-title">
-        Lebih sederhana,
-        <em>empat langkah saja.</em>
-      </h2>
+  grid-template-columns:
+    minmax(0,1.4fr)
+    minmax(340px,.6fr);
 
-    </div>
+  overflow: hidden;
 
+  border-radius: 25px;
 
-    <div class="journey-steps">
+  box-shadow:
+    0 35px 80px rgba(0,0,0,.22);
 
-      <div class="journey-step">
+}
 
-        <span>01</span>
 
-        <div class="journey-icon">
-          <i class="fa-brands fa-whatsapp"></i>
-        </div>
+.calculator-form {
 
-        <h3>Konsultasi</h3>
+  padding: 37px;
 
-        <p>
-          Hubungi Safeera dan sampaikan
-          kebutuhan perjalanan.
-        </p>
+  color: var(--text);
 
-      </div>
+  background: #fbfaf6;
 
+}
 
-      <div class="journey-line"></div>
 
+.calculator-section-title {
 
-      <div class="journey-step">
+  margin-bottom: 20px;
 
-        <span>02</span>
+  display: flex;
 
-        <div class="journey-icon">
-          <i class="fa-solid fa-sliders"></i>
-        </div>
+  align-items: center;
 
-        <h3>Pilih Layanan</h3>
+  gap: 11px;
 
-        <p>
-          Tentukan visa, hotel, transport
-          atau paket LA.
-        </p>
+}
 
-      </div>
 
+.calculator-section-title > span {
 
-      <div class="journey-line"></div>
+  width: 29px;
 
+  height: 29px;
 
-      <div class="journey-step">
+  display: grid;
 
-        <span>03</span>
+  place-items: center;
 
-        <div class="journey-icon">
-          <i class="fa-solid fa-file-circle-check"></i>
-        </div>
+  border-radius: 50%;
 
-        <h3>Konfirmasi</h3>
+  color: var(--gold-300);
 
-        <p>
-          Konfirmasi rincian layanan,
-          dokumen dan pembayaran.
-        </p>
+  background: var(--green-800);
 
-      </div>
+  font-size: 9px;
 
+  font-weight: 800;
 
-      <div class="journey-line"></div>
+}
 
 
-      <div class="journey-step">
+.calculator-section-title strong,
+.calculator-section-title small {
 
-        <span>04</span>
+  display: block;
 
-        <div class="journey-icon">
-          <i class="fa-solid fa-plane-departure"></i>
-        </div>
+}
 
-        <h3>Perjalanan</h3>
 
-        <p>
-          Tim membantu koordinasi layanan
-          yang telah dipesan.
-        </p>
+.calculator-section-title strong {
 
-      </div>
+  color: var(--green-900);
 
-    </div>
+  font-size: 13px;
 
-  </div>
+}
 
-</section>
 
+.calculator-section-title small {
 
+  color: var(--muted);
 
-<!-- =====================================
-     WHY SAFEERA
-===================================== -->
+  font-size: 8px;
 
-<section class="section why-section">
+}
 
-  <div class="container why-grid">
 
-    <div>
+.traveller-grid {
 
-      <div class="eyebrow gold-eyebrow">
-        <span></span>
-        WHY SAFEERA
-      </div>
+  display: grid;
 
-      <h2>
-        Indonesia dekat,
-        <em>Madinah pun dekat.</em>
-      </h2>
+  grid-template-columns:
+    repeat(3,1fr);
 
-      <p>
-        Safeera menghubungkan kebutuhan pelanggan Indonesia
-        dengan koordinasi layanan di Arab Saudi.
-      </p>
+  gap: 11px;
 
-    </div>
+}
 
 
+.counter-box {
 
-    <div class="why-cards">
+  padding: 15px;
 
-      <article>
+  text-align: center;
 
-        <i class="fa-solid fa-earth-asia"></i>
+  border:
+    1px solid var(--border);
 
-        <strong>
-          Indonesia × Saudi
-        </strong>
+  border-radius: 13px;
 
-        <p>
-          Basis layanan di Depok dan Madinah.
-        </p>
+  background: white;
 
-      </article>
+}
 
 
-      <article>
+.counter-box label {
 
-        <i class="fa-solid fa-layer-group"></i>
+  display: block;
 
-        <strong>
-          One Stop Service
-        </strong>
+  color: var(--green-700);
 
-        <p>
-          Berbagai kebutuhan perjalanan dalam satu koordinasi.
-        </p>
+  font-size: 8px;
 
-      </article>
+  font-weight: 800;
 
+  letter-spacing: 1px;
 
-      <article>
+}
 
-        <i class="fa-solid fa-people-group"></i>
 
-        <strong>
-          B2C & B2B
-        </strong>
+.counter {
 
-        <p>
-          Melayani jamaah langsung maupun mitra travel.
-        </p>
+  margin: 9px 0 3px;
 
-      </article>
+  display: flex;
 
+  justify-content: center;
 
-      <article>
+  align-items: center;
 
-        <i class="fa-solid fa-headset"></i>
+  gap: 15px;
 
-        <strong>
-          Saudi Support
-        </strong>
+}
 
-        <p>
-          Bantuan koordinasi selama jamaah berada di Saudi.
-        </p>
 
-      </article>
+.counter button {
 
-    </div>
+  width: 28px;
 
-  </div>
+  height: 28px;
 
-</section>
+  border-radius: 50%;
 
+  border:
+    1px solid var(--border);
 
+  background: #f7f8f5;
 
-<!-- =====================================
-     TESTIMONIAL
-===================================== -->
+  color: var(--green-700);
 
-<section class="section testimonial-section">
+  font-size: 17px;
 
-  <div class="container">
+}
 
-    <div class="section-heading">
 
-      <div>
+.counter button:last-child {
 
-        <div class="eyebrow">
-          <span></span>
-          CERITA JAMAAH
-        </div>
+  color: white;
 
-        <h2 class="section-title">
-          Pengalaman bersama
-          <em>Safeera.</em>
-        </h2>
+  border-color: var(--green-700);
 
-      </div>
+  background: var(--green-700);
 
-      <p>
-        Bagian ini dapat diganti dengan testimoni asli
-        pelanggan Safeera beserta dokumentasinya.
-      </p>
+}
 
-    </div>
 
+.counter strong {
 
+  min-width: 20px;
 
-    <div class="testimonial-grid">
+  color: var(--green-900);
 
-      <article class="testimonial-card">
+}
 
-        <div class="quote-mark">“</div>
 
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
+.counter-box > small {
 
-        <p>
-          Tempat untuk testimoni asli pelanggan Safeera.
-          Masukkan pengalaman jamaah setelah izin publikasi diperoleh.
-        </p>
+  color: #9aa39f;
 
-        <div class="testimonial-person">
+  font-size: 7px;
 
-          <div class="avatar">S</div>
+}
 
-          <div>
-            <strong>Testimoni Jamaah</strong>
-            <small>Indonesia</small>
-          </div>
 
-        </div>
+.form-divider {
 
-      </article>
+  height: 1px;
 
+  margin: 27px 0;
 
-      <article class="testimonial-card">
+  background: var(--border);
 
-        <div class="quote-mark">“</div>
+}
 
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
 
-        <p>
-          Testimoni tentang pelayanan hotel, transport,
-          visa atau pendampingan dapat ditampilkan di sini.
-        </p>
+.choice-grid {
 
-        <div class="testimonial-person">
+  display: grid;
 
-          <div class="avatar">S</div>
+  grid-template-columns:
+    repeat(3,1fr);
 
-          <div>
-            <strong>Testimoni Jamaah</strong>
-            <small>Indonesia</small>
-          </div>
+  gap: 10px;
 
-        </div>
+}
 
-      </article>
 
+.choice-card {
 
-      <article class="testimonial-card">
+  cursor: pointer;
 
-        <div class="quote-mark">“</div>
+}
 
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
 
-        <p>
-          Anda juga dapat memasukkan testimoni dari mitra
-          travel untuk memperkuat layanan B2B Safeera.
-        </p>
+.choice-card input {
+  display: none;
+}
 
-        <div class="testimonial-person">
 
-          <div class="avatar">S</div>
+.choice-card > div {
 
-          <div>
-            <strong>Mitra Travel</strong>
-            <small>Indonesia</small>
-          </div>
+  min-height: 105px;
 
-        </div>
+  padding: 14px;
 
-      </article>
+  border:
+    1px solid var(--border);
 
-    </div>
+  border-radius: 12px;
 
-  </div>
+  background: white;
 
-</section>
+  transition: .2s;
 
+}
 
 
-<!-- =====================================
-     GALLERY
-===================================== -->
+.choice-card input:checked + div {
 
-<section class="section gallery-section">
+  border-color: var(--green-600);
 
-  <div class="container">
+  box-shadow:
+    inset 0 0 0 1px var(--green-600);
 
-    <div class="center-heading">
+  background: #f1f6f1;
 
-      <div class="eyebrow centered-eyebrow">
-        <span></span>
-        SAFEERA JOURNEY
-        <span></span>
-      </div>
+}
 
-      <h2 class="section-title">
-        Dokumentasi
-        <em>perjalanan kami.</em>
-      </h2>
 
-      <p>
-        Nanti ganti kotak ini dengan dokumentasi asli Safeera.
-      </p>
+.choice-card i {
 
-    </div>
+  display: block;
 
+  margin-bottom: 11px;
 
-    <div class="gallery-grid">
+  color: var(--green-600);
 
-      <div class="gallery-item large-gallery">
-        <i class="fa-solid fa-kaaba"></i>
-        <span>Dokumentasi Makkah</span>
-      </div>
+}
 
-      <div class="gallery-item">
-        <i class="fa-solid fa-mosque"></i>
-        <span>Dokumentasi Madinah</span>
-      </div>
 
-      <div class="gallery-item">
-        <i class="fa-solid fa-users"></i>
-        <span>Jamaah Safeera</span>
-      </div>
+.choice-card strong,
+.choice-card small {
 
-      <div class="gallery-item">
-        <i class="fa-solid fa-bus"></i>
-        <span>Transportasi</span>
-      </div>
+  display: block;
 
-      <div class="gallery-item">
-        <i class="fa-solid fa-hotel"></i>
-        <span>Hotel</span>
-      </div>
+}
 
-    </div>
 
-  </div>
+.choice-card strong {
 
-</section>
+  font-size: 10px;
 
+}
 
 
-<!-- =====================================
-     FAQ
-===================================== -->
+.choice-card small {
 
-<section class="section faq-section" id="faq">
+  margin-top: 4px;
 
-  <div class="container faq-grid">
+  color: var(--muted);
 
-    <div class="faq-heading">
+  font-size: 8px;
 
-      <div class="eyebrow">
-        <span></span>
-        FAQ
-      </div>
+}
 
-      <h2 class="section-title">
-        Pertanyaan yang
-        <em>sering ditanyakan.</em>
-      </h2>
 
-      <p>
-        Tidak menemukan jawabannya?
-        Tim Safeera dapat membantu melalui WhatsApp.
-      </p>
+.hotel-night-grid {
 
-      <a
-        href="https://wa.me/6282165870953"
-        target="_blank"
-        class="outline-action"
-      >
+  display: grid;
 
-        Tanya Safeera
+  grid-template-columns:
+    repeat(2,1fr);
 
-        <i class="fa-brands fa-whatsapp"></i>
+  gap: 10px;
 
-      </a>
+}
 
-    </div>
 
+.field label {
 
+  display: block;
 
-    <div class="faq-list">
+  margin-bottom: 6px;
 
+  color: var(--muted);
 
-      <div class="faq-item">
+  font-size: 8px;
 
-        <button class="faq-question">
+  font-weight: 700;
 
-          Apa itu Land Arrangement Umroh?
+  text-transform: uppercase;
 
-          <i class="fa-solid fa-plus"></i>
+  letter-spacing: 1px;
 
-        </button>
+}
 
-        <div class="faq-answer">
-          <p>
-            Land Arrangement adalah pengaturan kebutuhan perjalanan
-            darat jamaah seperti hotel, transportasi, handling,
-            Mutawwif dan layanan lain sesuai paket yang disepakati.
-          </p>
-        </div>
 
-      </div>
+.field select {
 
+  width: 100%;
 
-      <div class="faq-item">
+  height: 47px;
 
-        <button class="faq-question">
+  padding: 0 13px;
 
-          Apakah Safeera melayani jamaah mandiri?
+  border:
+    1px solid var(--border);
 
-          <i class="fa-solid fa-plus"></i>
+  border-radius: 10px;
 
-        </button>
+  outline: none;
 
-        <div class="faq-answer">
-          <p>
-            Ya. Safeera dirancang untuk melayani jamaah individu,
-            keluarga, grup maupun kebutuhan B2B mitra travel.
-          </p>
-        </div>
+  color: var(--green-900);
 
-      </div>
+  background: white;
 
+  font-size: 10px;
 
-      <div class="faq-item">
+}
 
-        <button class="faq-question">
 
-          Bisa pesan hotel saja?
+.hotel-category {
 
-          <i class="fa-solid fa-plus"></i>
+  margin-top: 11px;
 
-        </button>
+  display: grid;
 
-        <div class="faq-answer">
-          <p>
-            Bisa. Anda dapat berkonsultasi mengenai hotel Makkah
-            atau Madinah tanpa mengambil seluruh paket LA.
-          </p>
-        </div>
+  grid-template-columns:
+    repeat(3,1fr);
 
-      </div>
+  gap: 7px;
 
+}
 
-      <div class="faq-item">
 
-        <button class="faq-question">
+.category-choice input {
+  display: none;
+}
 
-          Apakah harga kalkulator sudah final?
 
-          <i class="fa-solid fa-plus"></i>
+.category-choice span {
 
-        </button>
+  height: 36px;
 
-        <div class="faq-answer">
-          <p>
-            Belum. Kalkulator memberikan estimasi awal. Harga final
-            dapat berbeda berdasarkan tanggal, ketersediaan hotel,
-            rute, jumlah jamaah dan kebutuhan aktual.
-          </p>
-        </div>
+  display: grid;
 
-      </div>
+  place-items: center;
 
+  cursor: pointer;
 
-      <div class="faq-item">
+  border:
+    1px solid var(--border);
 
-        <button class="faq-question">
+  border-radius: 20px;
 
-          Apakah Safeera menyediakan Mutawwif?
+  color: var(--muted);
 
-          <i class="fa-solid fa-plus"></i>
+  background: white;
 
-        </button>
+  font-size: 8px;
 
-        <div class="faq-answer">
-          <p>
-            Ya. Layanan Mutawwif/guide berbahasa Indonesia
-            dapat dikonsultasikan berdasarkan tanggal,
-            kota dan program perjalanan.
-          </p>
-        </div>
+  font-weight: 700;
 
-      </div>
+}
 
 
-      <div class="faq-item">
+.category-choice input:checked + span {
 
-        <button class="faq-question">
+  color: white;
 
-          Bagaimana cara mendapatkan penawaran grup?
+  border-color: var(--green-700);
 
-          <i class="fa-solid fa-plus"></i>
+  background: var(--green-700);
 
-        </button>
+}
 
-        <div class="faq-answer">
-          <p>
-            Hubungi Safeera melalui WhatsApp dan informasikan
-            jumlah jamaah, tanggal perjalanan, kebutuhan hotel,
-            transportasi dan layanan lain yang diperlukan.
-          </p>
-        </div>
 
-      </div>
+.addon-grid {
 
-    </div>
+  margin-top: 12px;
 
-  </div>
+  display: grid;
 
-</section>
+  grid-template-columns:
+    repeat(2,1fr);
 
+  gap: 9px;
 
+}
 
-<!-- =====================================
-     FINAL CTA
-===================================== -->
 
-<section class="final-cta">
+.addon {
 
-  <div class="cta-pattern"></div>
+  min-height: 60px;
 
-  <div class="container final-cta-inner">
+  padding: 12px;
 
-    <div class="cta-symbol">
-      S
-    </div>
+  display: flex;
 
-    <div class="eyebrow light-eyebrow centered-eyebrow">
-      <span></span>
-      SAFEERA MADINAH
-      <span></span>
-    </div>
+  align-items: center;
 
-    <h2>
-      Perjalanan yang baik
-      dimulai dari persiapan yang baik.
-    </h2>
+  gap: 9px;
 
-    <p>
-      Ceritakan rencana perjalanan Anda.
-      Tim Safeera siap membantu menyusun kebutuhan
-      Umroh dan Land Arrangement.
-    </p>
+  cursor: pointer;
 
+  border:
+    1px solid var(--border);
 
-    <div class="cta-buttons">
+  border-radius: 11px;
 
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20konsultasi%20perjalanan%20Umroh."
-        target="_blank"
-        class="button gold-button"
-      >
+  background: white;
 
-        <i class="fa-brands fa-whatsapp"></i>
+}
 
-        Konsultasi Gratis
 
-      </a>
+.addon input {
+  display: none;
+}
 
-      <a href="#kalkulator" class="button ghost-button">
-        Hitung Estimasi
-      </a>
 
-    </div>
+.custom-check {
 
-  </div>
+  width: 20px;
 
-</section>
+  height: 20px;
 
+  flex-shrink: 0;
 
+  border:
+    1px solid #cbd3cf;
 
-<!-- =====================================
-     FOOTER
-===================================== -->
+  border-radius: 6px;
 
-<footer class="footer">
+}
 
-  <div class="container footer-top">
 
+.addon input:checked + .custom-check {
 
-    <div class="footer-brand">
+  position: relative;
 
-      <div class="footer-logo">
+  border-color: var(--green-700);
 
-        <div class="brand-mark">
-          S
-        </div>
+  background: var(--green-700);
 
-        <div class="brand-name">
-          <strong>SAFEERA</strong>
-          <span>MADINAH</span>
-        </div>
+}
 
-      </div>
 
+.addon input:checked + .custom-check::after {
 
-      <p>
-        Journey • Hospitality • A Higher Meaning
-      </p>
+  content: "✓";
 
+  position: absolute;
 
-      <p class="footer-description">
-        Layanan kebutuhan Umroh & Land Arrangement
-        untuk jamaah dan mitra travel Indonesia.
-      </p>
+  inset: 0;
 
+  display: grid;
 
-      <div class="footer-social">
+  place-items: center;
 
-        <a href="#" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
+  color: white;
 
-        <a href="#" aria-label="TikTok">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
+  font-size: 11px;
 
-        <a
-          href="https://wa.me/6282165870953"
-          target="_blank"
-          aria-label="WhatsApp"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
+}
 
-      </div>
 
-    </div>
+.addon strong,
+.addon small {
 
+  display: block;
 
+}
 
-    <div class="footer-column">
 
-      <h4>Layanan</h4>
+.addon strong {
 
-      <a href="#visa">Visa Umroh</a>
-      <a href="#la">Land Arrangement</a>
-      <a href="#hotel">Hotel</a>
-      <a href="#transport">Transportasi</a>
-      <a href="#mutawwif">Mutawwif</a>
-      <a href="#lainnya">Haramain</a>
+  font-size: 9px;
 
-    </div>
+}
 
 
+.addon small {
 
-    <div class="footer-column">
+  color: var(--muted);
 
-      <h4>Safeera</h4>
+  font-size: 7px;
 
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#kalkulator">Kalkulator</a>
-      <a href="#faq">FAQ</a>
-      <a href="#">Syarat & Ketentuan</a>
-      <a href="#">Kebijakan Privasi</a>
+}
 
-    </div>
 
+/* RESULT */
 
+.calculator-result {
 
-    <div class="footer-column">
+  min-height: 100%;
 
-      <h4>Hubungi Kami</h4>
+  padding: 40px 32px;
 
-      <a
-        href="https://wa.me/6282165870953"
-        target="_blank"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-        +62 821-6587-0953
-      </a>
+  display: flex;
 
-      <span>
-        <i class="fa-solid fa-location-dot"></i>
-        Depok, Indonesia
-      </span>
+  flex-direction: column;
 
-      <span>
-        <i class="fa-solid fa-location-dot"></i>
-        Madinah, Saudi Arabia
-      </span>
+  background:
 
-      <span>
-        <i class="fa-solid fa-envelope"></i>
-        Email akan ditambahkan
-      </span>
+    radial-gradient(
+      circle at 100% 0,
+      rgba(207,166,91,.12),
+      transparent 25%
+    ),
 
-    </div>
+    var(--green-800);
 
-  </div>
+}
 
 
+.result-top > span {
 
-  <div class="container footer-legal-placeholder">
+  color: var(--gold-300);
 
-    <i class="fa-solid fa-shield-halved"></i>
+  font-size: 8px;
 
-    <p>
-      Informasi badan usaha, legalitas, lisensi dan mitra resmi
-      Safeera akan ditampilkan di bagian ini setelah data
-      terverifikasi tersedia.
-    </p>
+  font-weight: 800;
 
-  </div>
+  letter-spacing: 2px;
 
+}
 
 
-  <div class="container footer-bottom">
+.result-top h3 {
 
-    <p>
-      © 2026 Safeera Madinah. All rights reserved.
-    </p>
+  margin: 8px 0 2px;
 
-    <span>
-      Indonesia • Saudi Arabia
-    </span>
+  color: white;
 
-  </div>
+  font-size: 34px;
 
-</footer>
+}
 
 
+.result-top small {
 
-<!-- =====================================
-     FLOATING WHATSAPP
-===================================== -->
+  color: #91aaa0;
 
-<div class="floating-contact">
+  font-size: 8px;
 
-  <a
-    href="https://wa.me/6282165870953"
-    target="_blank"
-    class="floating-chat"
-  >
+}
 
-    <i class="fa-brands fa-whatsapp"></i>
 
-    <span>Chat Safeera</span>
+.result-divider {
 
-  </a>
+  height: 1px;
 
-</div>
+  margin: 27px 0;
 
+  background:
+    rgba(255,255,255,.1);
 
-<button
-  class="back-top"
-  id="backTop"
-  aria-label="Kembali ke atas"
->
+}
 
-  <i class="fa-solid fa-arrow-up"></i>
 
-</button>
+.result-details {
 
+  display: flex;
 
-<script src="script.js"></script>
+  flex-direction: column;
 
-</body>
-</html>
+  gap: 14px;
+
+}
+
+
+.result-details div {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #b4c8c0;
+
+  font-size: 9px;
+
+}
+
+
+.result-details strong {
+  color: white;
+}
+
+
+.result-total {
+
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+.result-total small {
+
+  display: block;
+
+  color: var(--gold-300);
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.result-total strong {
+
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--gold-300);
+
+  font-size: 30px;
+
+}
+
+
+.estimate-note {
+
+  margin: 20px 0;
+
+  color: #819b91;
+
+  font-size: 7px;
+
+}
+
+
+.result-button {
+
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: auto;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  color: #1b2b25;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-300),
+      var(--gold-500)
+    );
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+}
+
+
+.result-button i {
+  margin-left: 7px;
+}
+
+
+.result-secondary {
+
+  margin-top: 13px;
+
+  text-align: center;
+
+  color: #a7beb5;
+
+  font-size: 8px;
+
+}
+
+
+/* ======================================================
+   VISA
+====================================================== */
+
+.visa-section {
+  background: var(--ivory);
+}
+
+
+.visa-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 17px;
+
+}
+
+
+.visa-card {
+
+  position: relative;
+
+  padding: 29px;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow:
+    0 10px 35px rgba(3,43,35,.04);
+
+}
+
+
+.visa-card-head {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+
+.service-round-icon {
+
+  width: 43px;
+
+  height: 43px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--green-700);
+
+  background: #edf3ed;
+
+}
+
+
+.visa-card-head > span {
+
+  color: var(--muted);
+
+  font-size: 7px;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.visa-card h3 {
+
+  margin-top: 20px;
+
+  color: var(--green-900);
+
+  font-size: 18px;
+
+}
+
+
+.service-price {
+
+  margin: 7px 0 13px;
+
+  color: var(--green-700);
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+}
+
+
+.service-price small {
+
+  color: var(--muted);
+
+  font-size: 8px;
+
+  font-weight: 400;
+
+}
+
+
+.visa-card > p {
+
+  min-height: 64px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+}
+
+
+.visa-card ul {
+
+  margin: 18px 0 25px;
+
+  list-style: none;
+
+}
+
+
+.visa-card li {
+
+  margin: 9px 0;
+
+  color: #52625c;
+
+  font-size: 9px;
+
+}
+
+
+.visa-card li i {
+
+  width: 20px;
+
+  color: var(--green-600);
+
+}
+
+
+.service-action {
+
+  min-height: 43px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-radius: 9px;
+
+  color: var(--green-800);
+
+  background: #eef4ee;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+}
+
+
+.featured-visa {
+
+  border-color: var(--green-600);
+
+  box-shadow:
+    inset 0 0 0 1px var(--green-600),
+    var(--shadow);
+
+}
+
+
+.popular-label {
+
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+
+  padding: 7px 12px;
+
+  color: var(--gold-300);
+
+  background: var(--green-800);
+
+  border-radius:
+    0 17px 0 12px;
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+}
+
+
+.process-row {
+
+  margin-top: 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 11px;
+
+}
+
+
+.process-card {
+
+  padding: 20px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 13px;
+
+  background: #f5f1e7;
+
+}
+
+
+.process-card span {
+
+  width: 27px;
+
+  height: 27px;
+
+  margin-bottom: 13px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--gold-300);
+
+  background: var(--green-700);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+
+.process-card strong {
+
+  display: block;
+
+  font-size: 10px;
+
+}
+
+
+.process-card p {
+
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: 8px;
+
+}
+
+
+/* ======================================================
+   LAND ARRANGEMENT
+====================================================== */
+
+.la-section {
+
+  color: white;
+
+  background:
+
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(207,166,91,.12),
+      transparent 30%
+    ),
+
+    var(--green-950);
+
+}
+
+
+.la-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr .8fr;
+
+  gap: 90px;
+
+  align-items: center;
+
+}
+
+
+.la-content h2,
+.mutawwif-copy h2,
+.why-grid h2 {
+
+  max-width: 650px;
+
+  font-family:
+    "Cormorant Garamond", serif;
+
+  font-size:
+    clamp(40px,5vw,55px);
+
+}
+
+
+.la-content p {
+
+  max-width: 620px;
+
+  margin: 20px 0 28px;
+
+  color: #9bb0a8;
+
+  font-size: 13px;
+
+}
+
+
+.la-features {
+
+  margin-bottom: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 11px;
+
+}
+
+
+.la-features > div {
+
+  padding: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255,255,255,.035);
+
+}
+
+
+.la-features i {
+
+  width: 33px;
+
+  height: 33px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  color: var(--gold-300);
+
+  background:
+    rgba(207,166,91,.1);
+
+}
+
+
+.la-features span {
+
+  color: #839b92;
+
+  font-size: 8px;
+
+}
+
+
+.la-features strong {
+
+  display: block;
+
+  color: white;
+
+  font-size: 10px;
+
+}
+
+
+.la-package-card {
+
+  padding: 35px;
+
+  border:
+    1px solid rgba(225,193,126,.25);
+
+  border-radius: 25px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.025)
+    );
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.2);
+
+}
+
+
+.la-package-top {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: var(--gold-300);
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+}
+
+
+.la-package-card h3 {
+
+  margin: 28px 0 13px;
+
+  font-family:
+    "Cormorant Garamond", serif;
+
+  font-size: 35px;
+
+}
+
+
+.la-package-card h3 em {
+
+  display: block;
+
+  color: var(--gold-400);
+
+  font-style: normal;
+
+}
+
+
+.la-package-card > p {
+
+  color: #90a59d;
+
+  font-size: 10px;
+
+}
+
+
+.package-route {
+
+  margin: 30px 0;
+
+  padding: 25px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+}
+
+
+.package-route div {
+  text-align: center;
+}
+
+
+.package-route span {
+
+  display: block;
+
+  color: var(--gold-400);
+
+  font-size: 7px;
+
+}
+
+
+.package-route strong {
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.package-route > i {
+
+  color: #61766e;
+
+  font-size: 9px;
+
+}
+
+
+.package-bottom {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  color: #9bb0a8;
+
+  font-size: 8px;
+
+}
+
+
+.package-bottom i {
+
+  color: var(--gold-400);
+
+  margin-right: 4px;
+
+}
+
+
+/* ======================================================
+   HOTEL
+====================================================== */
+
+.hotel-section {
+  background: #f5f0e4;
+}
+
+
+.filter-tabs {
+
+  margin-bottom: 25px;
+
+  display: flex;
+
+  gap: 8px;
+
+}
+
+
+.filter-tab {
+
+  padding: 8px 16px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 20px;
+
+  color: var(--muted);
+
+  background: transparent;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+}
+
+
+.filter-tab.active {
+
+  color: white;
+
+  border-color: var(--green-700);
+
+  background: var(--green-700);
+
+}
+
+
+.hotel-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 17px;
+
+}
+
+
+.hotel-card {
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 17px;
+
+  background: white;
+
+  box-shadow:
+    0 10px 30px rgba(3,43,35,.05);
+
+}
+
+
+.hotel-card.hidden {
+  display: none;
+}
+
+
+.hotel-image {
+
+  position: relative;
+
+  height: 245px;
+
+}
+
+
+.hotel-placeholder {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: rgba(255,255,255,.75);
+
+}
+
+
+.makkah-bg {
+
+  background:
+    linear-gradient(
+      145deg,
+      #173d31,
+      #071c17
+    );
+
+}
+
+
+.gold-bg {
+
+  background:
+    linear-gradient(
+      145deg,
+      #b18a4a,
+      #56401f
+    );
+
+}
+
+
+.madinah-bg {
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d5a46,
+      #073227
+    );
+
+}
+
+
+.hotel-placeholder-icon {
+
+  font-size: 55px;
+
+  color: var(--gold-300);
+
+}
+
+
+.hotel-placeholder > small {
+
+  margin-top: 15px;
+
+  font-size: 8px;
+
+}
+
+
+.hotel-city-badge {
+
+  position: absolute;
+
+  left: 12px;
+
+  top: 12px;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  color: var(--gold-300);
+
+  background:
+    rgba(3,43,35,.9);
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+}
+
+
+.hotel-info {
+  padding: 19px;
+}
+
+
+.hotel-meta {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: var(--green-600);
+
+  font-size: 7px;
+
+}
+
+
+.hotel-info h3 {
+
+  margin: 8px 0;
+
+  color: var(--green-900);
+
+  font-size: 14px;
+
+}
+
+
+.hotel-info > p {
+
+  min-height: 48px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+}
+
+
+.hotel-footer {
+
+  margin-top: 17px;
+
+  padding-top: 14px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  border-top:
+    1px solid var(--border);
+
+}
+
+
+.hotel-footer small,
+.hotel-footer strong {
+
+  display: block;
+
+}
+
+
+.hotel-footer small {
+
+  color: #9aa49f;
+
+  font-size: 6px;
+
+}
+
+
+.hotel-footer strong {
+
+  color: var(--green-700);
+
+  font-size: 12px;
+
+}
+
+
+.hotel-footer a {
+
+  color: var(--green-700);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+
+.center-action {
+
+  margin-top: 32px;
+
+  text-align: center;
+
+}
+
+
+.outline-action,
+.dark-action {
+
+  min-height: 45px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 10px;
+
+  color: var(--green-800);
+
+  background: white;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+}
+
+
+.dark-action {
+
+  color: white;
+
+  border-color: var(--green-800);
+
+  background: var(--green-800);
+
+}
+
+
+/* ======================================================
+   TRANSPORT
+====================================================== */
+
+.transport-section {
+  background: var(--ivory);
+}
+
+
+.transport-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 13px;
+
+}
+
+
+.transport-card {
+
+  position: relative;
+
+  min-height: 215px;
+
+  padding: 25px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: white;
+
+}
+
+
+.transport-card > span {
+
+  position: absolute;
+
+  right: 20px;
+
+  top: 15px;
+
+  color: #e8ece9;
+
+  font-size: 40px;
+
+  font-weight: 800;
+
+}
+
+
+.transport-icon {
+
+  width: 40px;
+
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: var(--green-700);
+
+  background: #eaf2eb;
+
+}
+
+
+.transport-card h3 {
+
+  margin: 17px 0 8px;
+
+  color: var(--green-900);
+
+  font-size: 14px;
+
+}
+
+
+.transport-card p {
+
+  max-width: 430px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+}
+
+
+.transport-tags {
+
+  margin-top: 16px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+}
+
+
+.transport-tags small {
+
+  padding: 4px 7px;
+
+  border-radius: 10px;
+
+  color: #6f7c76;
+
+  background: #f1f3ef;
+
+  font-size: 6px;
+
+}
+
+
+/* ======================================================
+   MUTAWIF
+====================================================== */
+
+.mutawwif-section {
+  background: #eee7d9;
+}
+
+
+.mutawwif-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr .65fr;
+
+  gap: 90px;
+
+  align-items: center;
+
+}
+
+
+.mutawwif-copy h2 {
+
+  color: var(--green-900);
+
+}
+
+
+.mutawwif-copy p {
+
+  max-width: 630px;
+
+  margin: 20px 0 25px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+}
+
+
+.mutawwif-benefits {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 10px;
+
+}
+
+
+.mutawwif-benefits > div {
+
+  padding: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255,255,255,.55);
+
+}
+
+
+.mutawwif-benefits i {
+
+  width: 34px;
+
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: var(--green-700);
+
+  background: #e2ebe2;
+
+}
+
+
+.mutawwif-benefits span {
+
+  color: var(--muted);
+
+  font-size: 7px;
+
+}
+
+
+.mutawwif-benefits strong {
+
+  display: block;
+
+  color: var(--green-900);
+
+  font-size: 9px;
+
+}
+
+
+.mutawwif-price-card {
+
+  position: relative;
+
+  padding: 32px;
+
+  border:
+    1px solid rgba(7,91,70,.25);
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow: var(--shadow);
+
+}
+
+
+.premium-tag {
+
+  position: absolute;
+
+  right: 20px;
+
+  top: -11px;
+
+  padding: 6px 10px;
+
+  border-radius: 15px;
+
+  color: var(--gold-300);
+
+  background: var(--green-800);
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+}
+
+
+.mutawwif-price-card > span {
+
+  color: var(--muted);
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.mutawwif-price-card h3 {
+
+  margin: 8px 0 20px;
+
+  color: var(--green-700);
+
+  font-size: 27px;
+
+}
+
+
+.mutawwif-price-card h3 small {
+
+  color: var(--muted);
+
+  font-size: 8px;
+
+  font-weight: 400;
+
+}
+
+
+.mutawwif-price-card ul {
+
+  margin-bottom: 25px;
+
+  list-style: none;
+
+}
+
+
+.mutawwif-price-card li {
+
+  margin: 11px 0;
+
+  color: #50605a;
+
+  font-size: 9px;
+
+}
+
+
+.mutawwif-price-card li i {
+
+  width: 20px;
+
+  color: var(--green-600);
+
+}
+
+
+.full-button {
+  width: 100%;
+}
+
+
+/* ======================================================
+   OTHER
+====================================================== */
+
+.other-services {
+  background: white;
+}
+
+
+.other-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 13px;
+
+}
+
+
+.other-card {
+
+  padding: 25px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: var(--ivory);
+
+  transition: .25s;
+
+}
+
+
+.other-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+
+}
+
+
+.other-icon {
+
+  width: 43px;
+
+  height: 43px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  color: var(--gold-300);
+
+  background: var(--green-800);
+
+}
+
+
+.other-card h3 {
+
+  margin: 17px 0 8px;
+
+  color: var(--green-900);
+
+  font-size: 14px;
+
+}
+
+
+.other-card p {
+
+  min-height: 70px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+}
+
+
+.other-card a {
+
+  color: var(--green-700);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+
+/* ======================================================
+   JOURNEY
+====================================================== */
+
+.journey-section {
+  background: #f3eddf;
+}
+
+
+.journey-steps {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 50px 1fr 50px 1fr 50px 1fr;
+
+  align-items: start;
+
+}
+
+
+.journey-step {
+  text-align: center;
+}
+
+
+.journey-step > span {
+
+  color: var(--gold-600);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+
+.journey-icon {
+
+  width: 60px;
+
+  height: 60px;
+
+  margin: 10px auto 16px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--gold-300);
+
+  background: var(--green-800);
+
+  box-shadow:
+    0 10px 25px rgba(3,43,35,.12);
+
+}
+
+
+.journey-step h3 {
+
+  color: var(--green-900);
+
+  font-size: 13px;
+
+}
+
+
+.journey-step p {
+
+  max-width: 180px;
+
+  margin: 7px auto 0;
+
+  color: var(--muted);
+
+  font-size: 8px;
+
+}
+
+
+.journey-line {
+
+  height: 1px;
+
+  margin-top: 42px;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--gold-400),
+      var(--green-600)
+    );
+
+}
+
+
+/* ======================================================
+   WHY
+====================================================== */
+
+.why-section {
+
+  color: white;
+
+  background:
+    var(--green-900);
+
+}
+
+
+.why-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    .75fr 1.25fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+}
+
+
+.why-grid > div:first-child > p {
+
+  margin-top: 20px;
+
+  color: #9bb0a8;
+
+  font-size: 13px;
+
+}
+
+
+.why-cards {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 11px;
+
+}
+
+
+.why-cards article {
+
+  padding: 23px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255,255,255,.035);
+
+}
+
+
+.why-cards i {
+
+  color: var(--gold-400);
+
+  font-size: 19px;
+
+}
+
+
+.why-cards strong {
+
+  display: block;
+
+  margin: 14px 0 6px;
+
+  font-size: 11px;
+
+}
+
+
+.why-cards p {
+
+  color: #829b91;
+
+  font-size: 8px;
+
+}
+
+
+/* ======================================================
+   TESTIMONIAL
+====================================================== */
+
+.testimonial-section {
+  background: var(--ivory);
+}
+
+
+.testimonial-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 14px;
+
+}
+
+
+.testimonial-card {
+
+  position: relative;
+
+  padding: 27px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: white;
+
+}
+
+
+.quote-mark {
+
+  position: absolute;
+
+  right: 20px;
+
+  top: 5px;
+
+  color: #edf0ed;
+
+  font-family: serif;
+
+  font-size: 70px;
+
+}
+
+
+.testimonial-stars {
+
+  color: var(--gold-500);
+
+  letter-spacing: 2px;
+
+  font-size: 9px;
+
+}
+
+
+.testimonial-card > p {
+
+  min-height: 100px;
+
+  margin: 18px 0;
+
+  color: #5e6d67;
+
+  font-family:
+    "Cormorant Garamond", serif;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+
+}
+
+
+.testimonial-person {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+.avatar {
+
+  width: 35px;
+
+  height: 35px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--gold-300);
+
+  background: var(--green-800);
+
+  font-family:
+    "Cormorant Garamond";
+
+  font-size: 20px;
+
+}
+
+
+.testimonial-person strong,
+.testimonial-person small {
+
+  display: block;
+
+}
+
+
+.testimonial-person strong {
+  font-size: 9px;
+}
+
+
+.testimonial-person small {
+
+  color: var(--muted);
+
+  font-size: 7px;
+
+}
+
+
+/* ======================================================
+   GALLERY
+====================================================== */
+
+.gallery-section {
+  background: #eee7d9;
+}
+
+
+.gallery-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.3fr 1fr 1fr;
+
+  grid-template-rows:
+    200px 200px;
+
+  gap: 10px;
+
+}
+
+
+.gallery-item {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  color: rgba(255,255,255,.85);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      var(--green-700),
+      var(--green-950)
+    );
+
+}
+
+
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(5) {
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #9c783b,
+      #4a371c
+    );
+
+}
+
+
+.large-gallery {
+
+  grid-row:
+    1 / span 2;
+
+}
+
+
+.gallery-item i {
+
+  color: var(--gold-300);
+
+  font-size: 35px;
+
+}
+
+
+.gallery-item span {
+  font-size: 9px;
+}
+
+
+/* ======================================================
+   FAQ
+====================================================== */
+
+.faq-section {
+  background: var(--ivory);
+}
+
+
+.faq-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    .65fr 1fr;
+
+  gap: 90px;
+
+}
+
+
+.faq-heading > p {
+
+  max-width: 400px;
+
+  margin: 18px 0 23px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+}
+
+
+.faq-item {
+
+  border-bottom:
+    1px solid var(--border);
+
+}
+
+
+.faq-question {
+
+  width: 100%;
+
+  min-height: 65px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border: 0;
+
+  background: transparent;
+
+  text-align: left;
+
+  color: var(--green-900);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+}
+
+
+.faq-question i {
+
+  font-size: 9px;
+
+  transition: .25s;
+
+}
+
+
+.faq-answer {
+
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition: .3s ease;
+
+}
+
+
+.faq-answer p {
+
+  padding:
+    0 35px 20px 0;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+}
+
+
+.faq-item.active .faq-answer {
+
+  max-height: 200px;
+
+}
+
+
+.faq-item.active .faq-question i {
+
+  transform: rotate(45deg);
+
+}
+
+
+/* ======================================================
+   FINAL CTA
+====================================================== */
+
+.final-cta {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 90px 0;
+
+  text-align: center;
+
+  color: white;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(207,166,91,.18),
+      transparent 40%
+    ),
+
+    var(--green-950);
+
+}
+
+
+.cta-pattern {
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: .04;
+
+  background-size: 70px 70px;
+
+  background-image:
+
+    linear-gradient(
+      45deg,
+      #fff 25%,
+      transparent 25%
+    ),
+
+    linear-gradient(
+      -45deg,
+      #fff 25%,
+      transparent 25%
+    );
+
+}
+
+
+.final-cta-inner {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+
+}
+
+
+.cta-symbol {
+
+  width: 65px;
+
+  height: 65px;
+
+  margin: 0 auto 22px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid rgba(225,193,126,.4);
+
+  border-radius: 50%;
+
+  color: var(--gold-300);
+
+  font-family:
+    "Cormorant Garamond";
+
+  font-size: 40px;
+
+}
+
+
+.final-cta h2 {
+
+  font-family:
+    "Cormorant Garamond";
+
+  font-size:
+    clamp(39px,5vw,55px);
+
+}
+
+
+.final-cta p {
+
+  max-width: 600px;
+
+  margin: 17px auto 27px;
+
+  color: #95aaa2;
+
+  font-size: 12px;
+
+}
+
+
+.cta-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer {
+
+  padding: 70px 0 25px;
+
+  color: #9aada6;
+
+  background: #011612;
+
+}
+
+
+.footer-top {
+
+  display: grid;
+
+  grid-template-columns:
+    1.6fr 1fr 1fr 1.3fr;
+
+  gap: 55px;
+
+}
+
+
+.footer .brand-name strong {
+  color: white;
+}
+
+
+.footer-brand > p {
+
+  margin-top: 17px;
+
+  color: var(--gold-500);
+
+  font-family:
+    "Cormorant Garamond";
+
+  letter-spacing: 2px;
+
+  font-size: 11px;
+
+}
+
+
+.footer-description {
+
+  max-width: 320px;
+
+  color: #728980 !important;
+
+  font-family:
+    "DM Sans" !important;
+
+  letter-spacing: 0 !important;
+
+  font-size: 9px !important;
+
+}
+
+
+.footer-social {
+
+  margin-top: 20px;
+
+  display: flex;
+
+  gap: 7px;
+
+}
+
+
+.footer-social a {
+
+  width: 33px;
+
+  height: 33px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid rgba(255,255,255,.09);
+
+  border-radius: 8px;
+
+  color: var(--gold-400);
+
+}
+
+
+.footer-column {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+.footer-column h4 {
+
+  margin-bottom: 7px;
+
+  color: white;
+
+  font-size: 11px;
+
+}
+
+
+.footer-column a,
+.footer-column span {
+
+  color: #758b83;
+
+  font-size: 9px;
+
+}
+
+
+.footer-column i {
+
+  width: 18px;
+
+  color: var(--gold-500);
+
+}
+
+
+.footer-legal-placeholder {
+
+  margin-top: 45px;
+
+  padding: 17px;
+
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  border:
+    1px solid rgba(255,255,255,.07);
+
+  border-radius: 10px;
+
+  color: #667d74;
+
+  background:
+    rgba(255,255,255,.025);
+
+  font-size: 8px;
+
+}
+
+
+.footer-legal-placeholder i {
+  color: var(--gold-500);
+}
+
+
+.footer-bottom {
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-top:
+    1px solid rgba(255,255,255,.06);
+
+  color: #536a61;
+
+  font-size: 8px;
+
+}
+
+
+/* ======================================================
+   FLOATING CONTACT
+====================================================== */
+
+.floating-contact {
+
+  position: fixed;
+
+  right: 22px;
+
+  bottom: 22px;
+
+  z-index: 999;
+
+}
+
+
+.floating-chat {
+
+  min-height: 49px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  border-radius: 30px;
+
+  color: white;
+
+  background: var(--green-700);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.2);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+}
+
+
+.floating-chat i {
+
+  color: #9ef1c3;
+
+  font-size: 19px;
+
+}
+
+
+.back-top {
+
+  position: fixed;
+
+  right: 25px;
+
+  bottom: 83px;
+
+  z-index: 998;
+
+  width: 40px;
+
+  height: 40px;
+
+  display: none;
+
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  color: var(--green-800);
+
+  background: var(--gold-300);
+
+  box-shadow: var(--shadow);
+
+}
+
+
+.back-top.show {
+  display: grid;
+}
+
+
+/* ======================================================
+   RESPONSIVE TABLET
+====================================================== */
+
+@media (max-width: 1050px) {
+
+  .nav-links {
+
+    position: fixed;
+
+    left: 20px;
+
+    right: 20px;
+
+    top: 125px;
+
+    max-height:
+      calc(100vh - 145px);
+
+    overflow-y: auto;
+
+    padding: 22px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    border:
+      1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: var(--ivory);
+
+    box-shadow: var(--shadow-heavy);
+
+  }
+
+
+  .nav-links.active {
+    display: flex;
+  }
+
+
+  .nav-links > a,
+  .dropdown-trigger {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+      1px solid var(--border);
+
+  }
+
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+
+  .dropdown-menu {
+
+    position: static;
+
+    width: 100%;
+
+    margin: 5px 0;
+
+    grid-template-columns: 1fr;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    display: none;
+
+    transform: none;
+
+    box-shadow: none;
+
+  }
+
+
+  .nav-dropdown.open .dropdown-menu {
+    display: grid;
+  }
+
+
+  .menu-button {
+    display: block;
+  }
+
+
+  .hero-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+
+  }
+
+
+  .hero-copy {
+    max-width: 800px;
+  }
+
+
+  .hero-visual {
+
+    max-width: 600px;
+
+    margin-inline: auto;
+
+  }
+
+
+  .hero-logo-card {
+    margin-inline: auto;
+  }
+
+
+  .calculator-shell {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .calculator-result {
+    min-height: 560px;
+  }
+
+
+  .la-grid,
+  .mutawwif-grid,
+  .why-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+  }
+
+
+  .other-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 720px) {
+
+  .container {
+    width: min(100% - 28px,1180px);
+  }
+
+
+  .section {
+    padding: 75px 0;
+  }
+
+
+  .desktop-only {
+    display: none !important;
+  }
+
+
+  .topbar-inner {
+    justify-content: center;
+  }
+
+
+  .topbar-left {
+    display: none;
+  }
+
+
+  .navbar {
+    height: 70px;
+  }
+
+
+  .nav-links {
+    top: 112px;
+  }
+
+
+  .brand-mark {
+
+    width: 37px;
+
+    height: 37px;
+
+    font-size: 23px;
+
+  }
+
+
+  .brand-name strong {
+    font-size: 18px;
+  }
+
+
+  .brand-name span {
+    font-size: 6px;
+  }
+
+
+  .hero-grid {
+
+    min-height: auto;
+
+    padding-top: 60px;
+
+    padding-bottom: 55px;
+
+    gap: 50px;
+
+  }
+
+
+  .hero h1 {
+
+    font-size:
+      clamp(46px,13vw,64px);
+
+    letter-spacing: -1px;
+
+  }
+
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+
+  .hero-buttons {
+
+    flex-direction: column;
+
+  }
+
+
+  .hero-buttons .button {
+    width: 100%;
+  }
+
+
+  .hero-logo-card {
+
+    max-width: 100%;
+
+    border-radius: 23px;
+
+  }
+
+
+  .floating-card-one {
+
+    left: 8px;
+
+    bottom: -20px;
+
+  }
+
+
+  .floating-card-two {
+
+    right: 8px;
+
+    top: 15px;
+
+  }
+
+
+  .hero-stats {
+
+    margin-top: 20px;
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .hero-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+
+  .hero-stat:nth-child(-n+2) {
+
+    border-bottom:
+      1px solid rgba(255,255,255,.08);
+
+  }
+
+
+  .ticker-track {
+
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
+    padding: 0 20px;
+
+  }
+
+
+  .quick-services {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .quick-services > a {
+
+    border-bottom:
+      1px solid var(--border);
+
+  }
+
+
+  .quick-services > a:nth-child(2n) {
+    border-right: 0;
+  }
+
+
+  .quick-services > a:last-child {
+
+    grid-column:
+      1 / -1;
+
+    border-bottom: 0;
+
+  }
+
+
+  .section-heading,
+  .intro-grid,
+  .calculator-heading,
+  .faq-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+  }
+
+
+  .traveller-grid,
+  .choice-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .choice-card > div {
+
+    min-height: auto;
+
+  }
+
+
+  .hotel-night-grid,
+  .addon-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .calculator-form {
+    padding: 22px;
+  }
+
+
+  .calculator-result {
+
+    min-height: 520px;
+
+    padding: 30px 22px;
+
+  }
+
+
+  .visa-grid,
+  .hotel-grid,
+  .testimonial-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .process-row {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .la-features,
+  .mutawwif-benefits,
+  .why-cards {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .transport-grid,
+  .other-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .journey-steps {
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+  }
+
+
+  .journey-line {
+
+    width: 1px;
+
+    height: 30px;
+
+    margin: 0 auto;
+
+  }
+
+
+  .gallery-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+    grid-template-rows:
+      repeat(3,160px);
+
+  }
+
+
+  .large-gallery {
+
+    grid-column:
+      1 / -1;
+
+    grid-row: auto;
+
+  }
+
+
+  .footer-top {
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+  }
+
+
+  .footer-bottom {
+
+    flex-direction: column;
+
+    gap: 8px;
+
+  }
+
+
+  .floating-contact {
+
+    right: 14px;
+
+    bottom: 14px;
+
+  }
+
+
+  .floating-chat {
+
+    width: 50px;
+
+    height: 50px;
+
+    padding: 0;
+
+    justify-content: center;
+
+  }
+
+
+  .floating-chat span {
+    display: none;
+  }
+
+
+  .back-top {
+
+    right: 19px;
+
+    bottom: 76px;
+
+  }
+
+}
