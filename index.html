@@ -1,90 +1,88 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Safeera Madinah | Umroh & Land Arrangement Saudi Arabia</title>
+  <title>Safeera Madinah | Land Arrangement Saudi Arabia</title>
 
   <meta name="description"
-    content="Safeera Madinah menyediakan layanan Visa Umroh, Land Arrangement, Hotel Makkah dan Madinah, transportasi Saudi, Mutawwif, Haramain dan kebutuhan perjalanan Umroh.">
+    content="Safeera Madinah menyediakan layanan Land Arrangement Saudi Arabia: visa, hotel Makkah dan Madinah, transportasi, handling, mutawwif, dan ziarah.">
 
-  <meta name="theme-color" content="#063d32">
+  <meta name="theme-color" content="#123d34">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet"
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
+<!-- =========================================================
+     PRELOADER
+========================================================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">
+    <span>S</span>
+    <h2>SAFEERA</h2>
+    <small>MADINAH</small>
+  </div>
+</div>
 
-<!-- =====================================
+
+<!-- =========================================================
      TOP BAR
-===================================== -->
-
+========================================================= -->
 <div class="topbar">
-
   <div class="container topbar-inner">
 
     <div class="topbar-left">
       <span>
         <i class="fa-solid fa-location-dot"></i>
-        Madinah • Saudi Arabia
+        Saudi Arabia
       </span>
 
-      <span class="desktop-only">
-        <i class="fa-solid fa-location-dot"></i>
-        Depok • Indonesia
+      <span>
+        <i class="fa-solid fa-clock"></i>
+        Support Jamaah
       </span>
     </div>
 
-
     <div class="topbar-right">
-
-      <a href="https://wa.me/6282165870953" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        +62 821-6587-0953
-      </a>
-
-      <span class="desktop-only">
-        Journey • Hospitality • A Higher Meaning
-      </span>
-
+      <span>Land Arrangement Saudi Arabia</span>
     </div>
 
   </div>
-
 </div>
 
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="header" id="header">
 
-<!-- =====================================
-     NAVBAR
-===================================== -->
+  <div class="container nav-wrapper">
 
-<header class="navbar" id="navbar">
-
-  <div class="container nav-inner">
-
+    <!-- LOGO -->
     <a href="#home" class="brand">
 
-      <div class="brand-mark">
+      <div class="brand-icon">
         S
       </div>
 
-      <div class="brand-name">
+      <div class="brand-text">
         <strong>SAFEERA</strong>
         <span>MADINAH</span>
       </div>
@@ -92,104 +90,135 @@
     </a>
 
 
-    <nav class="nav-links" id="navLinks">
+    <!-- DESKTOP NAV -->
+    <nav class="nav-menu" id="navMenu">
 
-      <a href="#home">Beranda</a>
+      <a href="#home" class="nav-link active">
+        Beranda
+      </a>
 
 
+      <!-- DROPDOWN -->
       <div class="nav-dropdown">
 
-        <button class="dropdown-trigger">
+        <button class="nav-dropdown-button" type="button">
           Layanan
           <i class="fa-solid fa-chevron-down"></i>
         </button>
 
         <div class="dropdown-menu">
 
-          <a href="#visa">
-            <i class="fa-solid fa-passport"></i>
-            <div>
-              <strong>Visa Umroh</strong>
-              <small>Visa only & Siskopatuh</small>
-            </div>
+          <a href="#services" data-service-open="visa">
+            <span class="dropdown-icon">
+              <i class="fa-solid fa-passport"></i>
+            </span>
+            <span>
+              <strong>Visa Umrah</strong>
+              <small>Pengurusan visa jamaah</small>
+            </span>
           </a>
 
-          <a href="#la">
-            <i class="fa-solid fa-kaaba"></i>
-            <div>
-              <strong>Land Arrangement</strong>
-              <small>Layanan lengkap di Saudi</small>
-            </div>
-          </a>
-
-          <a href="#hotel">
-            <i class="fa-solid fa-hotel"></i>
-            <div>
+          <a href="#hotels">
+            <span class="dropdown-icon">
+              <i class="fa-solid fa-hotel"></i>
+            </span>
+            <span>
               <strong>Hotel</strong>
-              <small>Makkah & Madinah</small>
-            </div>
+              <small>Makkah, Madinah & Jeddah</small>
+            </span>
           </a>
 
           <a href="#transport">
-            <i class="fa-solid fa-bus"></i>
-            <div>
+            <span class="dropdown-icon">
+              <i class="fa-solid fa-bus-simple"></i>
+            </span>
+            <span>
               <strong>Transportasi</strong>
               <small>Airport & antar kota</small>
-            </div>
+            </span>
           </a>
 
-          <a href="#mutawwif">
-            <i class="fa-solid fa-person-walking-luggage"></i>
-            <div>
+          <a href="#services" data-service-open="handling">
+            <span class="dropdown-icon">
+              <i class="fa-solid fa-people-group"></i>
+            </span>
+            <span>
+              <strong>Handling</strong>
+              <small>Pendampingan jamaah</small>
+            </span>
+          </a>
+
+          <a href="#services" data-service-open="mutawwif">
+            <span class="dropdown-icon">
+              <i class="fa-solid fa-person-walking-luggage"></i>
+            </span>
+            <span>
               <strong>Mutawwif</strong>
-              <small>Guide Indonesia</small>
-            </div>
+              <small>Guide berbahasa Indonesia</small>
+            </span>
           </a>
 
-          <a href="#lainnya">
-            <i class="fa-solid fa-circle-nodes"></i>
-            <div>
-              <strong>Layanan Lainnya</strong>
-              <small>Haramain, flight & ziarah</small>
-            </div>
+          <a href="#services" data-service-open="ziarah">
+            <span class="dropdown-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </span>
+            <span>
+              <strong>Ziarah</strong>
+              <small>Makkah & Madinah</small>
+            </span>
           </a>
 
         </div>
-
       </div>
 
 
-      <a href="#hotel">Hotel</a>
+      <a href="#hotels" class="nav-link">
+        Hotel
+      </a>
 
-      <a href="#transport">Transportasi</a>
+      <a href="#transport" class="nav-link">
+        Transportasi
+      </a>
 
-      <a href="#kalkulator">Kalkulator</a>
+      <a href="#packages" class="nav-link">
+        Paket LA
+      </a>
 
-      <a href="#tentang">Tentang</a>
+      <a href="#calculator" class="nav-link">
+        Kalkulator
+      </a>
 
-      <a href="#faq">FAQ</a>
+      <a href="#about" class="nav-link">
+        Tentang
+      </a>
+
+      <a href="#faq" class="nav-link">
+        FAQ
+      </a>
 
     </nav>
 
 
-    <div class="nav-actions">
+    <!-- HEADER ACTION -->
+    <div class="header-action">
 
-      <a href="#kalkulator" class="nav-calc desktop-only">
-        <i class="fa-solid fa-calculator"></i>
-      </a>
-
-      <a href="https://wa.me/6282165870953"
-        target="_blank"
-        class="nav-cta desktop-only">
-
+      <a
+        href="#contact"
+        class="btn-consult"
+      >
         Konsultasi
-
         <i class="fa-brands fa-whatsapp"></i>
-
       </a>
 
-      <button class="menu-button" id="menuButton" aria-label="Menu">
-        <i class="fa-solid fa-bars"></i>
+      <button
+        class="mobile-toggle"
+        id="mobileToggle"
+        aria-label="Buka menu"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
     </div>
@@ -199,60 +228,132 @@
 </header>
 
 
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+<div class="mobile-menu" id="mobileMenu">
 
-<!-- =====================================
+  <div class="mobile-menu-head">
+
+    <div class="brand">
+
+      <div class="brand-icon">
+        S
+      </div>
+
+      <div class="brand-text">
+        <strong>SAFEERA</strong>
+        <span>MADINAH</span>
+      </div>
+
+    </div>
+
+    <button id="mobileClose" class="mobile-close" type="button">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+
+  <div class="mobile-menu-links">
+
+    <a href="#home">Beranda</a>
+
+    <button class="mobile-service-toggle" type="button">
+      Layanan
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <div class="mobile-submenu">
+
+      <a href="#services" data-service-open="visa">
+        Visa Umrah
+      </a>
+
+      <a href="#hotels">
+        Hotel
+      </a>
+
+      <a href="#transport">
+        Transportasi
+      </a>
+
+      <a href="#services" data-service-open="handling">
+        Handling
+      </a>
+
+      <a href="#services" data-service-open="mutawwif">
+        Mutawwif
+      </a>
+
+      <a href="#services" data-service-open="ziarah">
+        Ziarah
+      </a>
+
+    </div>
+
+    <a href="#hotels">Hotel</a>
+    <a href="#transport">Transportasi</a>
+    <a href="#packages">Paket LA</a>
+    <a href="#calculator">Kalkulator</a>
+    <a href="#about">Tentang</a>
+    <a href="#faq">FAQ</a>
+
+  </div>
+
+  <a href="#contact" class="mobile-wa">
+    <i class="fa-brands fa-whatsapp"></i>
+    Konsultasi Safeera
+  </a>
+
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+<!-- =========================================================
      HERO
-===================================== -->
+========================================================= -->
+<main>
 
 <section class="hero" id="home">
 
   <div class="hero-pattern"></div>
 
-  <div class="hero-glow hero-glow-one"></div>
-  <div class="hero-glow hero-glow-two"></div>
-
-
   <div class="container hero-grid">
 
-    <div class="hero-copy">
+    <!-- LEFT -->
+    <div class="hero-content reveal">
 
-      <div class="eyebrow light-eyebrow">
+      <div class="eyebrow">
         <span></span>
-        INDONESIA • SAUDI ARABIA
+        LAND ARRANGEMENT SAUDI ARABIA
       </div>
 
-
       <h1>
-        Perjalanan ke
-        <em>Tanah Suci,</em>
-        kami siapkan dengan lebih tenang.
+        Perjalanan lebih
+        <span>tenang.</span><br>
+        Kami urus kebutuhan
+        <span>di Saudi.</span>
       </h1>
 
-
-      <p class="hero-subtitle">
-        Solusi kebutuhan Umroh & Land Arrangement dalam satu layanan.
-        Mulai visa, hotel Makkah–Madinah, transportasi, Mutawwif,
-        Haramain hingga handling jamaah di Arab Saudi.
+      <p class="hero-description">
+        Satu koordinasi untuk kebutuhan jamaah di
+        Makkah, Madinah dan Jeddah — mulai dari hotel,
+        transportasi, visa, handling, mutawwif hingga ziarah.
       </p>
 
 
       <div class="hero-buttons">
 
-        <a href="#kalkulator" class="button gold-button">
-
-          Rencanakan Perjalanan
-
+        <a href="#services" class="btn btn-gold">
+          Lihat Layanan
           <i class="fa-solid fa-arrow-right"></i>
-
         </a>
 
-
-        <a href="#layanan-cepat" class="button ghost-button">
-
-          Jelajahi Layanan
-
-          <i class="fa-solid fa-chevron-down"></i>
-
+        <a href="#contact" class="btn btn-outline-light">
+          <i class="fa-brands fa-whatsapp"></i>
+          Minta Penawaran
         </a>
 
       </div>
@@ -260,663 +361,1542 @@
 
       <div class="hero-trust">
 
-        <div class="trust-icons">
+        <div>
+          <strong>3 Kota</strong>
+          <span>Makkah • Madinah • Jeddah</span>
+        </div>
+
+        <div>
+          <strong>6+</strong>
+          <span>Layanan Jamaah</span>
+        </div>
+
+        <div>
+          <strong>Flexible</strong>
+          <span>Individual & Group</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="hero-card-wrap reveal">
+
+      <div class="hero-main-card">
+
+        <div class="hero-card-top">
+
+          <span>SAFEERA</span>
 
           <span>
-            <i class="fa-solid fa-kaaba"></i>
+            CUSTOM PACKAGE
           </span>
 
-          <span>
-            <i class="fa-solid fa-hotel"></i>
-          </span>
-
-          <span>
-            <i class="fa-solid fa-plane"></i>
-          </span>
-
-        </div>
-
-        <div>
-          <div class="stars">★★★★★</div>
-          <small>
-            Mendampingi kebutuhan jamaah & travel
-          </small>
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- HERO VISUAL -->
-
-    <div class="hero-visual">
-
-      <div class="hero-logo-card">
-
-        <img
-          src="assets/safeera-logo.png"
-          alt="Safeera Madinah"
-          onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';"
-        >
-
-        <div class="logo-fallback">
-
-          <div class="fallback-s">S</div>
-
-          <strong>SAFEERA</strong>
-
-          <span>MADINAH</span>
-
-          <small>
-            JOURNEY • HOSPITALITY • A HIGHER MEANING
-          </small>
-
-        </div>
-
-      </div>
-
-
-      <div class="floating-card floating-card-one">
-
-        <div class="floating-icon">
-          <i class="fa-solid fa-shield-heart"></i>
-        </div>
-
-        <div>
-          <small>Safeera Support</small>
-          <strong>Indonesia & Saudi</strong>
-        </div>
-
-      </div>
-
-
-      <div class="floating-card floating-card-two">
-
-        <small>Mulai dari</small>
-
-        <strong>Rp 2.500.000</strong>
-
-        <span>Visa Umroh</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- HERO STATS -->
-
-  <div class="container">
-
-    <div class="hero-stats">
-
-      <div class="hero-stat">
-        <strong>500+</strong>
-        <span>Jamaah</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>50+</strong>
-        <span>Grup Dilayani</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>2</strong>
-        <span>Negara Operasional</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>24/7</strong>
-        <span>Saudi Support</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     TICKER
-===================================== -->
-
-<div class="trust-ticker">
-
-  <div class="ticker-track">
-
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Visa Umroh
-    </span>
-
-    <span>•</span>
-
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Hotel Makkah & Madinah
-    </span>
-
-    <span>•</span>
-
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Land Arrangement
-    </span>
-
-    <span>•</span>
-
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Transport Saudi
-    </span>
-
-    <span>•</span>
-
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Mutawwif Indonesia
-    </span>
-
-    <span>•</span>
-
-    <span>
-      <i class="fa-solid fa-circle-check"></i>
-      Handling Jamaah
-    </span>
-
-  </div>
-
-</div>
-
-
-
-<!-- =====================================
-     QUICK SERVICES
-===================================== -->
-
-<section class="quick-section" id="layanan-cepat">
-
-  <div class="container">
-
-    <div class="quick-services">
-
-      <a href="#visa">
-
-        <div class="quick-icon">
-          <i class="fa-solid fa-passport"></i>
-        </div>
-
-        <div>
-          <strong>Visa</strong>
-          <small>Umroh & Istifadhah</small>
-        </div>
-
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
-
-      </a>
-
-
-      <a href="#hotel">
-
-        <div class="quick-icon">
-          <i class="fa-solid fa-hotel"></i>
-        </div>
-
-        <div>
-          <strong>Hotel</strong>
-          <small>Makkah & Madinah</small>
-        </div>
-
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
-
-      </a>
-
-
-      <a href="#transport">
-
-        <div class="quick-icon">
-          <i class="fa-solid fa-bus"></i>
-        </div>
-
-        <div>
-          <strong>Transport</strong>
-          <small>Saudi Arabia</small>
-        </div>
-
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
-
-      </a>
-
-
-      <a href="#la">
-
-        <div class="quick-icon">
-          <i class="fa-solid fa-kaaba"></i>
-        </div>
-
-        <div>
-          <strong>Paket LA</strong>
-          <small>Custom kebutuhan</small>
-        </div>
-
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
-
-      </a>
-
-
-      <a href="#kalkulator" class="quick-featured">
-
-        <div class="quick-icon">
-          <i class="fa-solid fa-calculator"></i>
-        </div>
-
-        <div>
-          <strong>Kalkulator</strong>
-          <small>Hitung estimasi</small>
-        </div>
-
-        <i class="fa-solid fa-arrow-right quick-arrow"></i>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     INTRO
-===================================== -->
-
-<section class="section intro-section" id="tentang">
-
-  <div class="container intro-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        <span></span>
-        SAFEERA MADINAH
-      </div>
-
-      <h2 class="section-title">
-        Satu partner untuk kebutuhan
-        <em>perjalanan di Tanah Suci.</em>
-      </h2>
-
-    </div>
-
-
-    <div class="intro-copy">
-
-      <p>
-        Safeera hadir untuk membantu jamaah mandiri maupun mitra travel
-        dalam menyiapkan kebutuhan perjalanan Umroh di Arab Saudi
-        secara lebih praktis.
-      </p>
-
-      <p>
-        Pilih layanan sesuai kebutuhan — mulai dari satu layanan
-        hingga paket Land Arrangement yang lebih lengkap.
-      </p>
-
-      <div class="locations">
-
-        <span>
-          <i class="fa-solid fa-location-dot"></i>
-          Depok, Indonesia
-        </span>
-
-        <span>
-          <i class="fa-solid fa-location-dot"></i>
-          Madinah, Saudi Arabia
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     CALCULATOR
-===================================== -->
-
-<section class="section calculator-section" id="kalkulator">
-
-  <div class="container">
-
-    <div class="calculator-heading">
-
-      <div>
-
-        <div class="eyebrow gold-eyebrow">
-          <span></span>
-          KALKULATOR SAFEERA
         </div>
 
         <h2>
-          Rancang perjalanan
-          <em>sesuai kebutuhanmu.</em>
+          Land Arrangement
+          <span>Saudi Arabia</span>
+        </h2>
+
+        <p>
+          Paket dapat disesuaikan berdasarkan jumlah jamaah,
+          tanggal keberangkatan, kategori hotel dan kendaraan.
+        </p>
+
+
+        <div class="route">
+
+          <div class="route-city">
+            <small>01</small>
+            <strong>JEDDAH</strong>
+          </div>
+
+          <div class="route-line">
+            <span></span>
+          </div>
+
+          <div class="route-city">
+            <small>02</small>
+            <strong>MAKKAH</strong>
+          </div>
+
+          <div class="route-line">
+            <span></span>
+          </div>
+
+          <div class="route-city">
+            <small>03</small>
+            <strong>MADINAH</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hero-card-footer">
+
+          <span>
+            <i class="fa-solid fa-users"></i>
+            Individual & Group
+          </span>
+
+          <span>
+            <i class="fa-solid fa-kaaba"></i>
+            Safeera
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="floating-badge floating-badge-one">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>
+          <small>Layanan</small>
+          Terkoordinasi
+        </span>
+      </div>
+
+      <div class="floating-badge floating-badge-two">
+        <i class="fa-solid fa-headset"></i>
+        <span>
+          <small>Support</small>
+          Saudi Arabia
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <a href="#services" class="scroll-down">
+    <span>Scroll</span>
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK SERVICE BAR
+========================================================= -->
+<section class="quick-services">
+
+  <div class="container quick-service-grid">
+
+    <button
+      class="quick-service"
+      type="button"
+      data-service-open="visa"
+    >
+      <span>
+        <i class="fa-solid fa-passport"></i>
+      </span>
+
+      <div>
+        <strong>Visa</strong>
+        <small>Umrah & kebutuhan jamaah</small>
+      </div>
+
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+
+    <a class="quick-service" href="#hotels">
+
+      <span>
+        <i class="fa-solid fa-hotel"></i>
+      </span>
+
+      <div>
+        <strong>Hotel</strong>
+        <small>Makkah & Madinah</small>
+      </div>
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+
+    <a class="quick-service" href="#transport">
+
+      <span>
+        <i class="fa-solid fa-bus-simple"></i>
+      </span>
+
+      <div>
+        <strong>Transport</strong>
+        <small>Airport & antar kota</small>
+      </div>
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+
+    <button
+      class="quick-service"
+      type="button"
+      data-service-open="handling"
+    >
+
+      <span>
+        <i class="fa-solid fa-people-group"></i>
+      </span>
+
+      <div>
+        <strong>Handling</strong>
+        <small>Pendampingan jamaah</small>
+      </div>
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+<section class="section services-section" id="services">
+
+  <div class="container">
+
+    <div class="section-heading center reveal">
+
+      <span class="section-label">
+        LAYANAN SAFEERA
+      </span>
+
+      <h2>
+        Satu koordinasi untuk
+        <span>kebutuhan jamaah.</span>
+      </h2>
+
+      <p>
+        Pilih layanan yang dibutuhkan. Setiap layanan dapat
+        disesuaikan untuk jamaah individual, keluarga,
+        rombongan maupun mitra travel.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+      <!-- VISA -->
+      <article
+        class="service-card reveal"
+        data-service-open="visa"
+        tabindex="0"
+      >
+
+        <div class="service-number">
+          01
+        </div>
+
+        <div class="service-icon">
+          <i class="fa-solid fa-passport"></i>
+        </div>
+
+        <h3>Visa Umrah</h3>
+
+        <p>
+          Bantuan pengurusan kebutuhan visa sesuai
+          perjalanan jamaah.
+        </p>
+
+        <span class="service-link">
+          Lihat Detail
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </article>
+
+
+      <!-- HOTEL -->
+      <article
+        class="service-card reveal"
+        onclick="location.href='#hotels'"
+        tabindex="0"
+      >
+
+        <div class="service-number">
+          02
+        </div>
+
+        <div class="service-icon">
+          <i class="fa-solid fa-hotel"></i>
+        </div>
+
+        <h3>Hotel</h3>
+
+        <p>
+          Pilihan akomodasi Makkah, Madinah dan Jeddah
+          sesuai kebutuhan jamaah.
+        </p>
+
+        <span class="service-link">
+          Lihat Hotel
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </article>
+
+
+      <!-- TRANSPORT -->
+      <article
+        class="service-card reveal"
+        onclick="location.href='#transport'"
+        tabindex="0"
+      >
+
+        <div class="service-number">
+          03
+        </div>
+
+        <div class="service-icon">
+          <i class="fa-solid fa-bus-simple"></i>
+        </div>
+
+        <h3>Transportasi</h3>
+
+        <p>
+          Penjemputan airport dan perjalanan antar kota
+          dengan pilihan kendaraan.
+        </p>
+
+        <span class="service-link">
+          Lihat Armada
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </article>
+
+
+      <!-- HANDLING -->
+      <article
+        class="service-card reveal"
+        data-service-open="handling"
+        tabindex="0"
+      >
+
+        <div class="service-number">
+          04
+        </div>
+
+        <div class="service-icon">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <h3>Handling</h3>
+
+        <p>
+          Pendampingan kedatangan, keberangkatan dan
+          koordinasi kebutuhan jamaah.
+        </p>
+
+        <span class="service-link">
+          Lihat Detail
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </article>
+
+
+      <!-- MUTAWIF -->
+      <article
+        class="service-card reveal"
+        data-service-open="mutawwif"
+        tabindex="0"
+      >
+
+        <div class="service-number">
+          05
+        </div>
+
+        <div class="service-icon">
+          <i class="fa-solid fa-person-walking-luggage"></i>
+        </div>
+
+        <h3>Mutawwif</h3>
+
+        <p>
+          Pendamping berbahasa Indonesia untuk membantu
+          perjalanan ibadah jamaah.
+        </p>
+
+        <span class="service-link">
+          Lihat Detail
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </article>
+
+
+      <!-- ZIARAH -->
+      <article
+        class="service-card reveal"
+        data-service-open="ziarah"
+        tabindex="0"
+      >
+
+        <div class="service-number">
+          06
+        </div>
+
+        <div class="service-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <h3>Ziarah</h3>
+
+        <p>
+          Program kunjungan tempat bersejarah di
+          Makkah dan Madinah.
+        </p>
+
+        <span class="service-link">
+          Lihat Detail
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HOTEL
+========================================================= -->
+<section class="section hotel-section" id="hotels">
+
+  <div class="container">
+
+    <div class="hotel-heading-row">
+
+      <div class="section-heading reveal">
+
+        <span class="section-label">
+          AKOMODASI
+        </span>
+
+        <h2>
+          Menginap lebih nyaman di
+          <span>Makkah, Madinah & Jeddah.</span>
         </h2>
 
       </div>
 
 
+      <div class="hotel-heading-side reveal">
+
+        <p>
+          Kami membantu mencarikan hotel berdasarkan
+          budget, lokasi, kapasitas kamar dan ketersediaan
+          pada tanggal perjalanan.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- FILTER -->
+    <div class="hotel-filter reveal">
+
+      <button
+        class="hotel-filter-btn active"
+        data-filter="all"
+        type="button"
+      >
+        Semua
+      </button>
+
+      <button
+        class="hotel-filter-btn"
+        data-filter="makkah"
+        type="button"
+      >
+        Makkah
+      </button>
+
+      <button
+        class="hotel-filter-btn"
+        data-filter="madinah"
+        type="button"
+      >
+        Madinah
+      </button>
+
+      <button
+        class="hotel-filter-btn"
+        data-filter="jeddah"
+        type="button"
+      >
+        Jeddah
+      </button>
+
+    </div>
+
+
+    <div class="hotel-grid">
+
+
+      <!-- MAKKAH PREMIUM -->
+      <article
+        class="hotel-card reveal"
+        data-city="makkah"
+      >
+
+        <div class="hotel-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1200&q=85"
+            alt="Makkah Masjidil Haram"
+            loading="lazy"
+          >
+
+          <div class="hotel-image-overlay"></div>
+
+          <span class="hotel-city">
+            MAKKAH
+          </span>
+
+          <span class="hotel-class">
+            PREMIUM
+          </span>
+
+        </div>
+
+
+        <div class="hotel-content">
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Makkah
+          </div>
+
+          <h3>
+            Hotel Makkah — Premium
+          </h3>
+
+          <p>
+            Pilihan hotel dekat area Masjidil Haram untuk
+            jamaah yang mengutamakan lokasi dan kenyamanan.
+          </p>
+
+          <div class="hotel-bottom">
+
+            <span>
+              <i class="fa-solid fa-kaaba"></i>
+              Area Haram
+            </span>
+
+            <button
+              type="button"
+              class="hotel-detail-btn"
+              data-hotel="Makkah Premium"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MAKKAH VALUE -->
+      <article
+        class="hotel-card reveal"
+        data-city="makkah"
+      >
+
+        <div class="hotel-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=1200&q=85"
+            alt="Makkah Saudi Arabia"
+            loading="lazy"
+          >
+
+          <div class="hotel-image-overlay"></div>
+
+          <span class="hotel-city">
+            MAKKAH
+          </span>
+
+          <span class="hotel-class">
+            VALUE
+          </span>
+
+        </div>
+
+
+        <div class="hotel-content">
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Makkah
+          </div>
+
+          <h3>
+            Hotel Makkah — Value
+          </h3>
+
+          <p>
+            Pilihan untuk jamaah yang mengutamakan
+            keseimbangan harga, fasilitas dan kenyamanan.
+          </p>
+
+          <div class="hotel-bottom">
+
+            <span>
+              <i class="fa-solid fa-bed"></i>
+              Flexible
+            </span>
+
+            <button
+              type="button"
+              class="hotel-detail-btn"
+              data-hotel="Makkah Value"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MADINAH -->
+      <article
+        class="hotel-card reveal"
+        data-city="madinah"
+      >
+
+        <div class="hotel-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=85"
+            alt="Madinah Saudi Arabia"
+            loading="lazy"
+          >
+
+          <div class="hotel-image-overlay"></div>
+
+          <span class="hotel-city">
+            MADINAH
+          </span>
+
+          <span class="hotel-class">
+            PREMIUM
+          </span>
+
+        </div>
+
+
+        <div class="hotel-content">
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Madinah
+          </div>
+
+          <h3>
+            Hotel Madinah — Premium
+          </h3>
+
+          <p>
+            Akomodasi untuk jamaah yang mengutamakan
+            akses menuju kawasan Masjid Nabawi.
+          </p>
+
+          <div class="hotel-bottom">
+
+            <span>
+              <i class="fa-solid fa-mosque"></i>
+              Area Nabawi
+            </span>
+
+            <button
+              type="button"
+              class="hotel-detail-btn"
+              data-hotel="Madinah Premium"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MADINAH VALUE -->
+      <article
+        class="hotel-card reveal"
+        data-city="madinah"
+      >
+
+        <div class="hotel-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=85"
+            alt="Madinah"
+            loading="lazy"
+          >
+
+          <div class="hotel-image-overlay"></div>
+
+          <span class="hotel-city">
+            MADINAH
+          </span>
+
+          <span class="hotel-class">
+            VALUE
+          </span>
+
+        </div>
+
+
+        <div class="hotel-content">
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Madinah
+          </div>
+
+          <h3>
+            Hotel Madinah — Value
+          </h3>
+
+          <p>
+            Alternatif akomodasi untuk rombongan dengan
+            pilihan budget yang lebih fleksibel.
+          </p>
+
+          <div class="hotel-bottom">
+
+            <span>
+              <i class="fa-solid fa-users"></i>
+              Group Friendly
+            </span>
+
+            <button
+              type="button"
+              class="hotel-detail-btn"
+              data-hotel="Madinah Value"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- JEDDAH -->
+      <article
+        class="hotel-card reveal"
+        data-city="jeddah"
+      >
+
+        <div class="hotel-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=1200&q=85"
+            alt="Jeddah Saudi Arabia"
+            loading="lazy"
+          >
+
+          <div class="hotel-image-overlay"></div>
+
+          <span class="hotel-city">
+            JEDDAH
+          </span>
+
+          <span class="hotel-class">
+            CITY
+          </span>
+
+        </div>
+
+
+        <div class="hotel-content">
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Jeddah
+          </div>
+
+          <h3>
+            Hotel Jeddah
+          </h3>
+
+          <p>
+            Akomodasi transit maupun menginap di Jeddah
+            sesuai jadwal penerbangan jamaah.
+          </p>
+
+          <div class="hotel-bottom">
+
+            <span>
+              <i class="fa-solid fa-plane"></i>
+              Transit
+            </span>
+
+            <button
+              type="button"
+              class="hotel-detail-btn"
+              data-hotel="Jeddah Hotel"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CUSTOM -->
+      <article
+        class="hotel-card hotel-custom reveal"
+        data-city="all"
+      >
+
+        <div class="hotel-custom-inner">
+
+          <span class="hotel-custom-icon">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </span>
+
+          <span class="section-label">
+            HOTEL REQUEST
+          </span>
+
+          <h3>
+            Sudah punya hotel pilihan?
+          </h3>
+
+          <p>
+            Kirim nama hotel dan tanggal perjalanan.
+            Tim Safeera dapat membantu pengecekan sesuai
+            kebutuhan perjalanan Anda.
+          </p>
+
+          <a href="#contact" class="btn btn-gold">
+            Request Hotel
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRANSPORT
+========================================================= -->
+<section class="section transport-section" id="transport">
+
+  <div class="container">
+
+    <div class="section-heading center light reveal">
+
+      <span class="section-label">
+        TRANSPORTASI
+      </span>
+
+      <h2>
+        Perjalanan antar kota
+        <span>lebih terkoordinasi.</span>
+      </h2>
+
       <p>
-        Pilih jumlah jamaah dan layanan. Kalkulator akan
-        memberikan estimasi awal yang dapat langsung
-        dikirim ke WhatsApp Safeera.
+        Pilihan kendaraan dapat disesuaikan dengan jumlah
+        penumpang, bagasi dan rute perjalanan.
       </p>
 
     </div>
 
 
-
-    <div class="calculator-shell">
-
-      <!-- LEFT -->
-
-      <div class="calculator-form">
+    <div class="transport-grid">
 
 
-        <div class="calculator-section-title">
+      <article class="transport-card reveal">
+
+        <div class="transport-icon">
+          <i class="fa-solid fa-car-side"></i>
+        </div>
+
+        <span class="transport-type">
+          PRIVATE
+        </span>
+
+        <h3>Sedan / Private Car</h3>
+
+        <p>
+          Untuk perjalanan individual, pasangan atau
+          keluarga kecil.
+        </p>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Airport transfer
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Antar kota
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Private trip
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          class="transport-select"
+          data-transport="Sedan / Private Car"
+        >
+          Pilih Kendaraan
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </article>
+
+
+      <article class="transport-card featured reveal">
+
+        <div class="popular-label">
+          POPULER
+        </div>
+
+        <div class="transport-icon">
+          <i class="fa-solid fa-van-shuttle"></i>
+        </div>
+
+        <span class="transport-type">
+          FAMILY & SMALL GROUP
+        </span>
+
+        <h3>Hiace / Van</h3>
+
+        <p>
+          Pilihan fleksibel untuk keluarga dan rombongan
+          berukuran kecil.
+        </p>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Airport transfer
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Makkah – Madinah
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Ziarah
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          class="transport-select"
+          data-transport="Hiace / Van"
+        >
+          Pilih Kendaraan
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </article>
+
+
+      <article class="transport-card reveal">
+
+        <div class="transport-icon">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+
+        <span class="transport-type">
+          GROUP
+        </span>
+
+        <h3>Bus Jamaah</h3>
+
+        <p>
+          Untuk rombongan jamaah dengan kapasitas
+          penumpang lebih besar.
+        </p>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Group transfer
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Antar kota
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Program ziarah
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          class="transport-select"
+          data-transport="Bus Jamaah"
+        >
+          Pilih Kendaraan
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ROUTE
+========================================================= -->
+<section class="route-section">
+
+  <div class="container">
+
+    <div class="route-layout">
+
+      <div class="route-intro reveal">
+
+        <span class="section-label">
+          RUTE UTAMA
+        </span>
+
+        <h2>
+          Dari kedatangan hingga
+          <span>perjalanan antar kota.</span>
+        </h2>
+
+        <p>
+          Safeera membantu menyusun kebutuhan darat
+          berdasarkan itinerary jamaah.
+        </p>
+
+        <a href="#contact" class="text-link">
+          Konsultasikan itinerary
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <div class="route-map reveal">
+
+        <div class="map-city">
+
+          <div class="map-dot">
+            <i class="fa-solid fa-plane-arrival"></i>
+          </div>
 
           <span>01</span>
-
-          <div>
-            <strong>Jumlah Jamaah</strong>
-            <small>Atur jumlah peserta perjalanan</small>
-          </div>
+          <strong>JEDDAH</strong>
+          <small>Arrival</small>
 
         </div>
 
-
-
-        <div class="traveller-grid">
-
-          <div class="counter-box">
-
-            <label>DEWASA</label>
-
-            <div class="counter">
-
-              <button onclick="changeCounter('adult', -1)">−</button>
-
-              <strong id="adultCount">2</strong>
-
-              <button onclick="changeCounter('adult', 1)">+</button>
-
-            </div>
-
-            <small>12+ tahun</small>
-
-          </div>
-
-
-          <div class="counter-box">
-
-            <label>ANAK</label>
-
-            <div class="counter">
-
-              <button onclick="changeCounter('child', -1)">−</button>
-
-              <strong id="childCount">0</strong>
-
-              <button onclick="changeCounter('child', 1)">+</button>
-
-            </div>
-
-            <small>2–11 tahun</small>
-
-          </div>
-
-
-          <div class="counter-box">
-
-            <label>BAYI</label>
-
-            <div class="counter">
-
-              <button onclick="changeCounter('infant', -1)">−</button>
-
-              <strong id="infantCount">0</strong>
-
-              <button onclick="changeCounter('infant', 1)">+</button>
-
-            </div>
-
-            <small>&lt; 2 tahun</small>
-
-          </div>
-
+        <div class="map-line">
+          <span></span>
         </div>
 
+        <div class="map-city">
 
-
-        <div class="form-divider"></div>
-
-
-
-        <div class="calculator-section-title">
+          <div class="map-dot">
+            <i class="fa-solid fa-kaaba"></i>
+          </div>
 
           <span>02</span>
+          <strong>MAKKAH</strong>
+          <small>Umrah</small>
 
-          <div>
-            <strong>Pilih Visa</strong>
-            <small>Harga per jamaah</small>
+        </div>
+
+        <div class="map-line">
+          <span></span>
+        </div>
+
+        <div class="map-city">
+
+          <div class="map-dot">
+            <i class="fa-solid fa-mosque"></i>
           </div>
-
-        </div>
-
-
-        <div class="choice-grid">
-
-          <label class="choice-card">
-
-            <input
-              type="radio"
-              name="visa"
-              value="2500000"
-              data-label="Visa Only"
-              checked
-            >
-
-            <div>
-              <i class="fa-solid fa-passport"></i>
-              <strong>Visa Only</strong>
-              <small>Rp 2.500.000 / pax</small>
-            </div>
-
-          </label>
-
-
-          <label class="choice-card">
-
-            <input
-              type="radio"
-              name="visa"
-              value="2850000"
-              data-label="Visa + Siskopatuh"
-            >
-
-            <div>
-              <i class="fa-solid fa-shield"></i>
-              <strong>Visa + Siskopatuh</strong>
-              <small>Rp 2.850.000 / pax</small>
-            </div>
-
-          </label>
-
-
-          <label class="choice-card">
-
-            <input
-              type="radio"
-              name="visa"
-              value="4999999"
-              data-label="Visa Istifadhah"
-            >
-
-            <div>
-              <i class="fa-solid fa-earth-asia"></i>
-              <strong>Visa Istifadhah</strong>
-              <small>Rp 4.999.999 / pax</small>
-            </div>
-
-          </label>
-
-        </div>
-
-
-
-        <div class="form-divider"></div>
-
-
-
-        <div class="calculator-section-title">
 
           <span>03</span>
+          <strong>MADINAH</strong>
+          <small>Ziarah</small>
 
-          <div>
-            <strong>Hotel</strong>
-            <small>Pilih lama menginap & kategori</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PACKAGES
+========================================================= -->
+<section class="section package-section" id="packages">
+
+  <div class="container">
+
+    <div class="section-heading center reveal">
+
+      <span class="section-label">
+        PAKET LAND ARRANGEMENT
+      </span>
+
+      <h2>
+        Pilih kebutuhan,
+        <span>kami sesuaikan paketnya.</span>
+      </h2>
+
+      <p>
+        Paket di bawah adalah jenis layanan. Harga final
+        menyesuaikan tanggal, jumlah jamaah, hotel,
+        kendaraan dan kebutuhan perjalanan.
+      </p>
+
+    </div>
+
+
+    <div class="package-grid">
+
+
+      <article class="package-card reveal">
+
+        <div class="package-top">
+
+          <span class="package-badge">
+            BASIC
+          </span>
+
+          <div class="package-icon">
+            <i class="fa-solid fa-car"></i>
+          </div>
+
+        </div>
+
+        <h3>Transport Only</h3>
+
+        <p>
+          Untuk jamaah atau travel yang sudah memiliki
+          akomodasi sendiri.
+        </p>
+
+        <ul>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Airport transfer
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Makkah – Madinah
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Pilihan kendaraan
+          </li>
+
+        </ul>
+
+        <button
+          class="package-select"
+          data-package="Transport Only"
+          type="button"
+        >
+          Minta Penawaran
+        </button>
+
+      </article>
+
+
+      <article class="package-card package-featured reveal">
+
+        <div class="package-ribbon">
+          RECOMMENDED
+        </div>
+
+        <div class="package-top">
+
+          <span class="package-badge">
+            COMPLETE
+          </span>
+
+          <div class="package-icon">
+            <i class="fa-solid fa-star-and-crescent"></i>
+          </div>
+
+        </div>
+
+        <h3>Full Land Arrangement</h3>
+
+        <p>
+          Kebutuhan utama perjalanan Saudi dalam
+          satu koordinasi.
+        </p>
+
+        <ul>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Hotel
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Transportasi
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Handling
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Mutawwif
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Program ziarah
+          </li>
+
+        </ul>
+
+        <button
+          class="package-select"
+          data-package="Full Land Arrangement"
+          type="button"
+        >
+          Minta Penawaran
+        </button>
+
+      </article>
+
+
+      <article class="package-card reveal">
+
+        <div class="package-top">
+
+          <span class="package-badge">
+            CUSTOM
+          </span>
+
+          <div class="package-icon">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+
+        </div>
+
+        <h3>Custom Package</h3>
+
+        <p>
+          Pilih sendiri layanan yang diperlukan sesuai
+          itinerary dan kebutuhan jamaah.
+        </p>
+
+        <ul>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Flexible service
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Individual / group
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Travel partner
+          </li>
+
+        </ul>
+
+        <button
+          class="package-select"
+          data-package="Custom Package"
+          type="button"
+        >
+          Buat Paket
+        </button>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CALCULATOR
+========================================================= -->
+<section class="section calculator-section" id="calculator">
+
+  <div class="container calculator-layout">
+
+
+    <div class="calculator-copy reveal">
+
+      <span class="section-label">
+        KALKULATOR LA
+      </span>
+
+      <h2>
+        Susun kebutuhan
+        <span>perjalanan Anda.</span>
+      </h2>
+
+      <p>
+        Masukkan informasi perjalanan untuk mendapatkan
+        gambaran paket yang dibutuhkan. Kalkulator akan
+        membuat ringkasan kebutuhan sebelum Anda
+        menghubungi Safeera.
+      </p>
+
+
+      <div class="calculator-benefits">
+
+        <div>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>
+            <strong>Mudah</strong>
+            Pilih kebutuhan perjalanan
+          </span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>
+            <strong>Flexible</strong>
+            Individual maupun group
+          </span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>
+            <strong>Praktis</strong>
+            Kirim hasil langsung ke WhatsApp
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="calculator-card reveal">
+
+      <form id="laCalculator">
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label for="calcPax">
+              Jumlah Jamaah
+            </label>
+
+            <div class="input-icon">
+
+              <i class="fa-solid fa-users"></i>
+
+              <input
+                type="number"
+                id="calcPax"
+                min="1"
+                value="2"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="calcDays">
+              Lama Perjalanan
+            </label>
+
+            <div class="input-icon">
+
+              <i class="fa-solid fa-calendar-days"></i>
+
+              <select id="calcDays">
+
+                <option value="5">
+                  5 Hari
+                </option>
+
+                <option value="7">
+                  7 Hari
+                </option>
+
+                <option value="9" selected>
+                  9 Hari
+                </option>
+
+                <option value="12">
+                  12 Hari
+                </option>
+
+                <option value="custom">
+                  Custom
+                </option>
+
+              </select>
+
+            </div>
+
           </div>
 
         </div>
 
 
-        <div class="hotel-night-grid">
+        <div class="form-group">
 
-          <div class="field">
-
-            <label>Makkah</label>
-
-            <select id="makkahNights">
-              <option value="0">Tidak perlu</option>
-              <option value="3">3 malam</option>
-              <option value="4">4 malam</option>
-              <option value="5" selected>5 malam</option>
-              <option value="6">6 malam</option>
-              <option value="7">7 malam</option>
-              <option value="8">8 malam</option>
-              <option value="10">10 malam</option>
-            </select>
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Madinah</label>
-
-            <select id="madinahNights">
-              <option value="0">Tidak perlu</option>
-              <option value="3">3 malam</option>
-              <option value="4" selected>4 malam</option>
-              <option value="5">5 malam</option>
-              <option value="6">6 malam</option>
-              <option value="7">7 malam</option>
-              <option value="8">8 malam</option>
-            </select>
-
-          </div>
-
-        </div>
-
-
-        <div class="hotel-category">
-
-          <label class="category-choice">
-
-            <input
-              type="radio"
-              name="hotelCategory"
-              value="350000"
-              data-label="Budget"
-              checked
-            >
-
-            <span>Budget</span>
-
+          <label>
+            Kota
           </label>
 
+          <div class="choice-grid">
 
-          <label class="category-choice">
+            <label class="choice-box">
 
-            <input
-              type="radio"
-              name="hotelCategory"
-              value="550000"
-              data-label="Dekat"
-            >
+              <input
+                type="checkbox"
+                name="city"
+                value="Makkah"
+                checked
+              >
 
-            <span>Dekat</span>
+              <span>
+                <i class="fa-solid fa-kaaba"></i>
+                Makkah
+              </span>
 
-          </label>
-
-
-          <label class="category-choice">
-
-            <input
-              type="radio"
-              name="hotelCategory"
-              value="850000"
-              data-label="Premium"
-            >
-
-            <span>Premium ★</span>
-
-          </label>
-
-        </div>
+            </label>
 
 
+            <label class="choice-box">
 
-        <div class="form-divider"></div>
+              <input
+                type="checkbox"
+                name="city"
+                value="Madinah"
+                checked
+              >
+
+              <span>
+                <i class="fa-solid fa-mosque"></i>
+                Madinah
+              </span>
+
+            </label>
 
 
+            <label class="choice-box">
 
-        <div class="calculator-section-title">
+              <input
+                type="checkbox"
+                name="city"
+                value="Jeddah"
+              >
 
-          <span>04</span>
+              <span>
+                <i class="fa-solid fa-plane"></i>
+                Jeddah
+              </span>
 
-          <div>
-            <strong>Transportasi</strong>
-            <small>Pilih kebutuhan transport Saudi</small>
+            </label>
+
           </div>
 
         </div>
 
 
-        <div class="field">
+        <div class="form-group">
 
-          <select id="transportType">
+          <label for="hotelClass">
+            Kategori Hotel
+          </label>
 
-            <option value="0" data-label="Tanpa transport">
-              Tanpa transport
+          <select id="hotelClass">
+
+            <option value="Value">
+              Value
             </option>
 
-            <option value="750000" data-label="Shared Transport">
-              Shared Transport — estimasi Rp 750.000 / pax
+            <option value="Comfort" selected>
+              Comfort
             </option>
 
-            <option value="1250000" data-label="Private Transport">
-              Private Transport — estimasi Rp 1.250.000 / pax
+            <option value="Premium">
+              Premium
             </option>
 
           </select>
@@ -924,1464 +1904,385 @@
         </div>
 
 
+        <div class="form-group">
 
-        <div class="addon-grid">
-
-
-          <label class="addon">
-
-            <input
-              type="checkbox"
-              id="mutawwifAddon"
-              value="1320000"
-            >
-
-            <span class="custom-check"></span>
-
-            <div>
-              <strong>Mutawwif / Guide</strong>
-              <small>Rp 1.320.000 / hari</small>
-            </div>
-
+          <label for="vehicleType">
+            Kendaraan
           </label>
 
+          <select id="vehicleType">
 
-          <label class="addon">
+            <option value="Sedan">
+              Sedan / Private Car
+            </option>
 
-            <input
-              type="checkbox"
-              id="handlingAddon"
-              value="350000"
-            >
+            <option value="Hiace" selected>
+              Hiace / Van
+            </option>
 
-            <span class="custom-check"></span>
+            <option value="Bus">
+              Bus Jamaah
+            </option>
 
-            <div>
-              <strong>Handling Jamaah</strong>
-              <small>Estimasi Rp 350.000 / pax</small>
-            </div>
-
-          </label>
-
-
-          <label class="addon">
-
-            <input
-              type="checkbox"
-              id="haramainAddon"
-              value="750000"
-            >
-
-            <span class="custom-check"></span>
-
-            <div>
-              <strong>Kereta Haramain</strong>
-              <small>Estimasi Rp 750.000 / pax</small>
-            </div>
-
-          </label>
-
-
-          <label class="addon">
-
-            <input
-              type="checkbox"
-              id="ziarahAddon"
-              value="400000"
-            >
-
-            <span class="custom-check"></span>
-
-            <div>
-              <strong>Ziarah</strong>
-              <small>Estimasi Rp 400.000 / pax</small>
-            </div>
-
-          </label>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- RESULT -->
-
-      <aside class="calculator-result">
-
-        <div class="result-top">
-
-          <span>ESTIMASI PERJALANAN</span>
-
-          <h3 id="pricePerPerson">
-            Rp 0
-          </h3>
-
-          <small>estimasi per jamaah dewasa</small>
+          </select>
 
         </div>
 
 
-        <div class="result-divider"></div>
+        <div class="form-group">
+
+          <label>
+            Tambahan Layanan
+          </label>
+
+          <div class="extra-services">
+
+            <label>
+
+              <input
+                type="checkbox"
+                name="extra"
+                value="Visa"
+              >
+
+              <span>Visa</span>
+
+            </label>
 
 
-        <div class="result-details">
+            <label>
 
-          <div>
-            <span>Jumlah jamaah</span>
-            <strong id="summaryTravellers">2 pax</strong>
-          </div>
+              <input
+                type="checkbox"
+                name="extra"
+                value="Handling"
+              >
 
-          <div>
-            <span>Visa</span>
-            <strong id="summaryVisa">Rp 0</strong>
-          </div>
+              <span>Handling</span>
 
-          <div>
-            <span>Hotel</span>
-            <strong id="summaryHotel">Rp 0</strong>
-          </div>
+            </label>
 
-          <div>
-            <span>Transport</span>
-            <strong id="summaryTransport">Rp 0</strong>
-          </div>
 
-          <div>
-            <span>Add-on</span>
-            <strong id="summaryAddon">Rp 0</strong>
+            <label>
+
+              <input
+                type="checkbox"
+                name="extra"
+                value="Mutawwif"
+              >
+
+              <span>Mutawwif</span>
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                name="extra"
+                value="Ziarah"
+              >
+
+              <span>Ziarah</span>
+
+            </label>
+
           </div>
 
         </div>
 
 
-        <div class="result-total">
-
-          <small>TOTAL ESTIMASI</small>
-
-          <strong id="grandTotal">
-            Rp 0
-          </strong>
-
-        </div>
-
-
-        <p class="estimate-note">
-          *Harga hotel dan transport di kalkulator merupakan
-          estimasi sementara dan dapat berubah berdasarkan tanggal,
-          ketersediaan, jumlah jamaah dan pilihan layanan.
-        </p>
-
-
-        <button class="result-button" onclick="sendEstimateToWhatsApp()">
-
-          Kirim Estimasi ke WhatsApp
-
-          <i class="fa-brands fa-whatsapp"></i>
-
+        <button
+          class="calculator-submit"
+          type="submit"
+        >
+          Buat Estimasi Kebutuhan
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
 
+      </form>
 
-        <a href="#visa" class="result-secondary">
-          Lihat rincian layanan
-          <i class="fa-solid fa-arrow-down"></i>
-        </a>
 
-      </aside>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     VISA
-===================================== -->
-
-<section class="section visa-section" id="visa">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div>
-
-        <div class="eyebrow">
-          <span></span>
-          VISA
-        </div>
-
-        <h2 class="section-title">
-          Pilih layanan
-          <em>Visa Umroh.</em>
-        </h2>
-
-      </div>
-
-
-      <p>
-        Pilih jenis pengurusan visa sesuai kebutuhan perjalanan.
-        Tim Safeera akan membantu proses dan informasi dokumen.
-      </p>
-
-    </div>
-
-
-
-    <div class="visa-grid">
-
-
-      <article class="visa-card">
-
-        <div class="visa-card-head">
-
-          <div class="service-round-icon">
-            <i class="fa-solid fa-passport"></i>
-          </div>
-
-          <span>VISA ONLY</span>
-
-        </div>
-
-        <h3>Visa Umroh</h3>
-
-        <div class="service-price">
-          Rp 2.500.000
-          <small>/ pax</small>
-        </div>
-
-        <p>
-          Untuk jamaah yang telah menyiapkan kebutuhan
-          perjalanan lainnya secara mandiri.
-        </p>
-
-
-        <ul>
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pengajuan visa
-          </li>
-
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Bantuan pengecekan dokumen
-          </li>
-
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Update proses
-          </li>
-        </ul>
-
-
-        <a
-          href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20tentang%20Visa%20Umroh%20Only."
-          target="_blank"
-          class="service-action"
-        >
-
-          Ajukan Visa
-
-          <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-
-      </article>
-
-
-
-      <article class="visa-card featured-visa">
-
-        <div class="popular-label">
-          PILIHAN POPULER
-        </div>
-
-
-        <div class="visa-card-head">
-
-          <div class="service-round-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-
-          <span>VISA + SISKOPATUH</span>
-
-        </div>
-
-        <h3>Visa + Siskopatuh</h3>
-
-        <div class="service-price">
-          Rp 2.850.000
-          <small>/ pax</small>
-        </div>
-
-        <p>
-          Pilihan layanan Visa Umroh beserta kebutuhan
-          administrasi Siskopatuh.
-        </p>
-
-
-        <ul>
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pengajuan Visa Umroh
-          </li>
-
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Siskopatuh
-          </li>
-
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pendampingan dokumen
-          </li>
-        </ul>
-
-
-        <a
-          href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20tentang%20Visa%20%2B%20Siskopatuh."
-          target="_blank"
-          class="service-action"
-        >
-
-          Konsultasi Sekarang
-
-          <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-
-      </article>
-
-
-
-      <article class="visa-card">
-
-        <div class="visa-card-head">
-
-          <div class="service-round-icon">
-            <i class="fa-solid fa-earth-asia"></i>
-          </div>
-
-          <span>LONG STAY</span>
-
-        </div>
-
-        <h3>Visa Istifadhah</h3>
-
-        <div class="service-price">
-          Rp 4.999.999
-          <small>/ pax</small>
-        </div>
-
-        <p>
-          Pilihan visa untuk kebutuhan kunjungan yang
-          memenuhi ketentuan layanan terkait.
-        </p>
-
-
-        <ul>
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Konsultasi kebutuhan
-          </li>
-
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pengecekan dokumen
-          </li>
-
-          <li>
-            <i class="fa-solid fa-check"></i>
-            Pendampingan pengajuan
-          </li>
-        </ul>
-
-
-        <a
-          href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20tentang%20Visa%20Istifadhah."
-          target="_blank"
-          class="service-action"
-        >
-
-          Tanya Visa Istifadhah
-
-          <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-
-      </article>
-
-    </div>
-
-
-
-    <!-- PROCESS -->
-
-    <div class="process-row">
-
-      <div class="process-card">
-        <span>01</span>
-        <strong>Konsultasi</strong>
-        <p>Sampaikan jenis visa dan kebutuhan perjalanan.</p>
-      </div>
-
-      <div class="process-card">
-        <span>02</span>
-        <strong>Kirim Dokumen</strong>
-        <p>Tim memberikan daftar dokumen yang diperlukan.</p>
-      </div>
-
-      <div class="process-card">
-        <span>03</span>
-        <strong>Verifikasi</strong>
-        <p>Dokumen diperiksa sebelum proses pengajuan.</p>
-      </div>
-
-      <div class="process-card">
-        <span>04</span>
-        <strong>Proses Visa</strong>
-        <p>Safeera memberikan update proses kepada pelanggan.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     LAND ARRANGEMENT
-===================================== -->
-
-<section class="section la-section" id="la">
-
-  <div class="container la-grid">
-
-    <div class="la-content">
-
-      <div class="eyebrow gold-eyebrow">
-        <span></span>
-        LAND ARRANGEMENT
-      </div>
-
-      <h2>
-        Satu koordinasi untuk
-        <em>kebutuhan jamaah di Saudi.</em>
-      </h2>
-
-      <p>
-        Cocok untuk jamaah mandiri, keluarga, grup maupun
-        mitra travel yang membutuhkan layanan darat di
-        Makkah, Madinah dan Jeddah.
-      </p>
-
-
-      <div class="la-features">
-
-        <div>
-          <i class="fa-solid fa-passport"></i>
-          <span>
-            <strong>Visa</strong>
-            Pengurusan sesuai kebutuhan
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-hotel"></i>
-          <span>
-            <strong>Hotel</strong>
-            Makkah & Madinah
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-bus"></i>
-          <span>
-            <strong>Transport</strong>
-            Airport & antar kota
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-user-group"></i>
-          <span>
-            <strong>Handling</strong>
-            Pendampingan jamaah
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-person-walking-luggage"></i>
-          <span>
-            <strong>Mutawwif</strong>
-            Guide Bahasa Indonesia
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <strong>Ziarah</strong>
-            Makkah & Madinah
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20konsultasi%20Paket%20Land%20Arrangement."
-        target="_blank"
-        class="button gold-button"
+      <div
+        class="calculator-result"
+        id="calculatorResult"
       >
 
-        Minta Penawaran LA
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-      </a>
-
-    </div>
-
-
-
-    <div class="la-package-card">
-
-      <div class="la-package-top">
-
-        <span>SAFEERA</span>
-
-        <small>Custom Package</small>
-
-      </div>
-
-
-      <h3>
-        Land Arrangement
-        <em>Saudi Arabia</em>
-      </h3>
-
-
-      <p>
-        Paket dapat disesuaikan berdasarkan jumlah jamaah,
-        tanggal keberangkatan, kategori hotel dan kendaraan.
-      </p>
-
-
-      <div class="package-route">
-
-        <div>
-          <span>01</span>
-          <strong>JEDDAH</strong>
+        <div class="result-icon">
+          <i class="fa-solid fa-file-circle-check"></i>
         </div>
 
-        <i class="fa-solid fa-arrow-right"></i>
-
-        <div>
-          <span>02</span>
-          <strong>MAKKAH</strong>
-        </div>
-
-        <i class="fa-solid fa-arrow-right"></i>
-
-        <div>
-          <span>03</span>
-          <strong>MADINAH</strong>
-        </div>
-
-      </div>
-
-
-      <div class="package-bottom">
-
-        <span>
-          <i class="fa-solid fa-users"></i>
-          Individual & Group
-        </span>
-
-        <span>
-          <i class="fa-solid fa-handshake"></i>
-          B2B Travel
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     HOTEL
-===================================== -->
-
-<section class="section hotel-section" id="hotel">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div>
-
-        <div class="eyebrow">
-          <span></span>
-          HOTEL
-        </div>
-
-        <h2 class="section-title">
-          Menginap lebih nyaman di
-          <em>Makkah & Madinah.</em>
-        </h2>
-
-      </div>
-
-      <p>
-        Kami membantu mencarikan hotel berdasarkan budget,
-        lokasi, kapasitas kamar dan ketersediaan pada
-        tanggal perjalanan.
-      </p>
-
-    </div>
-
-
-
-    <div class="filter-tabs">
-
-      <button class="filter-tab active" data-city="all">
-        Semua
-      </button>
-
-      <button class="filter-tab" data-city="makkah">
-        Makkah
-      </button>
-
-      <button class="filter-tab" data-city="madinah">
-        Madinah
-      </button>
-
-    </div>
-
-
-
-    <div class="hotel-grid" id="hotelGrid">
-
-
-      <article class="hotel-card" data-city="makkah">
-
-        <div class="hotel-image hotel-placeholder makkah-bg">
-
-          <span class="hotel-city-badge">
-            MAKKAH
-          </span>
-
-          <div class="hotel-placeholder-icon">
-            <i class="fa-solid fa-kaaba"></i>
-          </div>
-
-          <small>Foto hotel dapat ditambahkan</small>
-
-        </div>
-
-
-        <div class="hotel-info">
-
-          <div class="hotel-meta">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Makkah
-            </span>
-            <span>★★★★★</span>
-          </div>
-
-          <h3>Hotel Makkah — Premium</h3>
-
-          <p>
-            Pilihan hotel dekat area Masjidil Haram.
-            Nama hotel disesuaikan ketersediaan.
-          </p>
-
-          <div class="hotel-footer">
-
-            <div>
-              <small>HARGA</small>
-              <strong>Hubungi Kami</strong>
-            </div>
-
-            <a
-              href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20mencari%20hotel%20di%20Makkah."
-              target="_blank"
-            >
-              Cek Hotel →
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="hotel-card" data-city="makkah">
-
-        <div class="hotel-image hotel-placeholder gold-bg">
-
-          <span class="hotel-city-badge">
-            MAKKAH
-          </span>
-
-          <div class="hotel-placeholder-icon">
-            <i class="fa-solid fa-hotel"></i>
-          </div>
-
-          <small>Foto hotel dapat ditambahkan</small>
-
-        </div>
-
-
-        <div class="hotel-info">
-
-          <div class="hotel-meta">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Makkah
-            </span>
-            <span>★★★★</span>
-          </div>
-
-          <h3>Hotel Makkah — Value</h3>
-
-          <p>
-            Pilihan untuk jamaah yang mengutamakan
-            keseimbangan harga dan kenyamanan.
-          </p>
-
-          <div class="hotel-footer">
-
-            <div>
-              <small>HARGA</small>
-              <strong>Hubungi Kami</strong>
-            </div>
-
-            <a
-              href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20mencari%20hotel%20Makkah%20kategori%20value."
-              target="_blank"
-            >
-              Cek Hotel →
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="hotel-card" data-city="madinah">
-
-        <div class="hotel-image hotel-placeholder madinah-bg">
-
-          <span class="hotel-city-badge">
-            MADINAH
-          </span>
-
-          <div class="hotel-placeholder-icon">
-            <i class="fa-solid fa-mosque"></i>
-          </div>
-
-          <small>Foto hotel dapat ditambahkan</small>
-
-        </div>
-
-
-        <div class="hotel-info">
-
-          <div class="hotel-meta">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Madinah
-            </span>
-            <span>★★★★★</span>
-          </div>
-
-          <h3>Hotel Madinah — Premium</h3>
-
-          <p>
-            Pilihan akomodasi untuk jamaah yang
-            mengutamakan akses dan kenyamanan.
-          </p>
-
-          <div class="hotel-footer">
-
-            <div>
-              <small>HARGA</small>
-              <strong>Hubungi Kami</strong>
-            </div>
-
-            <a
-              href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20mencari%20hotel%20di%20Madinah."
-              target="_blank"
-            >
-              Cek Hotel →
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-
-    <div class="center-action">
-
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20boleh%20minta%20pilihan%20hotel%20Makkah%20dan%20Madinah?"
-        target="_blank"
-        class="outline-action"
-      >
-
-        Minta Daftar Hotel
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     TRANSPORT
-===================================== -->
-
-<section class="section transport-section" id="transport">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div>
-
-        <div class="eyebrow">
-          <span></span>
-          TRANSPORT SAUDI
-        </div>
-
-        <h2 class="section-title">
-          Dari airport hingga antar kota,
-          <em>lebih terkoordinasi.</em>
-        </h2>
-
-      </div>
-
-      <p>
-        Pilihan kendaraan disesuaikan dengan jumlah jamaah,
-        rute, bagasi dan kebutuhan perjalanan.
-      </p>
-
-    </div>
-
-
-
-    <div class="transport-grid">
-
-
-      <article class="transport-card">
-
-        <div class="transport-icon">
-          <i class="fa-solid fa-plane-arrival"></i>
-        </div>
-
-        <span>01</span>
-
-        <h3>Airport Transfer</h3>
-
-        <p>
-          Penjemputan atau pengantaran dari dan menuju
-          airport sesuai itinerary.
-        </p>
-
-        <div class="transport-tags">
-          <small>Jeddah</small>
-          <small>Madinah</small>
-          <small>Private</small>
-        </div>
-
-      </article>
-
-
-
-      <article class="transport-card">
-
-        <div class="transport-icon">
-          <i class="fa-solid fa-road"></i>
-        </div>
-
-        <span>02</span>
-
-        <h3>Intercity</h3>
-
-        <p>
-          Perjalanan antar kota seperti
-          Jeddah–Makkah–Madinah.
-        </p>
-
-        <div class="transport-tags">
-          <small>Car</small>
-          <small>Hiace</small>
-          <small>Bus</small>
-        </div>
-
-      </article>
-
-
-
-      <article class="transport-card">
-
-        <div class="transport-icon">
-          <i class="fa-solid fa-train"></i>
-        </div>
-
-        <span>03</span>
-
-        <h3>Haramain Transfer</h3>
-
-        <p>
-          Transfer menuju atau dari stasiun
-          Kereta Cepat Haramain.
-        </p>
-
-        <div class="transport-tags">
-          <small>Station</small>
-          <small>Hotel</small>
-          <small>Airport</small>
-        </div>
-
-      </article>
-
-
-
-      <article class="transport-card">
-
-        <div class="transport-icon">
-          <i class="fa-solid fa-map-location-dot"></i>
-        </div>
-
-        <span>04</span>
-
-        <h3>Ziarah</h3>
-
-        <p>
-          Transportasi untuk program ziarah
-          Makkah dan Madinah.
-        </p>
-
-        <div class="transport-tags">
-          <small>Makkah</small>
-          <small>Madinah</small>
-          <small>Group</small>
-        </div>
-
-      </article>
-
-    </div>
-
-
-    <div class="center-action">
-
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20bertanya%20transportasi%20di%20Saudi."
-        target="_blank"
-        class="dark-action"
-      >
-
-        Tanya Harga Transport
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     MUTAWIF
-===================================== -->
-
-<section class="section mutawwif-section" id="mutawwif">
-
-  <div class="container mutawwif-grid">
-
-    <div class="mutawwif-copy">
-
-      <div class="eyebrow gold-eyebrow">
-        <span></span>
-        MUTAWWIF / GUIDE
-      </div>
-
-      <h2>
-        Pendamping berbahasa Indonesia
-        <em>di Tanah Suci.</em>
-      </h2>
-
-      <p>
-        Layanan Mutawwif/guide untuk membantu koordinasi
-        perjalanan dan pendampingan jamaah sesuai program.
-      </p>
-
-
-      <div class="mutawwif-benefits">
-
-        <div>
-          <i class="fa-solid fa-language"></i>
-          <span>
-            <strong>Bahasa Indonesia</strong>
-            Komunikasi lebih mudah
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <strong>Makkah & Madinah</strong>
-            Sesuai kebutuhan program
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-calendar-days"></i>
-          <span>
-            <strong>Fleksibel</strong>
-            Pilih kebutuhan per hari
-          </span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-users"></i>
-          <span>
-            <strong>Individual & Grup</strong>
-            Menyesuaikan jamaah
-          </span>
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="mutawwif-price-card">
-
-      <div class="premium-tag">
-        SAFEERA ADD-ON
-      </div>
-
-      <span>MUTAWWIF / GUIDE</span>
-
-      <h3>
-        Rp 1.320.000
-        <small>/ hari</small>
-      </h3>
-
-      <ul>
-
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Guide berbahasa Indonesia
-        </li>
-
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Makkah atau Madinah
-        </li>
-
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Pilihan tanggal sesuai ketersediaan
-        </li>
-
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Dapat digabung dengan paket LA
-        </li>
-
-      </ul>
-
-
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20booking%20Mutawwif%20%2F%20Guide."
-        target="_blank"
-        class="button gold-button full-button"
-      >
-
-        Booking Mutawwif
-
-        <i class="fa-solid fa-arrow-right"></i>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     OTHER SERVICES
-===================================== -->
-
-<section class="section other-services" id="lainnya">
-
-  <div class="container">
-
-    <div class="center-heading">
-
-      <div class="eyebrow centered-eyebrow">
-        <span></span>
-        LEBIH LENGKAP
-        <span></span>
-      </div>
-
-      <h2 class="section-title">
-        Lengkapi perjalanan bersama
-        <em>Safeera.</em>
-      </h2>
-
-      <p>
-        Pilih layanan tambahan sesuai kebutuhan perjalanan Anda.
-      </p>
-
-    </div>
-
-
-
-    <div class="other-grid">
-
-
-      <article class="other-card">
-
-        <div class="other-icon">
-          <i class="fa-solid fa-train-subway"></i>
-        </div>
-
-        <h3>Kereta Haramain</h3>
-
-        <p>
-          Bantuan kebutuhan perjalanan Kereta Cepat
-          Haramain sesuai rute dan jadwal.
-        </p>
+        <h3>
+          Ringkasan Perjalanan
+        </h3>
+
+        <div
+          class="result-details"
+          id="resultDetails"
+        ></div>
 
         <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20Kereta%20Haramain."
-          target="_blank"
+          href="#contact"
+          class="result-whatsapp"
+          id="resultWhatsapp"
         >
-          Konsultasi →
-        </a>
-
-      </article>
-
-
-
-      <article class="other-card">
-
-        <div class="other-icon">
-          <i class="fa-solid fa-plane"></i>
-        </div>
-
-        <h3>Tiket Pesawat</h3>
-
-        <p>
-          Bantuan pencarian kebutuhan penerbangan
-          berdasarkan itinerary jamaah.
-        </p>
-
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20tiket%20pesawat%20Umroh."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
-
-      </article>
-
-
-
-      <article class="other-card">
-
-        <div class="other-icon">
-          <i class="fa-solid fa-map-location"></i>
-        </div>
-
-        <h3>Ziarah</h3>
-
-        <p>
-          Program transport dan pendampingan
-          ziarah Makkah atau Madinah.
-        </p>
-
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20program%20ziarah."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
-
-      </article>
-
-
-
-      <article class="other-card">
-
-        <div class="other-icon">
-          <i class="fa-solid fa-suitcase-rolling"></i>
-        </div>
-
-        <h3>Perlengkapan Umroh</h3>
-
-        <p>
-          Kebutuhan perlengkapan perjalanan jamaah.
-          Katalog produk dapat ditambahkan kemudian.
-        </p>
-
-        <a
-          href="https://wa.me/6282165870953?text=Saya%20ingin%20bertanya%20perlengkapan%20Umroh."
-          target="_blank"
-        >
-          Konsultasi →
-        </a>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     HOW IT WORKS
-===================================== -->
-
-<section class="section journey-section">
-
-  <div class="container">
-
-    <div class="center-heading">
-
-      <div class="eyebrow centered-eyebrow">
-        <span></span>
-        CARA PEMESANAN
-        <span></span>
-      </div>
-
-      <h2 class="section-title">
-        Lebih sederhana,
-        <em>empat langkah saja.</em>
-      </h2>
-
-    </div>
-
-
-    <div class="journey-steps">
-
-      <div class="journey-step">
-
-        <span>01</span>
-
-        <div class="journey-icon">
           <i class="fa-brands fa-whatsapp"></i>
+          Kirim Permintaan
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY SAFEERA
+========================================================= -->
+<section class="section why-section" id="about">
+
+  <div class="container">
+
+    <div class="why-layout">
+
+
+      <div class="why-card reveal">
+
+        <div class="why-pattern"></div>
+
+        <span class="section-label light-label">
+          SAFEERA MADINAH
+        </span>
+
+        <h2>
+          Bukan sekadar booking.
+          <span>Satu koordinasi di Saudi.</span>
+        </h2>
+
+        <p>
+          Safeera dirancang untuk membantu kebutuhan
+          operasional jamaah selama berada di Saudi Arabia
+          dengan proses komunikasi yang lebih sederhana.
+        </p>
+
+
+        <div class="why-stats">
+
+          <div>
+            <strong>01</strong>
+            <span>Koordinasi</span>
+          </div>
+
+          <div>
+            <strong>03</strong>
+            <span>Kota Utama</span>
+          </div>
+
+          <div>
+            <strong>06+</strong>
+            <span>Layanan</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="why-list">
+
+        <article class="why-item reveal">
+
+          <span class="why-item-number">
+            01
+          </span>
+
+          <div>
+            <h3>
+              Satu pintu komunikasi
+            </h3>
+
+            <p>
+              Hotel, kendaraan dan layanan jamaah dapat
+              dikoordinasikan melalui satu kontak.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="why-item reveal">
+
+          <span class="why-item-number">
+            02
+          </span>
+
+          <div>
+            <h3>
+              Paket fleksibel
+            </h3>
+
+            <p>
+              Kebutuhan dapat disesuaikan untuk individual,
+              keluarga, group maupun mitra travel.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="why-item reveal">
+
+          <span class="why-item-number">
+            03
+          </span>
+
+          <div>
+            <h3>
+              Fokus Saudi Arabia
+            </h3>
+
+            <p>
+              Layanan difokuskan pada kebutuhan perjalanan
+              jamaah di Makkah, Madinah dan Jeddah.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="why-item reveal">
+
+          <span class="why-item-number">
+            04
+          </span>
+
+          <div>
+            <h3>
+              Mudah dikonsultasikan
+            </h3>
+
+            <p>
+              Kirim itinerary atau kebutuhan jamaah dan
+              paket dapat disusun berdasarkan perjalanan.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+<section class="section process-section">
+
+  <div class="container">
+
+    <div class="section-heading center reveal">
+
+      <span class="section-label">
+        CARA KERJA
+      </span>
+
+      <h2>
+        Dari itinerary menjadi
+        <span>layanan perjalanan.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <article class="process-card reveal">
+
+        <span>01</span>
+
+        <div class="process-icon">
+          <i class="fa-solid fa-comments"></i>
         </div>
 
         <h3>Konsultasi</h3>
 
         <p>
-          Hubungi Safeera dan sampaikan
-          kebutuhan perjalanan.
+          Sampaikan jumlah jamaah, tanggal dan kebutuhan.
         </p>
 
+      </article>
+
+
+      <div class="process-arrow">
+        <i class="fa-solid fa-arrow-right"></i>
       </div>
 
 
-      <div class="journey-line"></div>
-
-
-      <div class="journey-step">
+      <article class="process-card reveal">
 
         <span>02</span>
 
-        <div class="journey-icon">
-          <i class="fa-solid fa-sliders"></i>
+        <div class="process-icon">
+          <i class="fa-solid fa-list-check"></i>
         </div>
 
-        <h3>Pilih Layanan</h3>
+        <h3>Susun Layanan</h3>
 
         <p>
-          Tentukan visa, hotel, transport
-          atau paket LA.
+          Pilih hotel, kendaraan dan layanan tambahan.
         </p>
 
+      </article>
+
+
+      <div class="process-arrow">
+        <i class="fa-solid fa-arrow-right"></i>
       </div>
 
 
-      <div class="journey-line"></div>
-
-
-      <div class="journey-step">
+      <article class="process-card reveal">
 
         <span>03</span>
 
-        <div class="journey-icon">
-          <i class="fa-solid fa-file-circle-check"></i>
+        <div class="process-icon">
+          <i class="fa-solid fa-file-signature"></i>
         </div>
 
-        <h3>Konfirmasi</h3>
+        <h3>Penawaran</h3>
 
         <p>
-          Konfirmasi rincian layanan,
-          dokumen dan pembayaran.
+          Safeera menyusun kebutuhan berdasarkan itinerary.
         </p>
 
+      </article>
+
+
+      <div class="process-arrow">
+        <i class="fa-solid fa-arrow-right"></i>
       </div>
 
 
-      <div class="journey-line"></div>
-
-
-      <div class="journey-step">
+      <article class="process-card reveal">
 
         <span>04</span>
 
-        <div class="journey-icon">
-          <i class="fa-solid fa-plane-departure"></i>
+        <div class="process-icon">
+          <i class="fa-solid fa-route"></i>
         </div>
 
         <h3>Perjalanan</h3>
 
         <p>
-          Tim membantu koordinasi layanan
-          yang telah dipesan.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     WHY SAFEERA
-===================================== -->
-
-<section class="section why-section">
-
-  <div class="container why-grid">
-
-    <div>
-
-      <div class="eyebrow gold-eyebrow">
-        <span></span>
-        WHY SAFEERA
-      </div>
-
-      <h2>
-        Indonesia dekat,
-        <em>Madinah pun dekat.</em>
-      </h2>
-
-      <p>
-        Safeera menghubungkan kebutuhan pelanggan Indonesia
-        dengan koordinasi layanan di Arab Saudi.
-      </p>
-
-    </div>
-
-
-
-    <div class="why-cards">
-
-      <article>
-
-        <i class="fa-solid fa-earth-asia"></i>
-
-        <strong>
-          Indonesia × Saudi
-        </strong>
-
-        <p>
-          Basis layanan di Depok dan Madinah.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <i class="fa-solid fa-layer-group"></i>
-
-        <strong>
-          One Stop Service
-        </strong>
-
-        <p>
-          Berbagai kebutuhan perjalanan dalam satu koordinasi.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <i class="fa-solid fa-people-group"></i>
-
-        <strong>
-          B2C & B2B
-        </strong>
-
-        <p>
-          Melayani jamaah langsung maupun mitra travel.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <i class="fa-solid fa-headset"></i>
-
-        <strong>
-          Saudi Support
-        </strong>
-
-        <p>
-          Bantuan koordinasi selama jamaah berada di Saudi.
+          Layanan dikoordinasikan selama perjalanan Saudi.
         </p>
 
       </article>
@@ -2393,359 +2294,211 @@
 </section>
 
 
-
-<!-- =====================================
-     TESTIMONIAL
-===================================== -->
-
-<section class="section testimonial-section">
+<!-- =========================================================
+     CTA
+========================================================= -->
+<section class="cta-section">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="cta-box reveal">
 
-      <div>
+      <div class="cta-decoration"></div>
 
-        <div class="eyebrow">
-          <span></span>
-          CERITA JAMAAH
-        </div>
+      <div class="cta-content">
 
-        <h2 class="section-title">
-          Pengalaman bersama
-          <em>Safeera.</em>
+        <span class="section-label light-label">
+          MULAI PERJALANAN
+        </span>
+
+        <h2>
+          Sudah punya itinerary?
         </h2>
 
-      </div>
-
-      <p>
-        Bagian ini dapat diganti dengan testimoni asli
-        pelanggan Safeera beserta dokumentasinya.
-      </p>
-
-    </div>
-
-
-
-    <div class="testimonial-grid">
-
-      <article class="testimonial-card">
-
-        <div class="quote-mark">“</div>
-
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
-
         <p>
-          Tempat untuk testimoni asli pelanggan Safeera.
-          Masukkan pengalaman jamaah setelah izin publikasi diperoleh.
+          Kirim kebutuhan perjalanan Anda dan konsultasikan
+          Land Arrangement bersama Safeera.
         </p>
 
-        <div class="testimonial-person">
-
-          <div class="avatar">S</div>
-
-          <div>
-            <strong>Testimoni Jamaah</strong>
-            <small>Indonesia</small>
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="testimonial-card">
-
-        <div class="quote-mark">“</div>
-
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
-
-        <p>
-          Testimoni tentang pelayanan hotel, transport,
-          visa atau pendampingan dapat ditampilkan di sini.
-        </p>
-
-        <div class="testimonial-person">
-
-          <div class="avatar">S</div>
-
-          <div>
-            <strong>Testimoni Jamaah</strong>
-            <small>Indonesia</small>
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="testimonial-card">
-
-        <div class="quote-mark">“</div>
-
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
-
-        <p>
-          Anda juga dapat memasukkan testimoni dari mitra
-          travel untuk memperkuat layanan B2B Safeera.
-        </p>
-
-        <div class="testimonial-person">
-
-          <div class="avatar">S</div>
-
-          <div>
-            <strong>Mitra Travel</strong>
-            <small>Indonesia</small>
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     GALLERY
-===================================== -->
-
-<section class="section gallery-section">
-
-  <div class="container">
-
-    <div class="center-heading">
-
-      <div class="eyebrow centered-eyebrow">
-        <span></span>
-        SAFEERA JOURNEY
-        <span></span>
       </div>
 
-      <h2 class="section-title">
-        Dokumentasi
-        <em>perjalanan kami.</em>
-      </h2>
 
-      <p>
-        Nanti ganti kotak ini dengan dokumentasi asli Safeera.
-      </p>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item large-gallery">
-        <i class="fa-solid fa-kaaba"></i>
-        <span>Dokumentasi Makkah</span>
-      </div>
-
-      <div class="gallery-item">
-        <i class="fa-solid fa-mosque"></i>
-        <span>Dokumentasi Madinah</span>
-      </div>
-
-      <div class="gallery-item">
-        <i class="fa-solid fa-users"></i>
-        <span>Jamaah Safeera</span>
-      </div>
-
-      <div class="gallery-item">
-        <i class="fa-solid fa-bus"></i>
-        <span>Transportasi</span>
-      </div>
-
-      <div class="gallery-item">
-        <i class="fa-solid fa-hotel"></i>
-        <span>Hotel</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     FAQ
-===================================== -->
-
-<section class="section faq-section" id="faq">
-
-  <div class="container faq-grid">
-
-    <div class="faq-heading">
-
-      <div class="eyebrow">
-        <span></span>
-        FAQ
-      </div>
-
-      <h2 class="section-title">
-        Pertanyaan yang
-        <em>sering ditanyakan.</em>
-      </h2>
-
-      <p>
-        Tidak menemukan jawabannya?
-        Tim Safeera dapat membantu melalui WhatsApp.
-      </p>
-
-      <a
-        href="https://wa.me/6282165870953"
-        target="_blank"
-        class="outline-action"
-      >
-
-        Tanya Safeera
-
+      <a href="#contact" class="cta-button">
         <i class="fa-brands fa-whatsapp"></i>
 
+        <span>
+          <small>Konsultasi via</small>
+          WhatsApp
+        </span>
+
+        <i class="fa-solid fa-arrow-right"></i>
       </a>
 
     </div>
 
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+<section class="section faq-section" id="faq">
+
+  <div class="container faq-layout">
+
+
+    <div class="faq-heading reveal">
+
+      <span class="section-label">
+        FAQ
+      </span>
+
+      <h2>
+        Pertanyaan yang
+        <span>sering ditanyakan.</span>
+      </h2>
+
+      <p>
+        Belum menemukan jawaban yang Anda cari?
+        Hubungi Safeera untuk konsultasi.
+      </p>
+
+      <a href="#contact" class="text-link">
+        Hubungi Safeera
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
 
 
     <div class="faq-list">
 
 
-      <div class="faq-item">
+      <article class="faq-item active reveal">
 
-        <button class="faq-question">
+        <button class="faq-question" type="button">
 
-          Apa itu Land Arrangement Umroh?
-
-          <i class="fa-solid fa-plus"></i>
-
-        </button>
-
-        <div class="faq-answer">
-          <p>
-            Land Arrangement adalah pengaturan kebutuhan perjalanan
-            darat jamaah seperti hotel, transportasi, handling,
-            Mutawwif dan layanan lain sesuai paket yang disepakati.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="faq-item">
-
-        <button class="faq-question">
-
-          Apakah Safeera melayani jamaah mandiri?
+          <span>
+            Apakah layanan bisa untuk jamaah individual?
+          </span>
 
           <i class="fa-solid fa-plus"></i>
 
         </button>
 
         <div class="faq-answer">
+
           <p>
-            Ya. Safeera dirancang untuk melayani jamaah individu,
-            keluarga, grup maupun kebutuhan B2B mitra travel.
+            Bisa. Kebutuhan dapat disesuaikan untuk
+            individual, keluarga, rombongan maupun
+            mitra travel.
           </p>
+
         </div>
 
-      </div>
+      </article>
 
 
-      <div class="faq-item">
+      <article class="faq-item reveal">
 
-        <button class="faq-question">
+        <button class="faq-question" type="button">
 
-          Bisa pesan hotel saja?
+          <span>
+            Apakah bisa memesan hotel saja?
+          </span>
 
           <i class="fa-solid fa-plus"></i>
 
         </button>
 
         <div class="faq-answer">
+
           <p>
-            Bisa. Anda dapat berkonsultasi mengenai hotel Makkah
-            atau Madinah tanpa mengambil seluruh paket LA.
+            Bisa. Anda dapat memilih layanan tertentu saja,
+            termasuk hotel, transportasi atau kebutuhan
+            lainnya.
           </p>
+
         </div>
 
-      </div>
+      </article>
 
 
-      <div class="faq-item">
+      <article class="faq-item reveal">
 
-        <button class="faq-question">
+        <button class="faq-question" type="button">
 
-          Apakah harga kalkulator sudah final?
+          <span>
+            Apakah Safeera menyediakan transport antar kota?
+          </span>
 
           <i class="fa-solid fa-plus"></i>
 
         </button>
 
         <div class="faq-answer">
+
           <p>
-            Belum. Kalkulator memberikan estimasi awal. Harga final
-            dapat berbeda berdasarkan tanggal, ketersediaan hotel,
-            rute, jumlah jamaah dan kebutuhan aktual.
+            Ya. Transportasi dapat disesuaikan untuk
+            kebutuhan airport transfer, Makkah, Madinah,
+            Jeddah dan program perjalanan terkait.
           </p>
+
         </div>
 
-      </div>
+      </article>
 
 
-      <div class="faq-item">
+      <article class="faq-item reveal">
 
-        <button class="faq-question">
+        <button class="faq-question" type="button">
 
-          Apakah Safeera menyediakan Mutawwif?
+          <span>
+            Apakah tersedia mutawwif berbahasa Indonesia?
+          </span>
 
           <i class="fa-solid fa-plus"></i>
 
         </button>
 
         <div class="faq-answer">
+
           <p>
-            Ya. Layanan Mutawwif/guide berbahasa Indonesia
-            dapat dikonsultasikan berdasarkan tanggal,
-            kota dan program perjalanan.
+            Layanan mutawwif dapat dimasukkan dalam
+            kebutuhan paket berdasarkan jadwal dan
+            program perjalanan jamaah.
           </p>
+
         </div>
 
-      </div>
+      </article>
 
 
-      <div class="faq-item">
+      <article class="faq-item reveal">
 
-        <button class="faq-question">
+        <button class="faq-question" type="button">
 
-          Bagaimana cara mendapatkan penawaran grup?
+          <span>
+            Bagaimana cara mendapatkan harga?
+          </span>
 
           <i class="fa-solid fa-plus"></i>
 
         </button>
 
         <div class="faq-answer">
+
           <p>
-            Hubungi Safeera melalui WhatsApp dan informasikan
-            jumlah jamaah, tanggal perjalanan, kebutuhan hotel,
-            transportasi dan layanan lain yang diperlukan.
+            Sampaikan tanggal, jumlah jamaah, kota,
+            kategori hotel dan kendaraan. Informasi tersebut
+            digunakan untuk menyusun kebutuhan perjalanan.
           </p>
+
         </div>
 
-      </div>
+      </article>
 
     </div>
 
@@ -2754,249 +2507,509 @@
 </section>
 
 
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+<section class="section contact-section" id="contact">
 
-<!-- =====================================
-     FINAL CTA
-===================================== -->
-
-<section class="final-cta">
-
-  <div class="cta-pattern"></div>
-
-  <div class="container final-cta-inner">
-
-    <div class="cta-symbol">
-      S
-    </div>
-
-    <div class="eyebrow light-eyebrow centered-eyebrow">
-      <span></span>
-      SAFEERA MADINAH
-      <span></span>
-    </div>
-
-    <h2>
-      Perjalanan yang baik
-      dimulai dari persiapan yang baik.
-    </h2>
-
-    <p>
-      Ceritakan rencana perjalanan Anda.
-      Tim Safeera siap membantu menyusun kebutuhan
-      Umroh dan Land Arrangement.
-    </p>
+  <div class="container contact-layout">
 
 
-    <div class="cta-buttons">
+    <div class="contact-info reveal">
 
-      <a
-        href="https://wa.me/6282165870953?text=Assalamualaikum%20Safeera%2C%20saya%20ingin%20konsultasi%20perjalanan%20Umroh."
-        target="_blank"
-        class="button gold-button"
-      >
+      <span class="section-label light-label">
+        HUBUNGI SAFEERA
+      </span>
 
-        <i class="fa-brands fa-whatsapp"></i>
-
-        Konsultasi Gratis
-
-      </a>
-
-      <a href="#kalkulator" class="button ghost-button">
-        Hitung Estimasi
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer class="footer">
-
-  <div class="container footer-top">
-
-
-    <div class="footer-brand">
-
-      <div class="footer-logo">
-
-        <div class="brand-mark">
-          S
-        </div>
-
-        <div class="brand-name">
-          <strong>SAFEERA</strong>
-          <span>MADINAH</span>
-        </div>
-
-      </div>
-
+      <h2>
+        Ceritakan kebutuhan
+        <span>perjalanan Anda.</span>
+      </h2>
 
       <p>
-        Journey • Hospitality • A Higher Meaning
+        Isi form singkat. Setelah itu permintaan dapat
+        diteruskan ke WhatsApp Safeera.
       </p>
 
 
-      <p class="footer-description">
-        Layanan kebutuhan Umroh & Land Arrangement
-        untuk jamaah dan mitra travel Indonesia.
-      </p>
+      <div class="contact-points">
+
+        <div>
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+          </span>
+
+          <div>
+            <small>Area Layanan</small>
+            <strong>
+              Makkah • Madinah • Jeddah
+            </strong>
+          </div>
+
+        </div>
 
 
-      <div class="footer-social">
+        <div>
 
-        <a href="#" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
+          <span>
+            <i class="fa-solid fa-users"></i>
+          </span>
 
-        <a href="#" aria-label="TikTok">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
+          <div>
+            <small>Untuk</small>
+            <strong>
+              Individual • Group • Travel
+            </strong>
+          </div>
 
-        <a
-          href="https://wa.me/6282165870953"
-          target="_blank"
-          aria-label="WhatsApp"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
+        </div>
+
+
+        <div>
+
+          <span>
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+
+          <div>
+            <small>Fast Response</small>
+            <strong>
+              WhatsApp Consultation
+            </strong>
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
 
+    <div class="contact-form-card reveal">
 
-    <div class="footer-column">
-
-      <h4>Layanan</h4>
-
-      <a href="#visa">Visa Umroh</a>
-      <a href="#la">Land Arrangement</a>
-      <a href="#hotel">Hotel</a>
-      <a href="#transport">Transportasi</a>
-      <a href="#mutawwif">Mutawwif</a>
-      <a href="#lainnya">Haramain</a>
-
-    </div>
+      <form id="contactForm">
 
 
+        <div class="form-group">
 
-    <div class="footer-column">
+          <label for="contactName">
+            Nama
+          </label>
 
-      <h4>Safeera</h4>
+          <input
+            type="text"
+            id="contactName"
+            placeholder="Nama Anda"
+            required
+          >
 
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#kalkulator">Kalkulator</a>
-      <a href="#faq">FAQ</a>
-      <a href="#">Syarat & Ketentuan</a>
-      <a href="#">Kebijakan Privasi</a>
-
-    </div>
-
+        </div>
 
 
-    <div class="footer-column">
+        <div class="form-row">
 
-      <h4>Hubungi Kami</h4>
+          <div class="form-group">
 
-      <a
-        href="https://wa.me/6282165870953"
-        target="_blank"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-        +62 821-6587-0953
-      </a>
+            <label for="contactPax">
+              Jumlah Jamaah
+            </label>
 
-      <span>
-        <i class="fa-solid fa-location-dot"></i>
-        Depok, Indonesia
-      </span>
+            <input
+              type="number"
+              id="contactPax"
+              placeholder="Contoh: 10"
+              min="1"
+              required
+            >
 
-      <span>
-        <i class="fa-solid fa-location-dot"></i>
-        Madinah, Saudi Arabia
-      </span>
+          </div>
 
-      <span>
-        <i class="fa-solid fa-envelope"></i>
-        Email akan ditambahkan
-      </span>
+
+          <div class="form-group">
+
+            <label for="contactDate">
+              Tanggal
+            </label>
+
+            <input
+              type="date"
+              id="contactDate"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="contactService">
+            Layanan
+          </label>
+
+          <select id="contactService">
+
+            <option value="Full Land Arrangement">
+              Full Land Arrangement
+            </option>
+
+            <option value="Hotel">
+              Hotel
+            </option>
+
+            <option value="Transportasi">
+              Transportasi
+            </option>
+
+            <option value="Visa">
+              Visa
+            </option>
+
+            <option value="Handling">
+              Handling
+            </option>
+
+            <option value="Mutawwif">
+              Mutawwif
+            </option>
+
+            <option value="Ziarah">
+              Ziarah
+            </option>
+
+            <option value="Custom Package">
+              Custom Package
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="contactMessage">
+            Kebutuhan
+          </label>
+
+          <textarea
+            id="contactMessage"
+            rows="5"
+            placeholder="Contoh: membutuhkan hotel Makkah dan Madinah, Hiace, handling..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="contact-submit"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Kirim Permintaan
+        </button>
+
+      </form>
 
     </div>
 
   </div>
 
+</section>
+
+</main>
 
 
-  <div class="container footer-legal-placeholder">
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
 
-    <i class="fa-solid fa-shield-halved"></i>
+  <div class="container">
 
-    <p>
-      Informasi badan usaha, legalitas, lisensi dan mitra resmi
-      Safeera akan ditampilkan di bagian ini setelah data
-      terverifikasi tersedia.
-    </p>
-
-  </div>
+    <div class="footer-top">
 
 
+      <div class="footer-brand">
 
-  <div class="container footer-bottom">
+        <a href="#home" class="brand footer-logo">
 
-    <p>
-      © 2026 Safeera Madinah. All rights reserved.
-    </p>
+          <div class="brand-icon">
+            S
+          </div>
 
-    <span>
-      Indonesia • Saudi Arabia
-    </span>
+          <div class="brand-text">
+            <strong>SAFEERA</strong>
+            <span>MADINAH</span>
+          </div>
+
+        </a>
+
+        <p>
+          Land Arrangement Saudi Arabia untuk kebutuhan
+          jamaah di Makkah, Madinah dan Jeddah.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Layanan</h4>
+
+        <a href="#hotels">Hotel</a>
+        <a href="#transport">Transportasi</a>
+        <a href="#services">Visa</a>
+        <a href="#services">Handling</a>
+        <a href="#services">Mutawwif</a>
+        <a href="#services">Ziarah</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Safeera</h4>
+
+        <a href="#about">Tentang</a>
+        <a href="#calculator">Kalkulator</a>
+        <a href="#packages">Paket LA</a>
+        <a href="#faq">FAQ</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Area</h4>
+
+        <span>Makkah</span>
+        <span>Madinah</span>
+        <span>Jeddah</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span id="currentYear"></span>
+        Safeera Madinah. All rights reserved.
+      </p>
+
+      <p>
+        Land Arrangement Saudi Arabia
+      </p>
+
+    </div>
 
   </div>
 
 </footer>
 
 
+<!-- =========================================================
+     SERVICE MODAL
+========================================================= -->
+<div
+  class="modal"
+  id="serviceModal"
+  aria-hidden="true"
+>
 
-<!-- =====================================
-     FLOATING WHATSAPP
-===================================== -->
+  <div class="modal-overlay" data-modal-close></div>
 
-<div class="floating-contact">
 
-  <a
-    href="https://wa.me/6282165870953"
-    target="_blank"
-    class="floating-chat"
-  >
+  <div class="modal-box">
 
-    <i class="fa-brands fa-whatsapp"></i>
+    <button
+      class="modal-close"
+      data-modal-close
+      type="button"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-    <span>Chat Safeera</span>
 
-  </a>
+    <div class="modal-icon" id="modalIcon">
+      <i class="fa-solid fa-star"></i>
+    </div>
+
+    <span
+      class="section-label"
+      id="modalLabel"
+    >
+      SAFEERA SERVICE
+    </span>
+
+    <h2 id="modalTitle">
+      Layanan Safeera
+    </h2>
+
+    <p id="modalDescription">
+      Detail layanan.
+    </p>
+
+
+    <div
+      class="modal-features"
+      id="modalFeatures"
+    ></div>
+
+
+    <a
+      href="#contact"
+      class="btn btn-gold modal-contact"
+      data-modal-close
+    >
+      Minta Penawaran
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+  </div>
 
 </div>
 
 
-<button
-  class="back-top"
-  id="backTop"
-  aria-label="Kembali ke atas"
+<!-- =========================================================
+     HOTEL MODAL
+========================================================= -->
+<div
+  class="modal"
+  id="hotelModal"
+  aria-hidden="true"
 >
 
-  <i class="fa-solid fa-arrow-up"></i>
+  <div class="modal-overlay" data-hotel-close></div>
 
+
+  <div class="modal-box hotel-modal-box">
+
+    <button
+      class="modal-close"
+      data-hotel-close
+      type="button"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="modal-icon">
+      <i class="fa-solid fa-hotel"></i>
+    </div>
+
+    <span class="section-label">
+      HOTEL REQUEST
+    </span>
+
+    <h2 id="hotelModalTitle">
+      Hotel
+    </h2>
+
+    <p>
+      Ketersediaan dan harga hotel dapat berubah berdasarkan
+      tanggal perjalanan, jumlah jamaah dan tipe kamar.
+    </p>
+
+
+    <div class="hotel-modal-info">
+
+      <div>
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>
+          <small>Tanggal</small>
+          Sesuai perjalanan
+        </span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-bed"></i>
+        <span>
+          <small>Kamar</small>
+          Sesuai kebutuhan
+        </span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-users"></i>
+        <span>
+          <small>Jamaah</small>
+          Individual & Group
+        </span>
+      </div>
+
+    </div>
+
+
+    <a
+      href="#contact"
+      class="btn btn-gold"
+      data-hotel-close
+    >
+      Request Hotel
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+<a
+  href="#contact"
+  class="floating-whatsapp"
+  id="floatingWhatsapp"
+>
+
+  <span class="wa-icon">
+    <i class="fa-brands fa-whatsapp"></i>
+  </span>
+
+  <span class="wa-text">
+    <small>Butuh bantuan?</small>
+    Chat Safeera
+  </span>
+
+</a>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+<button
+  class="back-to-top"
+  id="backToTop"
+  aria-label="Kembali ke atas"
+  type="button"
+>
+  <i class="fa-solid fa-arrow-up"></i>
 </button>
 
 
+<!-- =========================================================
+     TOAST
+========================================================= -->
+<div
+  class="toast"
+  id="toast"
+>
+
+  <i class="fa-solid fa-circle-check"></i>
+
+  <span id="toastMessage">
+    Berhasil
+  </span>
+
+</div>
+
+
+<!-- JS -->
 <script src="script.js"></script>
 
 </body>
