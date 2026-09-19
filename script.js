@@ -1,681 +1,549 @@
-/* ======================================================
+/* =========================================================
    SAFEERA MADINAH
-   JAVASCRIPT
-====================================================== */
+   FULL SCRIPT.JS
+========================================================= */
+
+"use strict";
 
 
-/* ======================================================
-   DATA
-====================================================== */
+/* =========================================================
+   01. CONFIGURATION
+========================================================= */
 
-const safeeraWhatsApp = "6282165870953";
+/*
+  PENTING:
+  Ganti nomor WhatsApp di bawah dengan nomor Safeera.
+
+  Format:
+  - gunakan kode negara
+  - tanpa tanda +
+  - tanpa spasi
+  - tanpa angka 0 di depan
+
+  Contoh Saudi:
+  9665XXXXXXXX
+
+  Contoh Indonesia:
+  62812XXXXXXXX
+*/
+
+const SAFEERA_WHATSAPP = "966500000000";
 
 
-const counters = {
+/* =========================================================
+   02. HELPERS
+========================================================= */
 
-  adult: 2,
-  child: 0,
-  infant: 0
+const $ = (selector, parent = document) =>
+  parent.querySelector(selector);
 
-};
+const $$ = (selector, parent = document) =>
+  [...parent.querySelectorAll(selector)];
 
 
+function createWhatsAppURL(message = "") {
+  const encodedMessage = encodeURIComponent(message);
 
-/* ======================================================
-   FORMAT RUPIAH
-====================================================== */
-
-function rupiah(number) {
-
-  return new Intl.NumberFormat(
-    "id-ID",
-    {
-      style: "currency",
-      currency: "IDR",
-      maximumFractionDigits: 0
-    }
-  ).format(number);
-
+  return `https://wa.me/${SAFEERA_WHATSAPP}?text=${encodedMessage}`;
 }
 
 
-
-/* ======================================================
-   COUNTER
-====================================================== */
-
-function changeCounter(type, amount) {
-
-  counters[type] += amount;
-
-
-  if (type === "adult" && counters[type] < 1) {
-
-    counters[type] = 1;
-
-  }
-
-
-  if (type !== "adult" && counters[type] < 0) {
-
-    counters[type] = 0;
-
-  }
-
-
-  document.getElementById(
-    type + "Count"
-  ).textContent = counters[type];
-
-
-  calculateEstimate();
-
-}
-
-
-
-/* ======================================================
-   GET RADIO
-====================================================== */
-
-function getCheckedValue(name) {
-
-  const selected =
-    document.querySelector(
-      `input[name="${name}"]:checked`
-    );
-
-
-  return selected
-    ? Number(selected.value)
-    : 0;
-
-}
-
-
-
-function getCheckedLabel(name) {
-
-  const selected =
-    document.querySelector(
-      `input[name="${name}"]:checked`
-    );
-
-
-  return selected
-    ? selected.dataset.label
-    : "";
-
-}
-
-
-
-/* ======================================================
-   CALCULATOR
-====================================================== */
-
-function calculateEstimate() {
-
-  const adult = counters.adult;
-
-  const child = counters.child;
-
-  const infant = counters.infant;
-
-
-  const totalTravellers =
-    adult + child + infant;
-
-
-  /*
-    Untuk versi awal:
-    dewasa & anak dihitung penuh.
-    bayi 30%.
-
-    Formula dapat diganti nanti
-    sesuai harga sebenarnya.
-  */
-
-  const billableEquivalent =
-    adult +
-    child +
-    (infant * 0.3);
-
-
-  /* VISA */
-
-  const visaPrice =
-    getCheckedValue("visa");
-
-
-  const visaTotal =
-    visaPrice *
-    billableEquivalent;
-
-
-
-  /* HOTEL */
-
-  const makkahNights =
-    Number(
-      document.getElementById(
-        "makkahNights"
-      ).value
-    );
-
-
-  const madinahNights =
-    Number(
-      document.getElementById(
-        "madinahNights"
-      ).value
-    );
-
-
-  const hotelNightPrice =
-    getCheckedValue(
-      "hotelCategory"
-    );
-
-
-  const totalHotelNights =
-    makkahNights +
-    madinahNights;
-
-
-  const hotelTotal =
-    hotelNightPrice *
-    totalHotelNights *
-    billableEquivalent;
-
-
-
-  /* TRANSPORT */
-
-  const transportElement =
-    document.getElementById(
-      "transportType"
-    );
-
-
-  const transportPrice =
-    Number(
-      transportElement.value
-    );
-
-
-  const transportTotal =
-    transportPrice *
-    billableEquivalent;
-
-
-
-  /* ADD ONS */
-
-  let addonTotal = 0;
-
-
-  const mutawwif =
-    document.getElementById(
-      "mutawwifAddon"
-    );
-
-
-  const handling =
-    document.getElementById(
-      "handlingAddon"
-    );
-
-
-  const haramain =
-    document.getElementById(
-      "haramainAddon"
-    );
-
-
-  const ziarah =
-    document.getElementById(
-      "ziarahAddon"
-    );
-
-
-  /*
-    Mutawwif diasumsikan
-    satu hari per booking,
-    bukan per jamaah.
-  */
-
-  if (mutawwif.checked) {
-
-    addonTotal +=
-      Number(mutawwif.value);
-
-  }
-
-
-  if (handling.checked) {
-
-    addonTotal +=
-      Number(handling.value) *
-      billableEquivalent;
-
-  }
-
-
-  if (haramain.checked) {
-
-    addonTotal +=
-      Number(haramain.value) *
-      billableEquivalent;
-
-  }
-
-
-  if (ziarah.checked) {
-
-    addonTotal +=
-      Number(ziarah.value) *
-      billableEquivalent;
-
-  }
-
-
-
-  /* GRAND TOTAL */
-
-  const grandTotal =
-    visaTotal +
-    hotelTotal +
-    transportTotal +
-    addonTotal;
-
-
-  const perPerson =
-    grandTotal /
-    Math.max(
-      totalTravellers,
-      1
-    );
-
-
-
-  /* UPDATE UI */
-
-  document.getElementById(
-    "summaryTravellers"
-  ).textContent =
-    totalTravellers + " pax";
-
-
-  document.getElementById(
-    "summaryVisa"
-  ).textContent =
-    rupiah(visaTotal);
-
-
-  document.getElementById(
-    "summaryHotel"
-  ).textContent =
-    rupiah(hotelTotal);
-
-
-  document.getElementById(
-    "summaryTransport"
-  ).textContent =
-    rupiah(transportTotal);
-
-
-  document.getElementById(
-    "summaryAddon"
-  ).textContent =
-    rupiah(addonTotal);
-
-
-  document.getElementById(
-    "grandTotal"
-  ).textContent =
-    rupiah(grandTotal);
-
-
-  document.getElementById(
-    "pricePerPerson"
-  ).textContent =
-    rupiah(perPerson);
-
-
-  return {
-
-    adult,
-    child,
-    infant,
-
-    totalTravellers,
-
-    visaPrice,
-    visaTotal,
-
-    visaLabel:
-      getCheckedLabel("visa"),
-
-    makkahNights,
-    madinahNights,
-
-    hotelCategory:
-      getCheckedLabel(
-        "hotelCategory"
-      ),
-
-    hotelTotal,
-
-    transportLabel:
-      transportElement
-        .options[
-          transportElement.selectedIndex
-        ]
-        .text,
-
-    transportTotal,
-
-    addonTotal,
-
-    grandTotal,
-
-    perPerson,
-
-    mutawwif:
-      mutawwif.checked,
-
-    handling:
-      handling.checked,
-
-    haramain:
-      haramain.checked,
-
-    ziarah:
-      ziarah.checked
-
-  };
-
-}
-
-
-
-/* ======================================================
-   SEND ESTIMATE WHATSAPP
-====================================================== */
-
-function sendEstimateToWhatsApp() {
-
-  const data =
-    calculateEstimate();
-
-
-  const addons = [];
-
-
-  if (data.mutawwif) {
-    addons.push(
-      "Mutawwif / Guide"
-    );
-  }
-
-
-  if (data.handling) {
-    addons.push(
-      "Handling Jamaah"
-    );
-  }
-
-
-  if (data.haramain) {
-    addons.push(
-      "Kereta Haramain"
-    );
-  }
-
-
-  if (data.ziarah) {
-    addons.push(
-      "Ziarah"
-    );
-  }
-
-
-  const addonText =
-    addons.length
-      ? addons.join(", ")
-      : "Tidak ada";
-
-
-  const message =
-
-`Assalamu'alaikum Safeera,
-
-Saya ingin konsultasi mengenai estimasi perjalanan berikut:
-
-*ESTIMASI SAFEERA*
-
-Jamaah:
-• Dewasa: ${data.adult}
-• Anak: ${data.child}
-• Bayi: ${data.infant}
-
-Visa:
-• ${data.visaLabel}
-
-Hotel:
-• Makkah: ${data.makkahNights} malam
-• Madinah: ${data.madinahNights} malam
-• Kategori: ${data.hotelCategory}
-
-Transportasi:
-• ${data.transportLabel}
-
-Add-on:
-• ${addonText}
-
-*Total estimasi: ${rupiah(data.grandTotal)}*
-
-Mohon dibantu cek harga dan ketersediaan aktual. Terima kasih.`;
-
-
-  const url =
-    `https://wa.me/${safeeraWhatsApp}?text=${encodeURIComponent(message)}`;
-
-
+function openWhatsApp(message) {
   window.open(
-    url,
-    "_blank"
+    createWhatsAppURL(message),
+    "_blank",
+    "noopener,noreferrer"
   );
+}
+
+
+function scrollToElement(target) {
+  const element =
+    typeof target === "string"
+      ? document.querySelector(target)
+      : target;
+
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+
+/* =========================================================
+   03. PRELOADER
+========================================================= */
+
+const preloader = $("#preloader");
+
+window.addEventListener("load", () => {
+
+  setTimeout(() => {
+
+    if (preloader) {
+      preloader.classList.add("hide");
+    }
+
+  }, 500);
+
+});
+
+
+/* Fallback */
+setTimeout(() => {
+
+  if (preloader) {
+    preloader.classList.add("hide");
+  }
+
+}, 2500);
+
+
+/* =========================================================
+   04. CURRENT YEAR
+========================================================= */
+
+const currentYear = $("#currentYear");
+
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
+
+
+/* =========================================================
+   05. HEADER SCROLL
+========================================================= */
+
+const header = $("#header");
+const backToTop = $("#backToTop");
+
+
+function handlePageScroll() {
+
+  const scrollY = window.scrollY;
+
+  if (header) {
+
+    if (scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
+  }
+
+
+  if (backToTop) {
+
+    if (scrollY > 500) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+
+  }
 
 }
 
 
-
-/* ======================================================
-   AUTO CALCULATE
-====================================================== */
-
-document
-  .querySelectorAll(
-    '#kalkulator input, #kalkulator select'
-  )
-  .forEach(element => {
-
-    element.addEventListener(
-      "change",
-      calculateEstimate
-    );
-
-  });
-
-
-
-/* ======================================================
-   MOBILE MENU
-====================================================== */
-
-const menuButton =
-  document.getElementById(
-    "menuButton"
-  );
-
-
-const navLinks =
-  document.getElementById(
-    "navLinks"
-  );
-
-
-menuButton.addEventListener(
-  "click",
-  () => {
-
-    navLinks.classList.toggle(
-      "active"
-    );
-
-
-    document.body.classList.toggle(
-      "menu-open"
-    );
-
-
-    const icon =
-      menuButton.querySelector("i");
-
-
-    if (
-      navLinks.classList.contains(
-        "active"
-      )
-    ) {
-
-      icon.className =
-        "fa-solid fa-xmark";
-
-    } else {
-
-      icon.className =
-        "fa-solid fa-bars";
-
-    }
-
-  }
+window.addEventListener(
+  "scroll",
+  handlePageScroll,
+  { passive: true }
 );
 
+handlePageScroll();
 
 
-/* CLOSE MENU */
+/* =========================================================
+   06. BACK TO TOP
+========================================================= */
 
-document
-  .querySelectorAll(
-    ".nav-links > a"
-  )
-  .forEach(link => {
+if (backToTop) {
 
-    link.addEventListener(
-      "click",
-      closeMobileMenu
-    );
+  backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
 
   });
+
+}
+
+
+/* =========================================================
+   07. SMOOTH ANCHOR LINKS
+========================================================= */
+
+$$('a[href^="#"]').forEach(link => {
+
+  link.addEventListener("click", event => {
+
+    const href = link.getAttribute("href");
+
+    if (!href || href === "#") return;
+
+    const target = document.querySelector(href);
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    closeMobileMenu();
+
+    scrollToElement(target);
+
+  });
+
+});
+
+
+/* =========================================================
+   08. MOBILE MENU
+========================================================= */
+
+const mobileToggle = $("#mobileToggle");
+const mobileMenu = $("#mobileMenu");
+const mobileClose = $("#mobileClose");
+const mobileOverlay = $("#mobileOverlay");
+
+
+function openMobileMenu() {
+
+  if (!mobileMenu || !mobileOverlay) return;
+
+  mobileMenu.classList.add("open");
+  mobileOverlay.classList.add("show");
+
+  document.body.classList.add("no-scroll");
+
+}
 
 
 function closeMobileMenu() {
 
-  navLinks.classList.remove(
-    "active"
-  );
+  if (!mobileMenu || !mobileOverlay) return;
 
+  mobileMenu.classList.remove("open");
+  mobileOverlay.classList.remove("show");
 
-  document.body.classList.remove(
-    "menu-open"
-  );
-
-
-  menuButton.querySelector(
-    "i"
-  ).className =
-    "fa-solid fa-bars";
+  document.body.classList.remove("no-scroll");
 
 }
 
 
-
-/* ======================================================
-   MOBILE DROPDOWN
-====================================================== */
-
-const dropdownTrigger =
-  document.querySelector(
-    ".dropdown-trigger"
+if (mobileToggle) {
+  mobileToggle.addEventListener(
+    "click",
+    openMobileMenu
   );
+}
 
 
-const navDropdown =
-  document.querySelector(
-    ".nav-dropdown"
+if (mobileClose) {
+  mobileClose.addEventListener(
+    "click",
+    closeMobileMenu
   );
+}
 
 
-dropdownTrigger.addEventListener(
-  "click",
-  () => {
+if (mobileOverlay) {
+  mobileOverlay.addEventListener(
+    "click",
+    closeMobileMenu
+  );
+}
 
-    if (
-      window.innerWidth <= 1050
-    ) {
 
-      navDropdown.classList.toggle(
-        "open"
-      );
+/* ESC close */
+document.addEventListener("keydown", event => {
 
-    }
+  if (event.key === "Escape") {
+
+    closeMobileMenu();
+    closeServiceModal();
+    closeHotelModal();
 
   }
-);
+
+});
 
 
+/* =========================================================
+   09. MOBILE SERVICE SUBMENU
+========================================================= */
 
-/* ======================================================
-   FAQ
-====================================================== */
+const mobileServiceToggle =
+  $(".mobile-service-toggle");
 
-document
-  .querySelectorAll(
-    ".faq-question"
-  )
-  .forEach(question => {
-
-    question.addEventListener(
-      "click",
-      () => {
-
-        const item =
-          question.parentElement;
+const mobileSubmenu =
+  $(".mobile-submenu");
 
 
-        document
-          .querySelectorAll(
-            ".faq-item"
-          )
-          .forEach(other => {
+if (mobileServiceToggle && mobileSubmenu) {
 
-            if (other !== item) {
+  mobileServiceToggle.addEventListener(
+    "click",
+    () => {
 
-              other.classList.remove(
-                "active"
-              );
+      mobileServiceToggle.classList.toggle("active");
+      mobileSubmenu.classList.toggle("open");
 
-            }
+    }
+  );
 
-          });
+}
 
 
-        item.classList.toggle(
-          "active"
-        );
+/* =========================================================
+   10. SERVICE DATA
+========================================================= */
+
+const serviceData = {
+
+  visa: {
+
+    label: "VISA UMRAH",
+
+    title: "Visa Umrah",
+
+    icon: "fa-solid fa-passport",
+
+    description:
+      "Layanan untuk membantu kebutuhan pengurusan visa perjalanan jamaah sesuai kebutuhan dan ketentuan yang berlaku.",
+
+    features: [
+      "Koordinasi kebutuhan dokumen jamaah",
+      "Layanan untuk individual maupun rombongan",
+      "Dapat digabung dengan Land Arrangement",
+      "Konsultasi kebutuhan sebelum keberangkatan"
+    ]
+
+  },
+
+
+  handling: {
+
+    label: "HANDLING JAMAAH",
+
+    title: "Handling",
+
+    icon: "fa-solid fa-people-group",
+
+    description:
+      "Pendampingan operasional jamaah untuk membantu proses perjalanan lebih terkoordinasi selama berada di Saudi Arabia.",
+
+    features: [
+      "Koordinasi kedatangan jamaah",
+      "Koordinasi keberangkatan",
+      "Pendampingan kebutuhan group",
+      "Dapat disesuaikan dengan itinerary"
+    ]
+
+  },
+
+
+  mutawwif: {
+
+    label: "PENDAMPING JAMAAH",
+
+    title: "Mutawwif",
+
+    icon: "fa-solid fa-person-walking-luggage",
+
+    description:
+      "Pendamping perjalanan jamaah untuk membantu pelaksanaan program ibadah dan perjalanan di Saudi Arabia.",
+
+    features: [
+      "Pendamping berbahasa Indonesia",
+      "Pendampingan program perjalanan",
+      "Dapat disesuaikan untuk group",
+      "Terintegrasi dengan paket LA"
+    ]
+
+  },
+
+
+  ziarah: {
+
+    label: "PROGRAM ZIARAH",
+
+    title: "Ziarah Makkah & Madinah",
+
+    icon: "fa-solid fa-location-dot",
+
+    description:
+      "Program kunjungan ke lokasi bersejarah dan destinasi yang disesuaikan dengan itinerary jamaah.",
+
+    features: [
+      "Program ziarah Makkah",
+      "Program ziarah Madinah",
+      "Transportasi dapat disediakan",
+      "Mutawwif dapat disertakan"
+    ]
+
+  }
+
+};
+
+
+/* =========================================================
+   11. SERVICE MODAL
+========================================================= */
+
+const serviceModal = $("#serviceModal");
+const modalIcon = $("#modalIcon");
+const modalLabel = $("#modalLabel");
+const modalTitle = $("#modalTitle");
+const modalDescription = $("#modalDescription");
+const modalFeatures = $("#modalFeatures");
+
+
+function openServiceModal(serviceKey) {
+
+  const service = serviceData[serviceKey];
+
+  if (!service || !serviceModal) return;
+
+
+  if (modalIcon) {
+
+    modalIcon.innerHTML =
+      `<i class="${service.icon}"></i>`;
+
+  }
+
+
+  if (modalLabel) {
+    modalLabel.textContent = service.label;
+  }
+
+
+  if (modalTitle) {
+    modalTitle.textContent = service.title;
+  }
+
+
+  if (modalDescription) {
+    modalDescription.textContent =
+      service.description;
+  }
+
+
+  if (modalFeatures) {
+
+    modalFeatures.innerHTML =
+      service.features
+        .map(feature => `
+          <div class="modal-feature">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>${feature}</span>
+          </div>
+        `)
+        .join("");
+
+  }
+
+
+  /*
+    Otomatis isi layanan pada contact form.
+  */
+
+  const contactService =
+    $("#contactService");
+
+  if (contactService) {
+
+    const mapping = {
+      visa: "Visa",
+      handling: "Handling",
+      mutawwif: "Mutawwif",
+      ziarah: "Ziarah"
+    };
+
+    contactService.value =
+      mapping[serviceKey] || "Full Land Arrangement";
+
+  }
+
+
+  serviceModal.classList.add("open");
+
+  serviceModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.classList.add("no-scroll");
+
+}
+
+
+function closeServiceModal() {
+
+  if (!serviceModal) return;
+
+  serviceModal.classList.remove("open");
+
+  serviceModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.classList.remove("no-scroll");
+
+}
+
+
+/* Click service cards */
+$$("[data-service-open]").forEach(element => {
+
+  element.addEventListener("click", event => {
+
+    /*
+      Supaya klik service dari dropdown
+      tidak langsung scroll.
+    */
+
+    event.preventDefault();
+
+    const service =
+      element.dataset.serviceOpen;
+
+    closeMobileMenu();
+
+    openServiceModal(service);
+
+  });
+
+});
+
+
+/* Keyboard support */
+$$(".service-card[data-service-open]")
+  .forEach(card => {
+
+    card.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          openServiceModal(
+            card.dataset.serviceOpen
+          );
+
+        }
 
       }
     );
@@ -683,68 +551,401 @@ document
   });
 
 
+/* Close service modal */
+$$("[data-modal-close]")
+  .forEach(element => {
 
-/* ======================================================
-   HOTEL FILTER
-====================================================== */
+    element.addEventListener(
+      "click",
+      closeServiceModal
+    );
 
-const filterTabs =
-  document.querySelectorAll(
-    ".filter-tab"
-  );
+  });
 
+
+/* =========================================================
+   12. HOTEL FILTER
+========================================================= */
+
+const hotelFilterButtons =
+  $$(".hotel-filter-btn");
 
 const hotelCards =
-  document.querySelectorAll(
-    ".hotel-card"
-  );
+  $$(".hotel-card[data-city]");
 
 
-filterTabs.forEach(tab => {
+hotelFilterButtons.forEach(button => {
 
-  tab.addEventListener(
-    "click",
-    () => {
+  button.addEventListener("click", () => {
 
-      filterTabs.forEach(
-        item =>
-          item.classList.remove(
-            "active"
-          )
-      );
+    const filter =
+      button.dataset.filter;
 
 
-      tab.classList.add(
-        "active"
-      );
+    hotelFilterButtons.forEach(btn =>
+      btn.classList.remove("active")
+    );
 
+    button.classList.add("active");
+
+
+    hotelCards.forEach(card => {
 
       const city =
-        tab.dataset.city;
+        card.dataset.city;
 
 
-      hotelCards.forEach(
-        card => {
+      /*
+        Custom request card selalu tampil.
+      */
+
+      if (city === "all") {
+
+        card.classList.remove(
+          "hotel-hidden"
+        );
+
+        return;
+
+      }
+
+
+      if (
+        filter === "all" ||
+        city === filter
+      ) {
+
+        card.classList.remove(
+          "hotel-hidden"
+        );
+
+      } else {
+
+        card.classList.add(
+          "hotel-hidden"
+        );
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* =========================================================
+   13. HOTEL MODAL
+========================================================= */
+
+const hotelModal =
+  $("#hotelModal");
+
+const hotelModalTitle =
+  $("#hotelModalTitle");
+
+
+function openHotelModal(hotelName) {
+
+  if (!hotelModal) return;
+
+
+  if (hotelModalTitle) {
+
+    hotelModalTitle.textContent =
+      hotelName;
+
+  }
+
+
+  const contactService =
+    $("#contactService");
+
+  if (contactService) {
+    contactService.value = "Hotel";
+  }
+
+
+  const contactMessage =
+    $("#contactMessage");
+
+  if (
+    contactMessage &&
+    !contactMessage.value.trim()
+  ) {
+
+    contactMessage.value =
+      `Saya ingin menanyakan ketersediaan ${hotelName}.`;
+
+  }
+
+
+  hotelModal.classList.add("open");
+
+  hotelModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.classList.add(
+    "no-scroll"
+  );
+
+}
+
+
+function closeHotelModal() {
+
+  if (!hotelModal) return;
+
+  hotelModal.classList.remove("open");
+
+  hotelModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.classList.remove(
+    "no-scroll"
+  );
+
+}
+
+
+$$(".hotel-detail-btn").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const hotel =
+      button.dataset.hotel;
+
+    openHotelModal(hotel);
+
+  });
+
+});
+
+
+$$("[data-hotel-close]").forEach(element => {
+
+  element.addEventListener(
+    "click",
+    closeHotelModal
+  );
+
+});
+
+
+/* =========================================================
+   14. TRANSPORT SELECTION
+========================================================= */
+
+$$(".transport-select")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const transport =
+          button.dataset.transport;
+
+
+        const serviceSelect =
+          $("#contactService");
+
+        const message =
+          $("#contactMessage");
+
+
+        if (serviceSelect) {
+          serviceSelect.value =
+            "Transportasi";
+        }
+
+
+        if (message) {
+
+          message.value =
+            `Saya membutuhkan transportasi ${transport}. Mohon informasi ketersediaan dan penawaran.`;
+
+        }
+
+
+        showToast(
+          `${transport} dipilih`
+        );
+
+
+        setTimeout(() => {
+
+          scrollToElement("#contact");
+
+        }, 350);
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   15. PACKAGE SELECTION
+========================================================= */
+
+$$(".package-select")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const packageName =
+          button.dataset.package;
+
+
+        const serviceSelect =
+          $("#contactService");
+
+        const message =
+          $("#contactMessage");
+
+
+        if (serviceSelect) {
+
+          /*
+            Full dan Custom tersedia
+            di select contact.
+          */
 
           if (
-            city === "all" ||
-            card.dataset.city === city
+            packageName ===
+            "Full Land Arrangement"
           ) {
 
-            card.classList.remove(
-              "hidden"
-            );
+            serviceSelect.value =
+              "Full Land Arrangement";
+
+          } else if (
+            packageName ===
+            "Custom Package"
+          ) {
+
+            serviceSelect.value =
+              "Custom Package";
 
           } else {
 
-            card.classList.add(
-              "hidden"
-            );
+            serviceSelect.value =
+              "Transportasi";
 
           }
 
         }
-      );
+
+
+        if (message) {
+
+          message.value =
+            `Saya tertarik dengan paket ${packageName}. Mohon dibuatkan penawaran sesuai kebutuhan perjalanan saya.`;
+
+        }
+
+
+        showToast(
+          `${packageName} dipilih`
+        );
+
+
+        setTimeout(() => {
+
+          scrollToElement("#contact");
+
+        }, 300);
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   16. FAQ ACCORDION
+========================================================= */
+
+const faqItems =
+  $$(".faq-item");
+
+
+function updateFaqHeight(item) {
+
+  const answer =
+    $(".faq-answer", item);
+
+  if (!answer) return;
+
+
+  if (
+    item.classList.contains("active")
+  ) {
+
+    answer.style.maxHeight =
+      `${answer.scrollHeight}px`;
+
+  } else {
+
+    answer.style.maxHeight = "0px";
+
+  }
+
+}
+
+
+/*
+  Initialize active FAQ.
+*/
+
+faqItems.forEach(item => {
+
+  updateFaqHeight(item);
+
+});
+
+
+faqItems.forEach(item => {
+
+  const question =
+    $(".faq-question", item);
+
+  if (!question) return;
+
+
+  question.addEventListener(
+    "click",
+    () => {
+
+      const alreadyActive =
+        item.classList.contains("active");
+
+
+      faqItems.forEach(otherItem => {
+
+        otherItem.classList.remove(
+          "active"
+        );
+
+        updateFaqHeight(otherItem);
+
+      });
+
+
+      if (!alreadyActive) {
+
+        item.classList.add("active");
+
+        updateFaqHeight(item);
+
+      }
 
     }
   );
@@ -752,69 +953,19 @@ filterTabs.forEach(tab => {
 });
 
 
-
-/* ======================================================
-   NAVBAR + BACK TOP
-====================================================== */
-
-const navbar =
-  document.getElementById(
-    "navbar"
-  );
-
-
-const backTop =
-  document.getElementById(
-    "backTop"
-  );
-
-
 window.addEventListener(
-  "scroll",
+  "resize",
   () => {
 
-    if (window.scrollY > 30) {
+    faqItems.forEach(item => {
 
-      navbar.classList.add(
-        "scrolled"
-      );
+      if (
+        item.classList.contains("active")
+      ) {
 
-    } else {
+        updateFaqHeight(item);
 
-      navbar.classList.remove(
-        "scrolled"
-      );
-
-    }
-
-
-    if (window.scrollY > 700) {
-
-      backTop.classList.add(
-        "show"
-      );
-
-    } else {
-
-      backTop.classList.remove(
-        "show"
-      );
-
-    }
-
-  }
-);
-
-
-backTop.addEventListener(
-  "click",
-  () => {
-
-    window.scrollTo({
-
-      top: 0,
-
-      behavior: "smooth"
+      }
 
     });
 
@@ -822,9 +973,924 @@ backTop.addEventListener(
 );
 
 
+/* =========================================================
+   17. CALCULATOR
+========================================================= */
 
-/* ======================================================
-   INITIALIZE
-====================================================== */
+const calculatorForm =
+  $("#laCalculator");
 
-calculateEstimate();
+const calculatorResult =
+  $("#calculatorResult");
+
+const resultDetails =
+  $("#resultDetails");
+
+const resultWhatsapp =
+  $("#resultWhatsapp");
+
+
+if (calculatorForm) {
+
+  calculatorForm.addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+
+      const pax =
+        Number($("#calcPax")?.value || 1);
+
+
+      const days =
+        $("#calcDays")?.value || "9";
+
+
+      const hotel =
+        $("#hotelClass")?.value ||
+        "Comfort";
+
+
+      const vehicle =
+        $("#vehicleType")?.value ||
+        "Hiace";
+
+
+      const cities =
+        $$('input[name="city"]:checked')
+          .map(input => input.value);
+
+
+      const extras =
+        $$('input[name="extra"]:checked')
+          .map(input => input.value);
+
+
+      /*
+        Validasi kota
+      */
+
+      if (cities.length === 0) {
+
+        showToast(
+          "Pilih minimal satu kota"
+        );
+
+        return;
+
+      }
+
+
+      /*
+        Smart vehicle suggestion.
+      */
+
+      let recommendedVehicle =
+        vehicle;
+
+
+      if (pax <= 3) {
+
+        recommendedVehicle =
+          "Sedan / Private Car";
+
+      } else if (pax <= 12) {
+
+        recommendedVehicle =
+          "Hiace / Van";
+
+      } else {
+
+        recommendedVehicle =
+          "Bus Jamaah";
+
+      }
+
+
+      /*
+        Smart package type.
+      */
+
+      let packageType =
+        "Custom Land Arrangement";
+
+
+      if (
+        extras.includes("Handling") &&
+        extras.includes("Mutawwif")
+      ) {
+
+        packageType =
+          "Full Land Arrangement";
+
+      }
+
+
+      const durationText =
+        days === "custom"
+          ? "Custom"
+          : `${days} hari`;
+
+
+      const extrasText =
+        extras.length
+          ? extras.join(", ")
+          : "Tidak ada tambahan";
+
+
+      /*
+        Show result.
+      */
+
+      if (resultDetails) {
+
+        resultDetails.innerHTML = `
+
+          <p>
+            <strong>Jamaah:</strong>
+            ${pax} orang
+          </p>
+
+          <p>
+            <strong>Durasi:</strong>
+            ${durationText}
+          </p>
+
+          <p>
+            <strong>Kota:</strong>
+            ${cities.join(" • ")}
+          </p>
+
+          <p>
+            <strong>Hotel:</strong>
+            ${hotel}
+          </p>
+
+          <p>
+            <strong>Kendaraan dipilih:</strong>
+            ${vehicle}
+          </p>
+
+          <p>
+            <strong>Rekomendasi kendaraan:</strong>
+            ${recommendedVehicle}
+          </p>
+
+          <p>
+            <strong>Layanan tambahan:</strong>
+            ${extrasText}
+          </p>
+
+          <p>
+            <strong>Tipe paket:</strong>
+            ${packageType}
+          </p>
+
+        `;
+
+      }
+
+
+      if (calculatorResult) {
+
+        calculatorResult.classList.add(
+          "show"
+        );
+
+      }
+
+
+      /*
+        Prepare WhatsApp text.
+      */
+
+      const whatsappMessage = `
+Assalamu'alaikum Safeera,
+
+Saya ingin meminta penawaran Land Arrangement Saudi Arabia.
+
+Rincian kebutuhan:
+• Jumlah jamaah: ${pax} orang
+• Durasi: ${durationText}
+• Kota: ${cities.join(", ")}
+• Kategori hotel: ${hotel}
+• Kendaraan: ${vehicle}
+• Rekomendasi kendaraan: ${recommendedVehicle}
+• Tambahan layanan: ${extrasText}
+• Paket: ${packageType}
+
+Mohon informasi dan penawarannya.
+
+Terima kasih.
+      `.trim();
+
+
+      if (resultWhatsapp) {
+
+        resultWhatsapp.href =
+          createWhatsAppURL(
+            whatsappMessage
+          );
+
+        resultWhatsapp.target =
+          "_blank";
+
+        resultWhatsapp.rel =
+          "noopener noreferrer";
+
+      }
+
+
+      showToast(
+        "Ringkasan perjalanan berhasil dibuat"
+      );
+
+
+      setTimeout(() => {
+
+        calculatorResult?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+
+      }, 200);
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   18. CONTACT FORM → WHATSAPP
+========================================================= */
+
+const contactForm =
+  $("#contactForm");
+
+
+if (contactForm) {
+
+  contactForm.addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+
+      const name =
+        $("#contactName")?.value.trim();
+
+
+      const pax =
+        $("#contactPax")?.value;
+
+
+      const date =
+        $("#contactDate")?.value;
+
+
+      const service =
+        $("#contactService")?.value;
+
+
+      const message =
+        $("#contactMessage")?.value.trim();
+
+
+      if (!name) {
+
+        showToast(
+          "Silakan isi nama"
+        );
+
+        return;
+
+      }
+
+
+      if (!pax || Number(pax) < 1) {
+
+        showToast(
+          "Masukkan jumlah jamaah"
+        );
+
+        return;
+
+      }
+
+
+      /*
+        Format date
+      */
+
+      let formattedDate =
+        "Belum ditentukan";
+
+
+      if (date) {
+
+        const dateObject =
+          new Date(`${date}T00:00:00`);
+
+
+        formattedDate =
+          new Intl.DateTimeFormat(
+            "id-ID",
+            {
+              day: "numeric",
+              month: "long",
+              year: "numeric"
+            }
+          ).format(dateObject);
+
+      }
+
+
+      const whatsappMessage = `
+Assalamu'alaikum Safeera,
+
+Nama: ${name}
+Jumlah jamaah: ${pax} orang
+Tanggal perjalanan: ${formattedDate}
+Layanan: ${service}
+
+Kebutuhan:
+${message || "Saya ingin konsultasi mengenai layanan Safeera."}
+
+Mohon informasi dan penawarannya.
+
+Terima kasih.
+      `.trim();
+
+
+      showToast(
+        "Membuka WhatsApp..."
+      );
+
+
+      setTimeout(() => {
+
+        openWhatsApp(
+          whatsappMessage
+        );
+
+      }, 350);
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   19. FLOATING WHATSAPP
+========================================================= */
+
+const floatingWhatsapp =
+  $("#floatingWhatsapp");
+
+
+if (floatingWhatsapp) {
+
+  floatingWhatsapp.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      const message = `
+Assalamu'alaikum Safeera,
+
+Saya ingin konsultasi mengenai layanan Land Arrangement Saudi Arabia.
+
+Mohon informasinya.
+      `.trim();
+
+
+      openWhatsApp(message);
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   20. GENERAL CONSULTATION BUTTONS
+========================================================= */
+
+/*
+  Tombol dengan href="#contact" tetap scroll
+  ke contact section.
+
+  Tombol WhatsApp khusus menggunakan
+  logic di atas.
+*/
+
+
+/* =========================================================
+   21. REVEAL ON SCROLL
+========================================================= */
+
+const revealElements =
+  $$(".reveal");
+
+
+if ("IntersectionObserver" in window) {
+
+  const revealObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12,
+        rootMargin:
+          "0px 0px -35px 0px"
+      }
+    );
+
+
+  revealElements.forEach(
+    (element, index) => {
+
+      /*
+        Sedikit stagger,
+        tetapi tidak berlebihan.
+      */
+
+      element.style.transitionDelay =
+        `${Math.min(
+          (index % 4) * 60,
+          180
+        )}ms`;
+
+
+      revealObserver.observe(element);
+
+    }
+  );
+
+} else {
+
+  revealElements.forEach(
+    element => {
+
+      element.classList.add(
+        "visible"
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   22. ACTIVE NAVIGATION
+========================================================= */
+
+const pageSections =
+  $$("main section[id]");
+
+const navLinks =
+  $$(".nav-link");
+
+
+function updateActiveNavigation() {
+
+  let currentSection = "home";
+
+
+  pageSections.forEach(section => {
+
+    const top =
+      section.offsetTop - 160;
+
+
+    if (window.scrollY >= top) {
+
+      currentSection =
+        section.id;
+
+    }
+
+  });
+
+
+  navLinks.forEach(link => {
+
+    link.classList.remove("active");
+
+
+    const href =
+      link.getAttribute("href");
+
+
+    if (
+      href === `#${currentSection}`
+    ) {
+
+      link.classList.add("active");
+
+    }
+
+  });
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  updateActiveNavigation,
+  { passive: true }
+);
+
+
+updateActiveNavigation();
+
+
+/* =========================================================
+   23. HOTEL IMAGE FALLBACK
+========================================================= */
+
+/*
+  Jika foto eksternal gagal dimuat,
+  card tetap terlihat bagus.
+*/
+
+$$(".hotel-image img").forEach(img => {
+
+  img.addEventListener("error", () => {
+
+    img.style.display = "none";
+
+    const wrapper =
+      img.closest(".hotel-image");
+
+
+    if (wrapper) {
+
+      wrapper.style.background = `
+        linear-gradient(
+          135deg,
+          #0b2923,
+          #175246
+        )
+      `;
+
+
+      if (
+        !wrapper.querySelector(
+          ".image-fallback"
+        )
+      ) {
+
+        const fallback =
+          document.createElement("div");
+
+
+        fallback.className =
+          "image-fallback";
+
+
+        fallback.innerHTML = `
+          <i class="fa-solid fa-hotel"></i>
+          <span>SAFEERA HOTEL</span>
+        `;
+
+
+        Object.assign(
+          fallback.style,
+          {
+            position: "absolute",
+            inset: "0",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            color: "rgba(255,255,255,.55)",
+            fontSize: "10px",
+            letterSpacing: ".14em"
+          }
+        );
+
+
+        const icon =
+          fallback.querySelector("i");
+
+
+        if (icon) {
+
+          Object.assign(
+            icon.style,
+            {
+              fontSize: "35px",
+              color:
+                "rgba(239,199,120,.7)"
+            }
+          );
+
+        }
+
+
+        wrapper.prepend(fallback);
+
+      }
+
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   24. CARD KEYBOARD SUPPORT
+========================================================= */
+
+$$(".service-card[onclick]")
+  .forEach(card => {
+
+    card.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          const onclick =
+            card.getAttribute("onclick");
+
+
+          if (
+            onclick &&
+            onclick.includes("#hotels")
+          ) {
+
+            scrollToElement("#hotels");
+
+          }
+
+
+          if (
+            onclick &&
+            onclick.includes("#transport")
+          ) {
+
+            scrollToElement("#transport");
+
+          }
+
+        }
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   25. TOAST
+========================================================= */
+
+const toast =
+  $("#toast");
+
+const toastMessage =
+  $("#toastMessage");
+
+let toastTimer;
+
+
+function showToast(message) {
+
+  if (!toast) return;
+
+
+  if (toastMessage) {
+    toastMessage.textContent =
+      message;
+  }
+
+
+  toast.classList.add("show");
+
+
+  clearTimeout(toastTimer);
+
+
+  toastTimer =
+    setTimeout(() => {
+
+      toast.classList.remove(
+        "show"
+      );
+
+    }, 2600);
+
+}
+
+
+/* =========================================================
+   26. CLOSE MODALS WHEN CLICKING CONTACT CTA
+========================================================= */
+
+$$(".modal-contact").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    closeServiceModal();
+    closeHotelModal();
+
+    setTimeout(() => {
+
+      scrollToElement("#contact");
+
+    }, 150);
+
+  });
+
+});
+
+
+/* =========================================================
+   27. TOUCH IMPROVEMENT FOR DESKTOP DROPDOWN
+========================================================= */
+
+const dropdownButton =
+  $(".nav-dropdown-button");
+
+const dropdownMenu =
+  $(".dropdown-menu");
+
+
+if (dropdownButton && dropdownMenu) {
+
+  dropdownButton.addEventListener(
+    "click",
+    event => {
+
+      /*
+        Berguna untuk tablet / touchscreen.
+      */
+
+      if (
+        window.matchMedia(
+          "(hover: none)"
+        ).matches
+      ) {
+
+        event.preventDefault();
+
+
+        const isOpen =
+          dropdownMenu.style.opacity === "1";
+
+
+        if (isOpen) {
+
+          dropdownMenu.style.opacity = "";
+          dropdownMenu.style.visibility = "";
+          dropdownMenu.style.pointerEvents = "";
+          dropdownMenu.style.transform = "";
+
+        } else {
+
+          dropdownMenu.style.opacity = "1";
+          dropdownMenu.style.visibility = "visible";
+          dropdownMenu.style.pointerEvents = "auto";
+          dropdownMenu.style.transform =
+            "translate(-50%, 0)";
+
+        }
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   28. SET MINIMUM DATE
+========================================================= */
+
+const contactDate =
+  $("#contactDate");
+
+
+if (contactDate) {
+
+  const today =
+    new Date();
+
+
+  const year =
+    today.getFullYear();
+
+
+  const month =
+    String(
+      today.getMonth() + 1
+    ).padStart(2, "0");
+
+
+  const day =
+    String(
+      today.getDate()
+    ).padStart(2, "0");
+
+
+  contactDate.min =
+    `${year}-${month}-${day}`;
+
+}
+
+
+/* =========================================================
+   29. RESPONSIVE CLEANUP
+========================================================= */
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    /*
+      Jika user rotate HP / memperbesar
+      browser ke desktop, tutup menu.
+    */
+
+    if (window.innerWidth > 1120) {
+
+      closeMobileMenu();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   30. SAFEERA READY
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    /*
+      Tampilkan elemen hero lebih cepat.
+    */
+
+    $$(".hero .reveal").forEach(
+      element => {
+
+        setTimeout(() => {
+
+          element.classList.add(
+            "visible"
+          );
+
+        }, 150);
+
+      }
+    );
+
+
+    console.log(
+      "%c SAFEERA MADINAH ",
+      "background:#0b2923;color:#efc778;padding:8px 14px;border-radius:5px;font-weight:bold;"
+    );
+
+
+    console.log(
+      "Website ready."
+    );
+
+  }
+);
